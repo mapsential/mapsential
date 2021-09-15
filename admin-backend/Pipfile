@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tortoise-orm = "*"
+fastapi = "*"
+pydantic = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+piccolo = {extras = ["sqlite", "uvloop"], version = "*"}
+piccolo-admin = "*"
+OSMPythonTools = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true

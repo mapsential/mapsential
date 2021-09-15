@@ -1,11 +1,11 @@
-CREATE TYPE mood AS ENUM ('toilet', 'water_fountain', 'soup_kitchen');
-
 CREATE TABLE locations (
     id INT NOT NULL,
-    name VARCHAR(255) NOT NULL,
+    type VARCHAR (127) NOT NULL,
+    name VARCHAR (255) NOT NULL,
     longitude REAL NOT NULL,
     latitude REAL NOT NULL,
-    detail_id INT NOT NULL,
+    details_id INT NOT NULL,
+    CONSTRAINT check_type CHECK (type IN ('toilet', 'water_fountain', 'soup_kitchen'))
     PRIMARY KEY (id)
 );
 
