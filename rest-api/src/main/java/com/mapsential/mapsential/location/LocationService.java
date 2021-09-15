@@ -23,4 +23,9 @@ public class LocationService {
     public List<LocationResource> getLocationsByType(LocationType locationType) {
         return locationRepository.findByLocationType(locationType);
     }
+
+    public List<LocationResource> getLocationsByTypes(LocationType[] locationType) {
+        return locationRepository.findByLocationTypes(locationType);
+    }
+
 }

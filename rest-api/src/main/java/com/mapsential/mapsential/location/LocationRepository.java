@@ -11,4 +11,7 @@ public interface LocationRepository extends JpaRepository<LocationResource, Long
 
     @Query("SELECT * FROM locations WHERE type = ?1")
     List<LocationResource> findByLocationType(LocationType locationType);
+
+    @Query("SELECT * FROM locations WHERE type IN ?1") //Ob der Type im Array ist
+    List<LocationResource> findByLocationTypes(LocationType[] locationType);
 }

@@ -22,6 +22,9 @@ public class LocationResource implements Serializable {
     @Column(name = "id")
     private Long locationId;
 
+    @Column(name = "details_id")
+    private Long detailsId;
+
     @Column(name = "type")
     private LocationType locationType;
 
@@ -36,11 +39,4 @@ public class LocationResource implements Serializable {
 
     @Column(name = "latitude") //breitengrad → east west
     private Long latitude;
-
-//    @Column(name = "reviewCount")
-//    private Long locationReviewCount;
-
-    @Column(name = "reviewList")
-    private List<Long> locationReviewList;
-
 }

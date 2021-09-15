@@ -4,7 +4,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @NoArgsConstructor
 @RestController
@@ -17,14 +19,11 @@ public class LocationController {
 
     @GetMapping(path = "/api/location/{locationId}", produces = "application/json")
     public Object getLocationById(@PathVariable Long locationId) {
-//        try {
-//            if (!locationService.findById(locationId).isPresent()){
-//                return MyResourceNotFoundException.notFound("Location with ID " + locationId + " could not be found");
-//            }
-//        } catch (Exception e){
-//            return MyResourceNotFoundException.badRequest(e);
-//        }
-        return locationService.findById(locationId);
+        Optional<LocationResource> locationResourceOptional = locationService.findById(locationId);
+        if (!locationResourceOptional.isPresent()){
+            return ("Location with ID " + locationId + " could not be found");
+        }
+        return locationResourceOptional;
     }
 
     @GetMapping(value = "/api/location", produces = "application/json")
@@ -38,8 +37,8 @@ public class LocationController {
     }
 
     @GetMapping(value = "/api/locations/{locationTypes}", produces = "application/json")
-    public List<LocationResource> getLocationsByType(@RequestParam LocationType[] locationTypes) {
-        return locationService.getLocationsByType(locationTypes);
+    public List<LocationResource> getLocationsByTypes(@RequestParam LocationType[] locationTypes) {
+        return locationService.getLocationsByTypes(locationTypes);
     }
 
 }
