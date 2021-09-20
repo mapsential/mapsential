@@ -1,8 +1,8 @@
-from piccolo_admin.endpoints import create_admin
-from starlette.routing import Route, Mount
-from fastapi import FastAPI
-
 from admin.piccolo_app import APP_CONFIG
+from fastapi import FastAPI
+from piccolo_admin.endpoints import create_admin
+from starlette.routing import Mount
+from starlette.routing import Route
 
 
 app = FastAPI(

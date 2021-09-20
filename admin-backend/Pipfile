@@ -11,6 +11,11 @@ uvicorn = {extras = ["standard"], version = "*"}
 piccolo = {extras = ["sqlite", "uvloop"], version = "*"}
 piccolo-admin = "*"
 OSMPythonTools = "*"
+ipython = "*"
+overpy = "*"
+geopy = "*"
+pre-commit = "*"
+mypy = "*"
 
 [dev-packages]
 

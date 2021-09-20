@@ -2,10 +2,10 @@
 Import all of the Tables subclasses in your app here, and register them with
 the APP_CONFIG.
 """
-
 import os
 
-from piccolo.conf.apps import AppConfig, table_finder
+from piccolo.conf.apps import AppConfig
+from piccolo.conf.apps import table_finder
 
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
