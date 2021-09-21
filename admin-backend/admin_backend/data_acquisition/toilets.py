@@ -1,4 +1,3 @@
-import asyncio
 import datetime
 import pathlib
 import re
@@ -17,7 +16,7 @@ if __name__ == "__main__":
 
 from admin.tables import Details, DataAcquisitionDetailsToilet, Locations, DataAcquisitionLocations, Sources
 from enums import LocationType, YesNoLimited, HandDryingMethod
-from crud import create_or_update_source
+from crud import create_or_update_source, delete_all_locations_by_type
 from geolocation import get_address_from_lat_long
 
 
@@ -45,13 +44,8 @@ overpass_api = overpy.Overpass()
 
 
 async def repopulate_with_toilets():
-    await delete_toilets()
+    await delete_all_locations_by_type(LocationType.TOILET)
     await populate_with_toilets()
-
-
-async def delete_toilets():
-    await Locations.delete().where(Locations.type == LocationType.TOILET).run()
-    await DataAcquisitionLocations.delete(DataAcquisitionLocations.type == LocationType.TOILET).run()
 
 
 async def populate_with_toilets():
@@ -323,4 +317,6 @@ def get_data_from_overpass():
 
 
 if __name__ == "__main__":
+    import asyncio
+
     asyncio.run(repopulate_with_toilets())

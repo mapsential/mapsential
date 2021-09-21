@@ -1,0 +1,582 @@
+{
+  "data": [
+    {
+      "address": "Karl-August-Platz 10625 Berlin Charlottenburg-Wilmersdorf",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "11:30",
+            "14:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Westf\u00e4lische Stra\u00dfe 70a 10709 Berlin Charlottenburg-Wilmersdorf",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "12:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Gemeindezentrum Pl\u00f6tzensee Heckerdamm 226 13627 Berlin Charlottenburg-Wilmersdorf",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Marheinekeplatz 1 10961 Berlin Friedrichshain-Kreuzberg",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "12:00",
+            "13:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Oranienstra\u00dfe 132-134 10969 Berlin Friedrichshain-Kreuzberg",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "14:00",
+            "16:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Marchlewskistra\u00dfe 40 10243 Berlin Friedrichshain-Kreuzberg",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "8:00",
+            "10:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Alt-Friedrichsfelde 8 a/b 10315 Berlin Lichtenberg",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "15:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Gemeindezentrum Am Fennpfuhl Paul-Junius-Stra\u00dfe 75 10369 Berlin Lichtenberg",
+      "time_data": [
+        {
+          "day": "Freitag",
+          "time": [
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Ladengesch\u00e4ft Grevesm\u00fchlener Str. 16 13059 Berlin Lichtenberg",
+      "time_data": [
+        {
+          "day": "Montag",
+          "time": [
+            "13:00"
+          ]
+        }
+      ],
+      "info": "Neukund*innen registrieren sich bitte zwischen 9:00 bis 11:00 Uhr"
+    },
+    {
+      "address": "Schwarzburger Stra\u00dfe 8 12687 Berlin Marzahn-Hellersdorf",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "15:00",
+            "17:00"
+          ]
+        },
+        {
+          "day": "Freitag",
+          "time": [
+            "15:00",
+            "17:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Adorfer Stra\u00dfe 6 12627 Berlin Marzahn-Hellersdorf",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "11:00",
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Waisenstra\u00dfe 28 10179 Berlin Mitte",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "11:00",
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Ev. Erl\u00f6serkirche Wikinger Ufer 9 10555 Berlin Mitte",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "14:00",
+            "15:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Badstra\u00dfe 50 13357 Berlin Mitte",
+      "time_data": [
+        {
+          "day": "Samstag",
+          "time": [
+            "12:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Seestra\u00dfe 35 13353 Berlin Mitte",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "12:00",
+            "13:40"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Samoastra\u00dfe 14 13353 Berlin Mitte",
+      "time_data": [
+        {
+          "day": "Freitag",
+          "time": [
+            "13:30",
+            "14:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Lipschitzallee 7 12351 Berlin Neuk\u00f6lln",
+      "time_data": [
+        {
+          "day": "Montag",
+          "time": [
+            "13:00",
+            "17:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Fuldastra\u00dfe 50 12045 Berlin Neuk\u00f6lln",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "14:00",
+            "16:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Karl-Marx-Str. 197 12055 Berlin Neuk\u00f6lln",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "9:00",
+            "14:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Kirchl. Begegnungszentrum Karow Achillesstr. 53 13125 Berlin Pankow",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "15:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "G\u00f6hrenerstra\u00dfe 11 10437 Berlin Pankow",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "11:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Jugendfreizeitheim Tollerstr. 31 13158 Berlin Pankow",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "12:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Danziger Stra\u00dfe 201-203 10407 Berlin Pankow",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "11:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Friesickestr. 15 13086 Berlin Pankow",
+      "time_data": [
+        {
+          "day": "Mittwoch"
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Klemkestr. 65 13409 Berlin Reinickendorf",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "12:00",
+            "14:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Auguste-Viktoria-Allee 17 13403 Berlin Reinickendorf",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "14:30",
+            "16:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Seniorenfreizeitst\u00e4tte Berliner Str. 105-107 13467 Berlin Reinickendorf",
+      "time_data": [
+        {
+          "day": "Samstag"
+        }
+      ],
+      "info": "nach vorheriger Anmeldung mit fester Uhrzeit"
+    },
+    {
+      "address": "Wilhelmsruher Damm 144 13439 Berlin Reinickendorf",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "14:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Alt-Wittenau 29 a 13437 Berlin Reinickendorf",
+      "time_data": [
+        {
+          "day": "Freitag",
+          "time": [
+            "14:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Ascheberger Weg 44 13507 Berlin Reinickendorf",
+      "time_data": [
+        {
+          "day": "Samstag",
+          "time": [
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Paul-Schneider-Haus Sch\u00f6nwalder Str. 24 13585 Berlin Spandau",
+      "time_data": [
+        {
+          "day": "Montag",
+          "time": [
+            "13:00",
+            "18:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Im Spektefeld 26 13589 Berlin Spandau",
+      "time_data": [
+        {
+          "day": "Freitag",
+          "time": [
+            "14:00",
+            "16:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Wei\u00dfenburger Str. 9-11 13595 Berlin Spandau",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "14:00",
+            "15:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Gemeindehaus Pillnitzer Weg 8 13593 Berlin Spandau",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Gallwitzallee 6 12249 Berlin Steglitz-Zehlendorf",
+      "time_data": [
+        {
+          "day": "Mittwoch",
+          "time": [
+            "11:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Gemeindezentrum Celsiustra\u00dfe Celsiusstra\u00dfe 71-75 12207 Berlin Steglitz-Zehlendorf",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "14:00",
+            "15:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Matth\u00e4us-Gemeinde Schlo\u00dfstr. 44 d 12165 Berlin Steglitz-Zehlendorf",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "13:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "M\u00fchlenstr. 47 14167 Berlin Steglitz-Zehlendorf",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "12:00",
+            "13:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Nahariyastra\u00dfe 33 12309 Berlin Tempelhof-Sch\u00f6neberg",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "14:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Dorothe\u00e9-S\u00f6lle-Haus Waldsassener Str. 9 12279 Berlin Tempelhof-Sch\u00f6neberg",
+      "time_data": [
+        {
+          "day": "Freitag",
+          "time": [
+            "13:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Dennewitzplatz 10783 Berlin Tempelhof-Sch\u00f6neberg",
+      "time_data": [
+        {
+          "day": "Freitag",
+          "time": [
+            "16:00",
+            "16:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Hauptstr. 48 / Haus I 10827 Berlin Tempelhof-Sch\u00f6neberg",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "12:00",
+            "15:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Wolffring 72 12101 Berlin Tempelhof-Sch\u00f6neberg",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "14:00",
+            "15:30"
+          ]
+        }
+      ],
+      "info": "Neuanmeldungen um 14:00 Uhr"
+    },
+    {
+      "address": "Hasselwerderstr. 22 a 12439 Berlin Treptow-K\u00f6penick",
+      "time_data": [
+        {
+          "day": "Donnerstag",
+          "time": [
+            "16:00",
+            "17:30"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Bahnhofstra\u00dfe 9 12555 Berlin Treptow-K\u00f6penick",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "15:00"
+          ]
+        }
+      ],
+      "info": ""
+    },
+    {
+      "address": "Plesser Stra\u00dfe 3 12435 Berlin Treptow-K\u00f6penick",
+      "time_data": [
+        {
+          "day": "Dienstag",
+          "time": [
+            "14:00",
+            "15:30"
+          ]
+        }
+      ],
+      "info": ""
+    }
+  ]
+}

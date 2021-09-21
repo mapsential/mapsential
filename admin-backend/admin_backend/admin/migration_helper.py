@@ -3,7 +3,6 @@ import datetime
 import json
 import sqlite3
 from collections import deque
-from enum import Enum
 from pathlib import Path
 from typing import cast
 from typing import Generic
@@ -94,7 +93,7 @@ class SqliteSqlFilesGenerator:
             if self.with_sources_columns:
                 return [
                     non_source_column_def,
-                    f"{self.name}_source_id INTEGER",
+                    f"{self.name}_source_id INTEGER REFERENCES sources(id) ON DELETE NO ACTION",
                 ]
 
             return [non_source_column_def]
@@ -135,13 +134,6 @@ class SqliteSqlFilesGenerator:
             return f"{column_def} DEFAULT {self.default}"
 
         def get_constraints(self, indent: str) -> list[str]:
-            if self.with_sources_columns:
-                return [
-                    f"FOREIGN KEY({self.name}_source_id) REFERENCES sources(id)\n"
-                    f"{indent}ON DELETE NO ACTION\n"
-                    f"{indent}ON UPDATE CASCADE"
-                ]
-
             return []
 
     class Integer(Column[int]):
@@ -160,21 +152,19 @@ class SqliteSqlFilesGenerator:
                 references: str,
                 references_column_name: str = "id",
                 on_delete: Literal["cascade", "restrict", "no_action", "set_null", "set_default"] = "cascade",
-                on_update: Literal["cascade", "restrict", "no_action", "set_null", "set_default"] = "cascade",
                 **kwargs
         ):
             super().__init__(name, **kwargs)
             self.references = references
             self.references_column_name = references_column_name
             self.on_delete = on_delete
-            self.on_update = on_update
 
-        def get_constraints(self, indent: str) -> list[str]:
-            return [
-                f"FOREIGN KEY({self.name}) REFERENCES {self.references}({self.references_column_name})\n"
-                f"{indent}ON DELETE {self.on_delete.replace('_', ' ').upper()}\n"
-                f"{indent}ON UPDATE {self.on_update.replace('_', ' ').upper()}",
-            ]
+        def add_column_def_end(self, indent: str) -> str:
+            return (
+                f"{super().add_column_def_end(indent)} REFERENCES "
+                f"{self.references}({self.references_column_name}) "
+                f"ON DELETE {self.on_delete.replace('_', ' ').upper()}"
+            )
 
     class Boolean(Integer):
         def __init__(self, name: str, default: Optional[bool] = None, **kwargs):
@@ -185,7 +175,15 @@ class SqliteSqlFilesGenerator:
             super().__init__(name, default=integer_default, **kwargs)
 
         def get_constraints(self, indent: str) -> list[str]:
-            return [f"CONSTRAINT check_{self.name}_is_bool\n{indent}CHECK ({self.name} = 0 OR {self.name} = 1)"]
+            if self.null:
+                or_null_str = f" OR {self.name} IS NULL"
+            else:
+                or_null_str = ""
+
+            return [
+                f"CONSTRAINT check_{self.name}_is_bool\n"
+                f"{indent}CHECK ({self.name} = 0 OR {self.name} = 1{or_null_str})"
+            ]
 
     class Varchar(Column[str]):
         def __init__(
@@ -206,9 +204,14 @@ class SqliteSqlFilesGenerator:
 
         def get_constraints(self, indent: str) -> list[str]:
             if self.choices is not None:
-                choices_str = ", ".join(f"'{mem.value}'" for mem in self.choices)
+                choices = [f"'{mem.value}'" for mem in self.choices]
+                if self.null:
+                    choices.append("NULL")
+
+                choices_str = ", ".join(choices)
                 return [
-                    f"CONSTRAINT check_{self.name}_matches_choices\n{indent}CHECK ({self.name} IN ({choices_str}))"
+                    f"CONSTRAINT check_{self.name}_matches_choices\n"
+                    f"{indent}CHECK ({self.name} IN ({choices_str}))"
                 ]
             return []
 
@@ -261,7 +264,9 @@ class SqliteSqlFilesGenerator:
 
         self.indent = indent
 
-        self.migrate_sql_commands: list[str] = []
+        self.migrate_sql_commands: list[str] = [
+            "PRAGMA foreign_keys = ON;",
+        ]
         self.revert_sql_commands: deque[str] = deque()
 
     def __enter__(self):

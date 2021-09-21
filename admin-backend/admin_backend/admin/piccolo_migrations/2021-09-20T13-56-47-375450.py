@@ -43,6 +43,18 @@ with SqliteSqlFilesGenerator(__file__) as gen:
             gen.Text("opening_times", null=True, with_sources_columns=True),
         ]
 
+    def get_common_soup_kitchen_details(column_name_prefix: str = ""):
+        column_data: list[tuple[str, Type[SqliteSqlFilesGenerator.Column], list[Any], dict[str, Any]]] = [
+            ("info", gen.JSON, [], {"null": True})
+        ]
+
+        columns = []
+        for column_name, column_cls, args, kwargs in column_data:
+            kwargs["with_sources_columns"] = True
+            columns.append(column_cls(f"{column_name_prefix}{column_name}", *args, **kwargs))
+
+        return columns
+
     def get_common_toilet_details(column_name_prefix: str = ""):
         column_data: list[tuple[str, Type[SqliteSqlFilesGenerator.Column], list[Any], dict[str, Any]]] = [
             ("has_fee", gen.Boolean, [], {"null": True}),
@@ -85,7 +97,21 @@ with SqliteSqlFilesGenerator(__file__) as gen:
     gen.create_table("details", [
         *get_details_mixin_columns(),
         *get_details_opening_time_mixin(),
+        *get_common_soup_kitchen_details(column_name_prefix="soup_kitchen_"),
         *get_common_toilet_details(column_name_prefix="toilet_"),
+    ])
+
+    gen.create_table("da_details_soup_kitchen", [
+        *get_details_mixin_columns(),
+        *get_details_opening_time_mixin(),
+        *get_common_soup_kitchen_details(),
+        gen.JSON("json_data", null=True, with_sources_columns=True),
+    ])
+
+    gen.create_table("da_details_drinking_fountain", [
+        *get_details_mixin_columns(),
+        *get_details_opening_time_mixin(),
+        gen.JSON("google_maps_kml_placemark", null=True, with_sources_columns=True),
     ])
 
     gen.create_table("da_details_toilet", [

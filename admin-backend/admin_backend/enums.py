@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class LocationType(str, Enum):
+    DRINKING_FOUNTAIN = "drinking_fountain"
     SOUP_KITCHEN = "soup_kitchen"
     TOILET = "toilet"
-    water_fountain = "water_fountain"
 
 
 class YesNoLimited(str, Enum):

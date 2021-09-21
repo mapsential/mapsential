@@ -16,6 +16,8 @@ overpy = "*"
 geopy = "*"
 pre-commit = "*"
 mypy = "*"
+requests = "*"
+types-requests = "*"
 
 [dev-packages]
 

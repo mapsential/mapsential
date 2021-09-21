@@ -68,6 +68,38 @@ class DetailsOpeningTimesMixin:
     opening_times = Text(null=True)
 
 
+class CommonDrinkingFountainDetails:
+
+    def __init_subclass__(cls, drinking_fountain_details_prefix: str = "", **kwargs):
+        columns: dict[str, Column] = dict(
+            # Add columns here
+        )
+
+        for column_name, column in columns.items():
+            setattr(cls, f"{drinking_fountain_details_prefix}{column_name}", column)
+
+        try:
+            super().__init_subclass__(**kwargs)  # type: ignore
+        except KeyError:
+            super().__init_subclass__()
+
+
+class CommonSoupKitchensDetails:
+
+    def __init_subclass__(cls, soup_kitchen_details_prefix: str = "", **kwargs):
+        columns: dict[str, Column] = dict(
+            info=Text(null=True),
+        )
+
+        for column_name, column in columns.items():
+            setattr(cls, f"{soup_kitchen_details_prefix}{column_name}", column)
+
+        try:
+            super().__init_subclass__(**kwargs)  # type: ignore
+        except KeyError:
+            super().__init_subclass__()
+
+
 class CommonToiletDetails:
 
     def __init_subclass__(cls, toilet_details_prefix: str = "", **kwargs):
@@ -120,12 +152,36 @@ class CommonToiletDetails:
 class Details(
     DetailsMixin,
     DetailsOpeningTimesMixin,
+    CommonSoupKitchensDetails,
     CommonToiletDetails,
     SourceColumnContainer,
     Table,
+    soup_kitchen_details_prefix="soup_kitchen_",
     toilet_details_prefix="toilet_"
 ):
     pass
+
+
+class DataAcquisitionDetailsDrinkingFountain(
+    DetailsMixin,
+    DetailsOpeningTimesMixin,
+    CommonDrinkingFountainDetails,
+    SourceColumnContainer,
+    Table,
+    tablename="da_details_drinking_fountain"
+):
+    google_maps_kml_placemark = JSON(null=True)
+
+
+class DataAcquisitionDetailsSoupKitchen(
+    DetailsMixin,
+    DetailsOpeningTimesMixin,
+    CommonSoupKitchensDetails,
+    SourceColumnContainer,
+    Table,
+    tablename="da_details_soup_kitchen"
+):
+    json_data = JSON(null=True)
 
 
 class DataAcquisitionDetailsToilet(
