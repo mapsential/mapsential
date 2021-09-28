@@ -1,7 +1,5 @@
 import datetime
 import re
-from typing import Any
-from typing import Callable
 
 from crud import create_or_update_source
 from geopy.geocoders import Nominatim

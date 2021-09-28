@@ -18,6 +18,7 @@ pre-commit = "*"
 mypy = "*"
 requests = "*"
 types-requests = "*"
+gunicorn = "*"
 
 [dev-packages]
 

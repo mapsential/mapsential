@@ -1,0 +1,77 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=8080
+
+  admin_backend:
+    build:
+      context: .
+      dockerfile: ./admin-backend/Dockerfile
+    volumes:
+      - ./admin-backend:/usr/src/admin-backend
+      - ./db:/usr/src/db
+    ports:
+      - "8000:80"
+    secrets:
+      - email_clemens
+      - piccolo_admin_password_clemens
+
+  airflow:
+    build:
+      context: .
+      dockerfile: ./airflow.Dockerfile
+      args:
+        - PY_VERSION=3.9
+        - AIRFLOW_HOME=/opt/airflow
+        - AIRFLOW_VERSION=2.1.4
+    volumes:
+      - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg
+#      - ./airflow/webserver_config.py:/opt/airflow/webserver_config.py
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+    ports:
+      - "8081:8080"
+    secrets:
+      - email_clemens
+      - email_denis
+      - email_lucas
+      - email_orhun
+      - email_oscar
+      - airflow_password_clemens
+      - airflow_password_denis
+      - airflow_password_lucas
+      - airflow_password_orhun
+      - airflow_password_oscar
+
+secrets:
+  email_clemens:
+    external: true
+  email_denis:
+    external: true
+  email_lucas:
+    external: true
+  email_orhun:
+    external: true
+  email_oscar:
+    external: true
+  piccolo_admin_password_clemens:
+    external: true
+  airflow_password_clemens:
+    external: true
+  airflow_password_denis:
+    external: true
+  airflow_password_lucas:
+    external: true
+  airflow_password_orhun:
+    external: true
+  airflow_password_oscar:
+    external: true

@@ -1,0 +1,3 @@
+airflow.db
+__pycache__/
+logs/
