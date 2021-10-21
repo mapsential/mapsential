@@ -1,5 +1,6 @@
 package com.mapsential.mapsential.location;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,24 +10,24 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@NoArgsConstructor
+@NoArgsConstructor //zum erzeugen der Constructors ohne Argumente
 @AllArgsConstructor
-@Data
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data //erzeugt autom. alle getter und setter
+@JsonInclude(JsonInclude.Include.NON_NULL) //alle Werte mit null werden ignoriert
 @Entity
-@Table(name = "locations")
+@Table(name = "locations") //Name der Tabelle
 public class LocationResource implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Id //Pimärschlüssel
+    @Column(name = "id") //Name der Spalte
     private Long locationId;
 
-    @Column(name = "details_id")
+    @JsonIgnore
+    @Column(name = "details_id")//Name der Spalte
     private Long detailsId;
 
     @Column(name = "type")
-    private LocationType locationType;
+    private String locationType;
 
     @Column(name = "name")
     private String locationName;

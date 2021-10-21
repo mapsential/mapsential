@@ -20,11 +20,11 @@ public class LocationService {
         return locationRepository.findAll();
     }
 
-    public List<LocationResource> getLocationsByType(LocationType locationType) {
+    public List<LocationResource> getLocationsByType(String locationType) {
         return locationRepository.findByLocationType(locationType);
     }
 
-    public List<LocationResource> getLocationsByTypes(LocationType[] locationType) {
+    public List<LocationResource> getLocationsByTypes(String[] locationType) {
         return locationRepository.findByLocationTypes(locationType);
     }
 
