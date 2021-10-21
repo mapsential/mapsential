@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MapsentialMain from "./mapsentialMain/MapsentialMain";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MapsentialMain />
   </React.StrictMode>,
   document.getElementById('root')
 );
