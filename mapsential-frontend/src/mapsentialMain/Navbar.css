@@ -1,0 +1,12 @@
+.MuiDrawer-paper {
+    max-width: 200px !important;
+    min-width: 200px !important;
+    width: 200px !important;
+    padding-left: 20px;
+}
+
+@media (max-width: 1200px) {
+    .MuiDrawer-paper {
+        width: 100px !important;
+    }
+}
