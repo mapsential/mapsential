@@ -1,13 +1,8 @@
-import os
-
 from admin.piccolo_app import APP_CONFIG
+from env import is_production
 from fastapi import FastAPI
 from piccolo_admin.endpoints import create_admin
 from starlette.routing import Mount
-
-
-def is_production():
-    return os.getenv("IS_PROD", None) == "true"
 
 
 app = FastAPI(

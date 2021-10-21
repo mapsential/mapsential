@@ -19,5 +19,7 @@ EXPOSE 80
 ENV IS_PROD=true
 
 ENTRYPOINT cd admin_backend \
-    && piccolo migrations forwards all \
+    # Uncomment following and run `podman-compose down && podman-compose build && podman-compose up`
+    # if migrations should be run.
+    # && piccolo migrations forwards all \
     && gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app -b 0.0.0.0:80

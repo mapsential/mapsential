@@ -4,12 +4,13 @@ from typing import Optional
 from enums import HandDryingMethod
 from enums import LocationType
 from enums import YesNoLimited
+from piccolo.columns import BigInt
 from piccolo.columns import Boolean
 from piccolo.columns import Column
-from piccolo.columns import Decimal
 from piccolo.columns import ForeignKey
 from piccolo.columns import Integer
 from piccolo.columns import JSON
+from piccolo.columns import Numeric
 from piccolo.columns import OnDelete
 from piccolo.columns import Real
 from piccolo.columns import Text
@@ -106,11 +107,12 @@ class CommonToiletDetails:
         columns: dict[str, Column] = dict(
             # see https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets
             has_fee=Boolean(null=True),
-            fee=Decimal(
+            fee=Numeric(
                 # Stores dd.dd
                 # This will cause a problem if there are toilets that charge more that 99 Euro.
                 # I don't think that will be a problem.
                 digits=(4, 2),
+                null=True,
             ),
             is_customer_only=Boolean(null=True),
 
@@ -123,9 +125,9 @@ class CommonToiletDetails:
             has_urinal=Boolean(null=True),
             has_squat=Boolean(null=True),
 
-            change_table=Varchar(length=31, choices=YesNoLimited),
+            change_table=Varchar(length=31, choices=YesNoLimited, null=True),
 
-            wheelchair_accessible=Varchar(length=31, choices=YesNoLimited),
+            wheelchair_accessible=Varchar(length=31, choices=YesNoLimited, null=True),
             wheelchair_access_info=Text(null=True),
 
             has_hand_washing=Boolean(null=True),
@@ -133,7 +135,7 @@ class CommonToiletDetails:
             has_hand_disinfectant=Boolean(null=True),
             has_hand_creme=Boolean(null=True),
             has_hand_drying=Boolean(null=True),
-            hand_drying_method=Varchar(length=31, choices=HandDryingMethod),
+            hand_drying_method=Varchar(length=31, choices=HandDryingMethod, null=True),
             has_paper=Boolean(null=True),
             has_hot_water=Boolean(null=True),
             has_shower=Boolean(null=True),
@@ -192,7 +194,7 @@ class DataAcquisitionDetailsToilet(
     Table,
     tablename="da_details_toilet",
 ):
-    overpass_node_id = Integer()
+    overpass_node_id = BigInt()
     overpass_node_data = JSON()
 
 
@@ -221,4 +223,4 @@ class DataAcquisitionLocations(
     add_source_columns=["name", "address", "longitude", "latitude"],
 ):
     # Does not use foreign key because the integer references different tables based on location type.
-    details_id = Integer(unique=True)
+    details_id = Integer();
