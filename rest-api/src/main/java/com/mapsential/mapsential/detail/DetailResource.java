@@ -1,14 +1,12 @@
 package com.mapsential.mapsential.detail;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.mapsential.mapsential.location.LocationType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor

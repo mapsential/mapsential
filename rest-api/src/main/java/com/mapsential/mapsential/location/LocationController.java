@@ -17,6 +17,7 @@ public class LocationController {
     @Autowired
     LocationRepository locationRepository;
 
+    //
     @GetMapping(path = "/api/location/{locationId}", produces = "application/json")
     public Object getLocationById(@PathVariable Long locationId) {
         Optional<LocationResource> locationResourceOptional = locationService.findById(locationId);
@@ -31,13 +32,13 @@ public class LocationController {
         return locationService.getAllLocations();
     }
 
-    @GetMapping(value = "/api/location/{locationType}", produces = "application/json")
-    public List<LocationResource> getLocationsByType(@PathVariable LocationType locationType) {
+    @GetMapping(value = "/api/filter_location/{locationType}", produces = "application/json")
+    public List<LocationResource> getLocationsByType(@PathVariable String locationType) {
         return locationService.getLocationsByType(locationType);
     }
 
-    @GetMapping(value = "/api/locations/{locationTypes}", produces = "application/json")
-    public List<LocationResource> getLocationsByTypes(@RequestParam LocationType[] locationTypes) {
+    @GetMapping(value = "/api/filter_locations/{locationTypes}", produces = "application/json")
+    public List<LocationResource> getLocationsByTypes(@PathVariable String[] locationTypes) {
         return locationService.getLocationsByTypes(locationTypes);
     }
 

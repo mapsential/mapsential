@@ -1,5 +1,6 @@
 package com.mapsential.mapsential.location;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,11 +22,12 @@ public class LocationResource implements Serializable {
     @Column(name = "id") //Name der Spalte
     private Long locationId;
 
+    @JsonIgnore
     @Column(name = "details_id")//Name der Spalte
     private Long detailsId;
 
     @Column(name = "type")
-    private LocationType locationType;
+    private String locationType;
 
     @Column(name = "name")
     private String locationName;
