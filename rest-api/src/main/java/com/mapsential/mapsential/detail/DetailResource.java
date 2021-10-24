@@ -17,15 +17,11 @@ import java.io.Serializable;
 public class DetailResource implements Serializable {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long detailId;
 
-    @Column(name = "opening_time")
-    private Long openingTime;
-
-    @Column(name = "closing_time")
-    private Long closingTime;
+    @Column(name = "opening_times")
+    private String openingTime;
 
 
 //    @Column(name = "location_id")

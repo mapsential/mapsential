@@ -2,14 +2,28 @@ version: "3.9"
 
 services:
   nginx:
-    image: nginx
+    build:
+      context: ./nginx
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "8080:80"
+      - "8000:80"
     environment:
       - NGINX_HOST=localhost
       - NGINX_PORT=8080
+    depends_on:
+      - "rest-api"
+      - "admin_backend"
+
+  rest_api:
+    build:
+      context: ./rest-api
+    ports:
+      - "8090:8080"
+    secrets:
+      - postgres_password
+    depends_on:
+      - "db"
 
   admin_backend:
     build:
@@ -19,40 +33,56 @@ services:
       - ./admin-backend:/usr/src/admin-backend
       - ./db:/usr/src/db
     ports:
-      - "8000:80"
+      - "8100:80"
     secrets:
-      - email_clemens
-      - piccolo_admin_password_clemens
+      - postgres_password
+    depends_on:
+      - "db"
 
-  airflow:
-    build:
-      context: .
-      dockerfile: ./airflow.Dockerfile
-      args:
-        - PY_VERSION=3.9
-        - AIRFLOW_HOME=/opt/airflow
-        - AIRFLOW_VERSION=2.1.4
+  db:
+    image: "postgres"
     volumes:
-      - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg
-#      - ./airflow/webserver_config.py:/opt/airflow/webserver_config.py
-      - ./airflow/dags:/opt/airflow/dags
-      - ./airflow/logs:/opt/airflow/logs
-      - ./airflow/plugins:/opt/airflow/plugins
+      - ./db/pgdata:/var/lib/postgresql/data
     ports:
-      - "8081:8080"
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
     secrets:
-      - email_clemens
-      - email_denis
-      - email_lucas
-      - email_orhun
-      - email_oscar
-      - airflow_password_clemens
-      - airflow_password_denis
-      - airflow_password_lucas
-      - airflow_password_orhun
-      - airflow_password_oscar
+      - postgres_password
+
+#  airflow:
+#    build:
+#      context: .
+#      dockerfile: ./airflow.Dockerfile
+#      args:
+#        - PY_VERSION=3.9
+#        - AIRFLOW_HOME=/opt/airflow
+#        - AIRFLOW_VERSION=2.1.4
+#    volumes:
+#      - ./airflow/airflow.cfg:/opt/airflow/airflow.cfg
+##      - ./airflow/webserver_config.py:/opt/airflow/webserver_config.py
+#      - ./airflow/dags:/opt/airflow/dags
+#      - ./airflow/logs:/opt/airflow/logs
+#      - ./airflow/plugins:/opt/airflow/plugins
+#    ports:
+#      - "8081:8080"
+#    secrets:
+#      - email_clemens
+#      - email_denis
+#      - email_lucas
+#      - email_orhun
+#      - email_oscar
+#      - airflow_password_clemens
+#      - airflow_password_denis
+#      - airflow_password_lucas
+#      - airflow_password_orhun
+#      - airflow_password_oscar
 
 secrets:
+  postgres_password:
+    external: true
   email_clemens:
     external: true
   email_denis:
@@ -62,8 +92,6 @@ secrets:
   email_orhun:
     external: true
   email_oscar:
-    external: true
-  piccolo_admin_password_clemens:
     external: true
   airflow_password_clemens:
     external: true

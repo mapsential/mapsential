@@ -22,7 +22,6 @@ public class LocationResource implements Serializable {
     @Column(name = "id") //Name der Spalte
     private Long locationId;
 
-    @JsonIgnore
     @Column(name = "details_id")//Name der Spalte
     private Long detailsId;
 
@@ -36,8 +35,8 @@ public class LocationResource implements Serializable {
     private String locationAddress;
 
     @Column(name = "longitude") //längengrad → north south
-    private Long longitude;
+    private Double longitude;
 
     @Column(name = "latitude") //breitengrad → east west
-    private Long latitude;
+    private Double latitude;
 }

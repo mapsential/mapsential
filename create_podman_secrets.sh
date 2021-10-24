@@ -7,6 +7,8 @@ source "${project_dir}/setup_pass.sh"
 # Remove current secrets
 podman secret rm -a
 
+pass postgres/password | podman secret create postgres_password -
+
 pass email/clemens | podman secret create email_clemens -
 pass email/denis | podman secret create email_denis -
 pass email/lucas | podman secret create email_lucas -
