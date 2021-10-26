@@ -2,9 +2,11 @@
 Code that goes along with the Airflow tutorial located at:
 https://github.com/apache/airflow/blob/master/airflow/example_dags/tutorial.py
 """
+from datetime import datetime
+from datetime import timedelta
+
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
-from datetime import datetime, timedelta
 
 
 default_args = {
@@ -53,4 +55,3 @@ t3 = BashOperator(
 
 t2.set_upstream(t1)
 t3.set_upstream(t1)
-

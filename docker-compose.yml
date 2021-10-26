@@ -9,17 +9,17 @@ services:
     ports:
       - "8000:80"
     environment:
-      - NGINX_HOST=localhost
-      - NGINX_PORT=8080
+      - NGINX_HOST=127.0.0.1
+      - NGINX_PORT=80
     depends_on:
-      - "rest-api"
+      - "rest_api"
       - "admin_backend"
 
   rest_api:
     build:
       context: ./rest-api
     ports:
-      - "8090:8080"
+      - "8080:8080"
     secrets:
       - postgres_password
     depends_on:
@@ -33,7 +33,7 @@ services:
       - ./admin-backend:/usr/src/admin-backend
       - ./db:/usr/src/db
     ports:
-      - "8100:80"
+      - "8090:8090"
     secrets:
       - postgres_password
     depends_on:

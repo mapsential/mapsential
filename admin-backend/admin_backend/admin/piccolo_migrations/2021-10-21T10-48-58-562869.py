@@ -20,7 +20,7 @@ from piccolo.columns.indexes import IndexMethod
 from piccolo.table import Table
 
 
-class Details(Table, tablename="details"):
+class Details(Table, tablename="details"):  # type: ignore
     id = Serial(
         null=False,
         primary_key=True,
@@ -32,7 +32,7 @@ class Details(Table, tablename="details"):
     )
 
 
-class Sources(Table, tablename="sources"):
+class Sources(Table, tablename="sources"):  # type: ignore
     id = Serial(
         null=False,
         primary_key=True,

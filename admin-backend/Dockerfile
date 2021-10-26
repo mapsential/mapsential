@@ -22,4 +22,4 @@ ENTRYPOINT cd admin_backend \
     # Uncomment following and run `podman-compose down && podman-compose build && podman-compose up`
     # if migrations should be run.
     # && piccolo migrations forwards all \
-    && gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app -b 0.0.0.0:80
+    && gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app -b 0.0.0.0:8090
