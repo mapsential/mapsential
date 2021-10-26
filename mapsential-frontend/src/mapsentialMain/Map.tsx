@@ -1,13 +1,23 @@
 import React, {useContext} from 'react'
 import GoogleMapReact from 'google-map-react'
 import Marker from "./Marker"
-import {CheckboxContext} from "./MapsentialMain";
+import {CheckboxContext, LocationContext} from "./MapsentialMain";
 
 export type LocationInformation = {
     lat: number,
     lng: number,
     name: string,
     type?: string
+}
+
+type locationDetails = {
+    locationId: number,
+    detailsId: number,
+    locationType: string,
+    locationName: string,
+    locationAddress: string,
+    longitude: number,
+    latitude: number
 }
 let locations: Array<LocationInformation> = [
     {
@@ -33,12 +43,15 @@ export default function Map() {
         zoom: 12
     };
     const checkboxes = useContext(CheckboxContext)
-    const markers = locations.map((marker: LocationInformation) => {
-        if ((marker.type === "drinking_fountain" && checkboxes.c1 === true) || (marker.type === "soup_kitchen" && checkboxes.c2 === true) || (marker.type === "toilet" && checkboxes.c3 === true)) {
-            return (<Marker lat={marker.lat} lng={marker.lng} text={marker.name} key={Math.random()*100000}/>)
-        }
-        else{
-            return(null)
+    const locations = useContext(LocationContext)
+    console.log(locations)
+    let markers = locations.location.map((marker: locationDetails) => {
+        if ((marker.locationType.toLowerCase() === "water_fountain" && checkboxes.c1 === true) || (marker.locationType.toLocaleLowerCase() === "soup_kitchen" && checkboxes.c2 === true) || (marker.locationType.toLocaleLowerCase() === "toilet" && checkboxes.c3 === true)) {
+            console.log(marker)
+            return (<Marker lat={marker.latitude / 10} lng={marker.longitude / 10} name={marker.locationName}
+                            key={Math.random() * 100000} adress={marker.locationAddress} type={marker.locationType}/>)
+        } else {
+            return (null)
         }
     })
     return (

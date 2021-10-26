@@ -17,15 +17,15 @@ export default function Sidebar() {
                     <FormControlLabel value="Drinking Fountain" control={<Checkbox defaultChecked={checkboxes.c1}
                                                                                    onChange={(event, isChecked) => {
                                                                                        checkboxes.setC1(isChecked)
-                                                                                   }}/>} label="drinking_fountain"/>
-                    <FormControlLabel value="Soup Kitchen" control={<Checkbox defaultChecked={checkboxes.c1}
+                                                                                   }}/>} label="Trinkbrunnen"/>
+                    <FormControlLabel value="Soup Kitchen" control={<Checkbox defaultChecked={checkboxes.c2}
                                                                               onChange={(event, isChecked) => {
                                                                                   checkboxes.setC2(isChecked)
-                                                                              }}/>} label="soup_kitchen"/>
-                    <FormControlLabel value="Toilet" control={<Checkbox defaultChecked={checkboxes.c1}
+                                                                              }}/>} label="Tafel"/>
+                    <FormControlLabel value="Toilet" control={<Checkbox defaultChecked={checkboxes.c3}
                                                                         onChange={(event, isChecked) => {
                                                                             checkboxes.setC3(isChecked)
-                                                                        }}/>} label="toilet"/>
+                                                                        }}/>} label="Toilette"/>
                 </RadioGroup>
             </FormControl>
         </Box>

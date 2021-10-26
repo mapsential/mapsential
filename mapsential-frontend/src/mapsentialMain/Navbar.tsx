@@ -40,7 +40,7 @@ export const Navbar = () => {
                 open={open}
                 onClose={() => {
                     setOpen(!open)
-                 }
+                }
                 }
             >
                 <Sidebar/>
