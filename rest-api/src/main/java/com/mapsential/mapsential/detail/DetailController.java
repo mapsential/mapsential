@@ -20,7 +20,7 @@ public class DetailController {
     @GetMapping(path = "/api/details/{detailId}", produces = "application/json")
     public Object getDetailsById(@PathVariable Long detailId) {
         Optional<DetailResource> detailResourceOptional = detailService.findById(detailId);
-        if (!detailResourceOptional.isPresent()){
+        if (!detailResourceOptional.isPresent()) {
             return ("Details with ID " + detailId + " could not be found");
         }
         return detailResourceOptional;
