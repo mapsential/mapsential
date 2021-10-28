@@ -23,15 +23,4 @@ public class DetailResource implements Serializable {
     @Column(name = "opening_times")
     private String openingTime;
 
-
-//    @Column(name = "location_id")
-//    private Long locationId;
-//
-//    @Column(name = "review_list")
-//    private List<Long> locationReviewList;
-//
-//    @Column(name = "reviewCount")
-//    private Long locationReviewCount;
-
-
 }
