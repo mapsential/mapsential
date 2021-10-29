@@ -4,15 +4,16 @@ import {Box, IconButton, Popover} from "@mui/material";
 import MarkerDescription from "./MarkerDescription";
 
 export type Markerprops = {
-    text: string
+    name: string
     lat: number
     lng: number
+    type: string
+    adress: string
 }
 
 export default function Marker(text: Markerprops) {
     const [open, setOpen] = useState(false);
     const [currentAnchor, setAnchor] = useState<any>()
-
     return (
         <Box>
             <IconButton
@@ -37,7 +38,7 @@ export default function Marker(text: Markerprops) {
                     horizontal: 'left',
                 }}
             >
-                <MarkerDescription lat={text.lat} lng={text.lng} text={text.text}/>
+                <MarkerDescription lat={text.lat} lng={text.lng} name={text.name} type={text.type} adress={text.adress}/>
             </Popover>
         </Box>
     )

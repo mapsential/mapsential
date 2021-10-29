@@ -5,7 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @NoArgsConstructor
@@ -22,16 +25,5 @@ public class DetailResource implements Serializable {
 
     @Column(name = "opening_times")
     private String openingTime;
-
-
-//    @Column(name = "location_id")
-//    private Long locationId;
-//
-//    @Column(name = "review_list")
-//    private List<Long> locationReviewList;
-//
-//    @Column(name = "reviewCount")
-//    private Long locationReviewCount;
-
 
 }

@@ -1,28 +1,29 @@
 package com.mapsential.mapsential.location;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.List;
 
-@NoArgsConstructor //zum erzeugen der Constructors ohne Argumente
+@NoArgsConstructor
 @AllArgsConstructor
-@Data //erzeugt autom. alle getter und setter
-@JsonInclude(JsonInclude.Include.NON_NULL) //alle Werte mit null werden ignoriert
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
-@Table(name = "locations") //Name der Tabelle
+@Table(name = "locations")
 public class LocationResource implements Serializable {
 
-    @Id //Pimärschlüssel
-    @Column(name = "id") //Name der Spalte
+    @Id
+    @Column(name = "id")
     private Long locationId;
 
-    @Column(name = "details_id")//Name der Spalte
+    @Column(name = "details_id")
     private Long detailsId;
 
     @Column(name = "type")
@@ -34,9 +35,9 @@ public class LocationResource implements Serializable {
     @Column(name = "address")
     private String locationAddress;
 
-    @Column(name = "longitude") //längengrad → north south
+    @Column(name = "longitude")
     private Double longitude;
 
-    @Column(name = "latitude") //breitengrad → east west
+    @Column(name = "latitude")
     private Double latitude;
 }
