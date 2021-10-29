@@ -1,5 +1,8 @@
+from typing import Callable
+from typing import Container
 from typing import Iterable
 from typing import Optional
+from typing import TypeVar
 
 from enums import HandDryingMethod
 from enums import LocationType
@@ -13,12 +16,24 @@ from piccolo.columns import JSON
 from piccolo.columns import Numeric
 from piccolo.columns import OnDelete
 from piccolo.columns import Real
+from piccolo.columns import Serial
 from piccolo.columns import Text
 from piccolo.columns import Timestamp
 from piccolo.columns import Varchar
 from piccolo.table import Table
 
 from .tables_helper import column_attrs
+
+
+TABLE_NAME_DETAILS_DEFIBRILLATOR = "details_defibrillator"
+TABLE_NAME_DETAILS_DRINKING_FOUNTAIN = "details_drinking_fountain"
+TABLE_NAME_DETAILS_SOUP_KITCHEN = "details_soup_kitchen"
+TABLE_NAME_DETAILS_TOILET = "details_toilet"
+TABLE_NAME_LOCATIONS = "locations"
+
+
+# Sources
+# ============================================================================
 
 
 class Sources(Table):
@@ -34,16 +49,21 @@ class Sources(Table):
     )
 
 
-class SourceColumnContainer:
+class SourceColumnContainerMixin:
 
     def __init_subclass__(
             cls,
             /,
-            add_source_columns: Optional[Iterable[str]] = None,
+            exclude_source_for_columns: Container[str] = (),
+            include_source_for_id_columns: Container[str] = (),
             **kwargs,
     ):
         for column_name in column_attrs(cls):
-            if add_source_columns is not None and column_name not in add_source_columns:
+            if column_name in exclude_source_for_columns:
+                continue
+
+            # Skip primary and foreign key columns by default
+            if column_name not in include_source_for_id_columns and column_name.endswith("id"):
                 continue
 
             for source_column_name, source_column in get_source_columns(column_name):
@@ -61,7 +81,11 @@ def get_source_columns(column_name: str) -> tuple[tuple[str, Column], ...]:
     )
 
 
-class DetailsMixin:
+# Details
+# ============================================================================
+
+
+class DetailsOperatorMixin:
     operator = Varchar(length=255, null=True)
 
 
@@ -69,133 +93,183 @@ class DetailsOpeningTimesMixin:
     opening_times = Text(null=True)
 
 
-class CommonDrinkingFountainDetails:
-
-    def __init_subclass__(cls, drinking_fountain_details_prefix: str = "", **kwargs):
-        columns: dict[str, Column] = dict(
-            # Add columns here
-        )
-
-        for column_name, column in columns.items():
-            setattr(cls, f"{drinking_fountain_details_prefix}{column_name}", column)
-
-        try:
-            super().__init_subclass__(**kwargs)  # type: ignore
-        except KeyError:
-            super().__init_subclass__()
+# Defibrillator Details
+# ----------------------------------------------------------------------------
 
 
-class CommonSoupKitchensDetails:
-
-    def __init_subclass__(cls, soup_kitchen_details_prefix: str = "", **kwargs):
-        columns: dict[str, Column] = dict(
-            info=Text(null=True),
-        )
-
-        for column_name, column in columns.items():
-            setattr(cls, f"{soup_kitchen_details_prefix}{column_name}", column)
-
-        try:
-            super().__init_subclass__(**kwargs)  # type: ignore
-        except KeyError:
-            super().__init_subclass__()
+class CommonDetailsDefibrillatorMixin(DetailsOperatorMixin, DetailsOpeningTimesMixin):
+    pass
 
 
-class CommonToiletDetails:
-
-    def __init_subclass__(cls, toilet_details_prefix: str = "", **kwargs):
-        columns: dict[str, Column] = dict(
-            # see https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets
-            has_fee=Boolean(null=True),
-            fee=Numeric(
-                # Stores dd.dd
-                # This will cause a problem if there are toilets that charge more that 99 Euro.
-                # I don't think that will be a problem.
-                digits=(4, 2),
-                null=True,
-            ),
-            is_customer_only=Boolean(null=True),
-
-            female=Boolean(null=True),
-            male=Boolean(null=True),
-            unisex=Boolean(null=True),
-            child=Boolean(null=True),
-
-            has_seated=Boolean(null=True),
-            has_urinal=Boolean(null=True),
-            has_squat=Boolean(null=True),
-
-            change_table=Varchar(length=31, choices=YesNoLimited, null=True),
-
-            wheelchair_accessible=Varchar(length=31, choices=YesNoLimited, null=True),
-            wheelchair_access_info=Text(null=True),
-
-            has_hand_washing=Boolean(null=True),
-            has_soap=Boolean(null=True),
-            has_hand_disinfectant=Boolean(null=True),
-            has_hand_creme=Boolean(null=True),
-            has_hand_drying=Boolean(null=True),
-            hand_drying_method=Varchar(length=31, choices=HandDryingMethod, null=True),
-            has_paper=Boolean(null=True),
-            has_hot_water=Boolean(null=True),
-            has_shower=Boolean(null=True),
-            has_drinking_water=Boolean(null=True),
-        )
-
-        for column_name, column in columns.items():
-            setattr(cls, f"{toilet_details_prefix}{column_name}", column)
-
-        try:
-            super().__init_subclass__(**kwargs)  # type: ignore
-        except KeyError:
-            super().__init_subclass__()
-
-
-class Details(
-    DetailsMixin,
-    DetailsOpeningTimesMixin,
-    CommonSoupKitchensDetails,
-    CommonToiletDetails,
-    SourceColumnContainer,
+class DetailsDefibrillator(
+    CommonDetailsDefibrillatorMixin,
+    SourceColumnContainerMixin,
     Table,
-    soup_kitchen_details_prefix="soup_kitchen_",
-    toilet_details_prefix="toilet_"
+    tablename=TABLE_NAME_DETAILS_DEFIBRILLATOR,
+):
+    pass
+
+
+class DataAcquisitionDetailsDefibrillator(
+    CommonDetailsDefibrillatorMixin,
+    SourceColumnContainerMixin,
+    Table,
+    tablename=f"da_{TABLE_NAME_DETAILS_DEFIBRILLATOR}"
+):
+    details_id = ForeignKey(references=DetailsDefibrillator)
+
+    street = Text(null=True)
+    city = Varchar(length=255)
+    # Stored as varchar because postal codes starting with 0 could cause
+    # unexpected bugs if they were handled as integers.
+    postal_code = Varchar(length=5, null=True)
+    country = Varchar(length=255)
+
+    json_data = JSON(null=True)
+
+
+# Drinking Fountain Details
+# ----------------------------------------------------------------------------
+
+
+class CommonDetailsDrinkingFountainMixin(DetailsOperatorMixin, DetailsOpeningTimesMixin):
+    pass
+
+
+class DetailsDrinkingFountain(
+    CommonDetailsDrinkingFountainMixin,
+    SourceColumnContainerMixin,
+    Table,
+    tablename=TABLE_NAME_DETAILS_DRINKING_FOUNTAIN
 ):
     pass
 
 
 class DataAcquisitionDetailsDrinkingFountain(
-    DetailsMixin,
-    DetailsOpeningTimesMixin,
-    CommonDrinkingFountainDetails,
-    SourceColumnContainer,
+    CommonDetailsDrinkingFountainMixin,
+    SourceColumnContainerMixin,
     Table,
-    tablename="da_details_drinking_fountain"
+    tablename=f"da_{TABLE_NAME_DETAILS_DRINKING_FOUNTAIN}"
 ):
+    details_id = ForeignKey(references=DetailsDrinkingFountain)
+
     google_maps_kml_placemark = JSON(null=True)
 
 
-class DataAcquisitionDetailsSoupKitchen(
-    DetailsMixin,
-    DetailsOpeningTimesMixin,
-    CommonSoupKitchensDetails,
-    SourceColumnContainer,
+# Soup Kitchen Details
+# ----------------------------------------------------------------------------
+
+
+class CommonDetailsSoupKitchensMixin(DetailsOperatorMixin, DetailsOpeningTimesMixin):
+    info = Text(null=True)
+
+
+class DetailsSoupKitchen(
+    CommonDetailsSoupKitchensMixin,
+    SourceColumnContainerMixin,
     Table,
-    tablename="da_details_soup_kitchen"
+    tablename=TABLE_NAME_DETAILS_SOUP_KITCHEN
 ):
+    pass
+
+
+class DataAcquisitionDetailsSoupKitchen(
+    CommonDetailsSoupKitchensMixin,
+    SourceColumnContainerMixin,
+    Table,
+    tablename=f"da_{TABLE_NAME_DETAILS_SOUP_KITCHEN}"
+):
+    details_id = ForeignKey(references=DetailsSoupKitchen)
+
     json_data = JSON(null=True)
 
 
-class DataAcquisitionDetailsToilet(
-    DetailsMixin,
-    DetailsOpeningTimesMixin,
-    CommonToiletDetails,
-    SourceColumnContainer,
+# Toilet Details
+# ----------------------------------------------------------------------------
+
+
+class CommonDetailsToilet(DetailsOperatorMixin, DetailsOpeningTimesMixin):
+    # see https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dtoilets
+    has_fee = Boolean(null=True)
+    fee = Numeric(
+        # Stores dd.dd
+        # This will cause a problem if there are toilets that charge more that 99 Euro.
+        # I don't think that will be a problem.
+        digits=(4, 2),
+        null=True,
+    ),
+    is_customer_only = Boolean(null=True)
+
+    female = Boolean(null=True)
+    male = Boolean(null=True)
+    unisex = Boolean(null=True)
+    child = Boolean(null=True)
+
+    has_seated = Boolean(null=True)
+    has_urinal = Boolean(null=True)
+    has_squat = Boolean(null=True)
+
+    change_table = Varchar(length=31, choices=YesNoLimited, null=True)
+
+    wheelchair_accessible = Varchar(length=31, choices=YesNoLimited, null=True)
+    wheelchair_access_info = Text(null=True)
+
+    has_hand_washing = Boolean(null=True)
+    has_soap = Boolean(null=True)
+    has_hand_disinfectant = Boolean(null=True)
+    has_hand_creme = Boolean(null=True)
+    has_hand_drying = Boolean(null=True)
+    hand_drying_method = Varchar(length=31, choices=HandDryingMethod, null=True)
+    has_paper = Boolean(null=True)
+    has_hot_water = Boolean(null=True)
+    has_shower = Boolean(null=True)
+    has_drinking_water = Boolean(null=True)
+
+
+class DetailsToilet(
+    CommonDetailsToilet,
+    SourceColumnContainerMixin,
     Table,
-    tablename="da_details_toilet",
+    tablename=TABLE_NAME_DETAILS_TOILET
 ):
-    overpass_node_id = BigInt()
-    overpass_node_data = JSON()
+    pass
+
+
+class DataAcquisitionDetailsToilet(
+    CommonDetailsToilet,
+    SourceColumnContainerMixin,
+    Table,
+    tablename=f"da_{TABLE_NAME_DETAILS_TOILET}",
+    include_source_for_id_columns=["osm_node_id"],
+):
+    details_id = ForeignKey(references=DetailsToilet)
+
+    osm_node_id = BigInt(null=True)
+    osm_node_data = JSON(null=True)
+
+
+# ----------------------------------------------------------------------------
+
+
+Details = TypeVar(
+    "Details",
+    DetailsDefibrillator,
+    DetailsDrinkingFountain,
+    DetailsSoupKitchen,
+    DetailsToilet
+)
+
+DataAcquisitionDetails = TypeVar(
+    "DataAcquisitionDetails",
+    DataAcquisitionDetailsDefibrillator,
+    DataAcquisitionDetailsDrinkingFountain,
+    DataAcquisitionDetailsSoupKitchen,
+    DataAcquisitionDetailsToilet,
+)
+
+
+# Locations
+# ============================================================================
 
 
 class LocationsMixin:
@@ -208,19 +282,20 @@ class LocationsMixin:
 
 class Locations(
     LocationsMixin,
-    SourceColumnContainer,
+    SourceColumnContainerMixin,
     Table,
-    add_source_columns=["name", "address", "longitude", "latitude"],
 ):
-    details_id = ForeignKey(references=Details, unique=True)
+    # Does not use foreign key because the integer references different tables based on location type.
+    details_id = Integer()
 
 
 class DataAcquisitionLocations(
     LocationsMixin,
-    SourceColumnContainer,
+    SourceColumnContainerMixin,
     Table,
     tablename="da_locations",
-    add_source_columns=["name", "address", "longitude", "latitude"],
+    exclude_source_for_columns=["type"],
 ):
+    locations_id = ForeignKey(references=Locations)
     # Does not use foreign key because the integer references different tables based on location type.
-    details_id = Integer();
+    details_id = Integer()

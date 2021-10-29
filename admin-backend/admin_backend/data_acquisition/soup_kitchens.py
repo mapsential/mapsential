@@ -1,12 +1,8 @@
 import datetime
-import json
 from pathlib import Path
 from typing import cast
-from typing import Generic
 from typing import Optional
 from typing import TypedDict
-from typing import TypeVar
-from typing import Union
 
 # Add admin_backend package root to path if file is being executed directly
 if __name__ == "__main__":
@@ -14,12 +10,12 @@ if __name__ == "__main__":
     sys.path.append(str(Path(__file__).parent.parent.resolve()))
 
 from enums import LocationType
-from admin.tables import Locations, DataAcquisitionLocations, Details, DataAcquisitionDetailsSoupKitchen
-from crud import delete_all_locations_by_type, create_or_update_source
+from admin.tables import Locations, DataAcquisitionLocations, Details, DataAcquisitionDetailsSoupKitchen, \
+    DetailsSoupKitchen
+from crud import create_or_update_source, repopulate_with_locations_and_details, \
+    construct_details_soup_kitchen_and_da_row, construct_locations_and_da_row
 from geolocation import get_lat_long_from_address
-
-
-T = TypeVar("T")
+from json_utils import get_obj_from_most_recently_json_file_in_dir
 
 
 DIR_PATH = Path(__file__).parent.resolve()
@@ -46,86 +42,92 @@ class JsonFileSchema(TypedDict):
 
 
 async def repopulate_with_soup_kitchens() -> None:
-    await delete_all_locations_by_type(LocationType.SOUP_KITCHEN)
-    await populate_with_soup_kitchens()
+    locations_rows, da_locations_rows, details_rows, da_details_rows = await construct_locations_and_details_rows()
+
+    await repopulate_with_locations_and_details(
+        LocationType.SOUP_KITCHEN,
+        locations_rows,
+        da_locations_rows,
+        details_rows,
+        da_details_rows,
+    )
 
 
-async def populate_with_soup_kitchens() -> None:
-    locations, da_locations = await get_location_rows_and_create_details()
-
-    await Locations.insert(*locations).run()
-    await DataAcquisitionLocations.insert(*da_locations).run()
-
-
-async def get_location_rows_and_create_details() -> tuple[
+async def construct_locations_and_details_rows() -> tuple[
     list[Locations],
     list[DataAcquisitionLocations],
+    list[DetailsSoupKitchen],
+    list[DataAcquisitionDetailsSoupKitchen],
 ]:
-    locations = []
-    da_locations = []
+    locations_rows = []
+    da_locations_rows = []
+    details_rows = []
+    da_details_rows = []
 
-    berliner_tafel_source_id = await create_or_update_berliner_tafel_source(datetime.datetime.now())
+    operator_source_id = await create_or_update_berliner_tafel_source(datetime.datetime.now())
 
     for json_location in cast(
             JsonFileSchema,
             get_obj_from_most_recently_json_file_in_dir(SOUP_KITCHENS_DATA_PATH)
     )["data"]:
-        common_details_kwargs = dict(
-            operator=BERLINER_TAFEL_OPERATOR,
-            operator_source_id=berliner_tafel_source_id,
-            opening_times=get_opening_times_from_json_location(json_location),
-            opening_times_source_id=berliner_tafel_source_id,
+        locations_row, da_locations_row = await construct_locations_and_da_row_from_json_location(
+            operator_source_id,
+            json_location,
+        )
+        details_row, da_details_row = construct_details_and_da_row_from_json_location(
+            operator_source_id,
+            json_location,
         )
 
-        if json_location["info"] is None:
-            soup_kitchen_info = None
-        else:
-            soup_kitchen_info = json_location["info"]
-        details_result = await Details.insert(Details(
-            **common_details_kwargs,
-            soup_kitchen_info=soup_kitchen_info,
-            soup_kitchen_info_source_id=berliner_tafel_source_id,
-        )).run()
-        details_id = details_result[0]["id"]
+        locations_rows.append(locations_row)
+        da_locations_rows.append(da_locations_row)
+        details_rows.append(details_row)
+        da_details_rows.append(da_details_row)
 
-        da_details_result = await DataAcquisitionDetailsSoupKitchen.insert(
-            DataAcquisitionDetailsSoupKitchen(
-                **common_details_kwargs,
-                **dict(
-                    json_data=json_location,
-                    json_data_source_id=berliner_tafel_source_id,
-                ),
-                info=json_location["info"],
-                info_source_id=berliner_tafel_source_id,
-            )).run()
-        da_details_id = da_details_result[0]["id"]
+    return locations_rows, da_locations_rows, details_rows, da_details_rows
 
-        address = json_location["address"]
-        lat_long_source_id, lat, long = await get_lat_long_from_address(address)
 
-        common_location_kwargs = dict(
-            type=LocationType.SOUP_KITCHEN,
-            name=BERLINER_TAFEL_LOCATION_NAME,
-            name_source_id=berliner_tafel_source_id,
-            address=address,
-            address_source_id=berliner_tafel_source_id,
-            latitude=lat,
-            latitude_source_id=lat_long_source_id,
-            longitude=long,
-            longitude_source_id=lat_long_source_id,
-        )
+async def construct_locations_and_da_row_from_json_location(
+        operator_source_id: int,
+        json_location: JsonFileLocationSchema,
+) -> tuple[Locations, DataAcquisitionLocations]:
+    address = json_location["address"]
+    lat_long_source_id, lat, long = await get_lat_long_from_address(address)
 
-        locations.append(Locations(
-            **common_location_kwargs,
-            details_id=details_id,
-        ))
+    return construct_locations_and_da_row(
+        type=LocationType.SOUP_KITCHEN,
+        name=BERLINER_TAFEL_LOCATION_NAME,
+        name_source_id=operator_source_id,
+        address=address,
+        address_source_id=operator_source_id,
+        latitude=lat,
+        latitude_source_id=lat_long_source_id,
+        longitude=long,
+        longitude_source_id=lat_long_source_id,
+    )
 
-        da_locations.append(DataAcquisitionLocations(
-            **common_location_kwargs,
-            details_id=da_details_id,
-        ))
 
-    return locations, da_locations
+def construct_details_and_da_row_from_json_location(
+        operator_source_id: int,
+        json_location: JsonFileLocationSchema,
+) -> tuple[Details, DataAcquisitionDetailsSoupKitchen]:
+    if json_location["info"] is None:
+        info = None
+        info_source_id = None
+    else:
+        info = json_location["info"]
+        info_source_id = operator_source_id
+
+    return construct_details_soup_kitchen_and_da_row(
+        operator=BERLINER_TAFEL_OPERATOR,
+        operator_source_id=operator_source_id,
+        opening_times=get_opening_times_from_json_location(json_location),
+        opening_times_source_id=operator_source_id,
+        info=info,
+        info_source_id=info_source_id,
+        json_data=json_location,
+        json_data_source_id=operator_source_id,
+    )
 
 
 def get_opening_times_from_json_location(json_location: JsonFileLocationSchema) -> Optional[str]:
@@ -164,28 +166,6 @@ async def create_or_update_berliner_tafel_source(access_time: datetime.datetime)
         url=BERLINER_TAFEL_SOURCE_URL,
         access_time=access_time,
     )
-
-
-def get_obj_from_most_recently_json_file_in_dir(
-        dir_path: Union[str, Path],
-        # Determine most recent file by name. E.g. '2021_10_21.json' is more recent than '2021_09_24.json'
-        most_recent_key = lambda path: path.name,
-) -> T:
-    resolved_path = Path(dir_path).resolve()
-
-    most_recent_json_file = max(
-        (child for child in resolved_path.iterdir() if child.is_file() and child.suffix == ".json"),
-        key=most_recent_key
-    )
-
-    return get_obj_from_json_file(most_recent_json_file)
-
-
-def get_obj_from_json_file(file_path: Union[str, Path]) -> T:
-    resolved_path = Path(file_path).resolve()
-
-    with open(resolved_path, "r") as file:
-        return json.loads(file.read())
 
 
 if __name__ == "__main__":

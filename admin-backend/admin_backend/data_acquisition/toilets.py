@@ -2,10 +2,9 @@ import datetime
 import pathlib
 import re
 from functools import cache
-from typing import Any
 from typing import Optional
+from typing import Protocol
 from typing import TypeVar
-from typing import Union
 
 import overpy
 
@@ -14,9 +13,11 @@ if __name__ == "__main__":
     import sys
     sys.path.append(str(pathlib.Path(__file__).parent.parent.resolve()))
 
-from admin.tables import Details, DataAcquisitionDetailsToilet, Locations, DataAcquisitionLocations, Sources
+from admin.tables import Details, DataAcquisitionDetailsToilet, Locations, DataAcquisitionLocations, Sources, \
+    DetailsToilet
 from enums import LocationType, YesNoLimited, HandDryingMethod
-from crud import create_or_update_source, delete_all_locations_by_type
+from crud import create_or_update_source, delete_all_locations_by_type, construct_locations_and_da_row, \
+    construct_details_toilet_and_da_row, repopulate_with_locations_and_details
 from geolocation import get_address_from_lat_long
 
 
@@ -43,157 +44,193 @@ DEFAULT_LOCATION_NAME = "Toilette"
 overpass_api = overpy.Overpass()
 
 
+class OsmNodeSchema(Protocol):
+    id: int
+    tags: dict[str, str]
+    attributes: dict[str, str]
+    lat: float
+    lon: float
+
+    def __hash__(self):
+        pass
+
+
 async def repopulate_with_toilets():
-    await delete_all_locations_by_type(LocationType.TOILET)
-    await populate_with_toilets()
+    locations_rows, da_locations_rows, details_rows, da_details_rows = await construct_locations_and_details_rows()
 
-
-async def populate_with_toilets():
-    overpass_source_id, nodes = await get_nodes_from_overpass()
-    for node in nodes:
-        await insert_toilet_from_overpass_node(overpass_source_id, node)
-
-
-async def insert_toilet_from_overpass_node(overpass_source_id, node):
-    address_source_id, address = await get_address_from_lat_long(node.lat, node.lon)
-
-    details_insert_result = await Details.insert(Details(
-        **get_column_values_with_source_columns(
-            overpass_source_id,
-            dict(
-                operator=get_operator_from_overpass_node(node),
-                opening_times=get_opening_time_from_overpass_node(node),
-                **get_toilet_details_row_column_values("toilet_", node),
-            ),
-        )
-    )).run()
-    details_id = details_insert_result[0]["id"]
-
-    da_details_insert_result = await DataAcquisitionDetailsToilet.insert(DataAcquisitionDetailsToilet(
-        **get_column_values_with_source_columns(overpass_source_id, dict(
-            overpass_node_id=node.id,
-            overpass_node_data=dict(
-                id=node.id,
-                attributes=node.attributes,
-                tags=node.tags,
-                lat=node.lat,
-                lon=node.lon,
-            ),
-            operator=get_operator_from_overpass_node(node),
-            opening_times=get_opening_time_from_overpass_node(node),
-            **get_toilet_details_row_column_values("", node),
-        ))
-    )).run()
-    da_details_id = da_details_insert_result[0]["id"]
-
-    await Locations.insert(Locations(
-        type=LocationType.TOILET,
-        **get_column_values_with_source_columns(address_source_id, dict(address=address)),
-        **get_column_values_with_source_columns(overpass_source_id, dict(
-            name=get_str_from_overpass_node_tag(node, "name") or DEFAULT_LOCATION_NAME,
-            latitude=node.lat,
-            longitude=node.lon,
-        )),
-        details_id=details_id,
-    )).run()
-
-    await DataAcquisitionLocations.insert(DataAcquisitionLocations(
-        type=LocationType.TOILET,
-        **get_column_values_with_source_columns(address_source_id, dict(address=address)),
-        **get_column_values_with_source_columns(overpass_source_id, dict(
-            name=get_str_from_overpass_node_tag(node, "name") or DEFAULT_LOCATION_NAME,
-            latitude=node.lat,
-            longitude=node.lon,
-        )),
-        details_id=da_details_id,
-    )).run()
-
-
-def get_column_values_with_source_columns(
-        source_id: int,
-        column_values: dict[str, Union[T, int]],
-) -> dict[str, Union[T, int]]:
-    column_values_with_source_columns = {}
-    for column_name, column_value in column_values.items():
-        column_values_with_source_columns[column_name] = column_value
-        column_values_with_source_columns[f"{column_name}_source_id"] = source_id
-    return column_values_with_source_columns
-
-
-def get_operator_from_overpass_node(node):
-    return node.tags.get("operator", None)
-
-
-@cache
-def get_opening_time_from_overpass_node(node):
-    return node.tags.get("opening_hours", None)
-
-
-def get_toilet_details_row_column_values(toilet_columns_prefix: str, node) -> dict[str, Any]:
-    has_soap = get_bool_from_overpass_node_tag(node, "handwashing:soap")
-    has_hand_disinfectant = get_bool_from_overpass_node_tag(node, "handwashing:hand_disinfectant")
-    has_hand_washing = (
-       get_bool_from_overpass_node_tag(node, "toilets:handwashing")
-       or has_soap
-       or has_hand_disinfectant
+    await repopulate_with_locations_and_details(
+        LocationType.TOILET,
+        locations_rows,
+        da_locations_rows,
+        details_rows,
+        da_details_rows,
     )
-    hand_drying_method = get_hand_drying_method_from_overpass_node(node)
+
+
+async def construct_locations_and_details_rows() ->  tuple[
+    list[Locations],
+    list[DataAcquisitionLocations],
+    list[DetailsToilet],
+    list[DataAcquisitionDetailsToilet],
+]:
+    locations_rows = []
+    da_locations_rows = []
+    details_rows = []
+    da_details_rows = []
+
+    map_provider_source_id, osm_nodes = await get_nodes_from_overpass()
+
+    for osm_node in osm_nodes:
+        locations_row, da_locations_row = await construct_locations_and_da_row_from_osm_node(
+            map_provider_source_id,
+            osm_node,
+        )
+        details_row, da_details_row = construct_details_and_da_row_from_osm_node(
+            map_provider_source_id,
+            osm_node,
+        )
+
+        locations_rows.append(locations_row)
+        da_locations_rows.append(da_locations_row)
+        details_rows.append(details_row)
+        da_details_rows.append(da_details_row)
+
+    return locations_rows, da_locations_rows, details_rows, da_details_rows
+
+
+async def construct_locations_and_da_row_from_osm_node(
+        map_provider_source_id: int,
+        osm_node: OsmNodeSchema,
+) -> tuple[Locations, DataAcquisitionLocations]:
+    address_source_id, address = await get_address_from_lat_long(osm_node.lat, osm_node.lon)
+
+    return construct_locations_and_da_row(
+        type=LocationType.TOILET,
+        address=address,
+        address_source_id=address_source_id,
+        name=get_str_from_osm_node_tag(osm_node, "name") or DEFAULT_LOCATION_NAME,
+        name_source_id=map_provider_source_id,
+        latitude=osm_node.lat,
+        latitude_source_id=map_provider_source_id,
+        longitude=osm_node.lon,
+        longitude_source_id=map_provider_source_id,
+    )
+
+
+def construct_details_and_da_row_from_osm_node(
+        map_provider_source_id: int,
+        osm_node: OsmNodeSchema,
+) -> tuple[DetailsToilet, DataAcquisitionDetailsToilet]:
+    has_soap = get_bool_from_osm_node_tag(osm_node, "handwashing:soap")
+    has_hand_disinfectant = get_bool_from_osm_node_tag(osm_node, "handwashing:hand_disinfectant")
+    has_hand_washing = (
+            get_bool_from_osm_node_tag(osm_node, "toilets:handwashing")
+            or has_soap
+            or has_hand_disinfectant
+    )
+    hand_drying_method = get_hand_drying_method_from_osm_node(osm_node)
     has_hand_drying = hand_drying_method is not None
 
-    unprocessed_column_values: dict[str, Any] = dict(
-        has_fee=get_bool_from_overpass_node_tag(node, "fee"),
-        fee=get_fee_from_overpass_node(node),
-        is_customer_only=get_is_customer_only_from_overpass_node(node),
+    return construct_details_toilet_and_da_row(
+        operator=get_operator_from_osm_node(osm_node),
+        operator_source_id=map_provider_source_id,
+        opening_times=get_opening_time_from_osm_node(osm_node),
+        opening_times_source_id=map_provider_source_id,
 
-        female=get_bool_from_overpass_node_tag(node, "female"),
-        male=get_bool_from_overpass_node_tag(node, "male"),
-        unisex=get_bool_from_overpass_node_tag(node, "unisex"),
-        child=get_bool_from_overpass_node_tag(node, "child"),
+        has_fee=get_bool_from_osm_node_tag(osm_node, "fee"),
+        has_fee_source_id=map_provider_source_id,
+        is_customer_only=get_is_customer_only_from_osm_node(osm_node),
+        is_customer_only_source_id=map_provider_source_id,
 
-        has_seated=get_has_seated_from_overpass_node(node),
-        has_urinal=get_has_seated_from_overpass_node(node),
-        has_squat=get_has_seated_from_overpass_node(node),
+        female=get_bool_from_osm_node_tag(osm_node, "female"),
+        female_source_id=map_provider_source_id,
+        male=get_bool_from_osm_node_tag(osm_node, "male"),
+        male_source_id=map_provider_source_id,
+        unisex=get_bool_from_osm_node_tag(osm_node, "unisex"),
+        unisex_source_id=map_provider_source_id,
+        child=get_bool_from_osm_node_tag(osm_node, "child"),
+        child_source_id=map_provider_source_id,
 
-        change_table=get_yes_no_limited_from_overpass_node_tag(
-            node,
+        has_seated=get_has_seated_from_osm_node(osm_node),
+        has_seated_source_id=map_provider_source_id,
+        has_urinal=get_has_seated_from_osm_node(osm_node),
+        has_urinal_source_id=map_provider_source_id,
+        has_squat=get_has_seated_from_osm_node(osm_node),
+        has_squat_source_id=map_provider_source_id,
+
+        change_table=get_yes_no_limited_from_osm_node_tag(
+            osm_node,
             "toilets:change_table",
             "change_table",
         ),
+        change_table_source_id=map_provider_source_id,
 
-        wheelchair_accessible=get_yes_no_limited_from_overpass_node_tag(
-            node,
+        wheelchair_accessible=get_yes_no_limited_from_osm_node_tag(
+            osm_node,
             "toilets:wheelchair",
             "wheelchair",
         ),
-        wheelchair_access_info=get_str_from_overpass_node_tag(
-            node,
+        wheelchair_accessible_source_id=map_provider_source_id,
+        wheelchair_access_info=get_str_from_osm_node_tag(
+            osm_node,
             "wheelchair:description:de",
             "wheelchair:description",
         ),
+        wheelchair_access_info_source_id=map_provider_source_id,
 
+        has_paper=get_str_from_osm_node_tag(
+            osm_node,
+            "toilets:paper_supplied",
+            "toilets:byop",
+        ),
+        has_paper_source_id=map_provider_source_id,
         has_hand_washing=has_hand_washing,
+        has_hand_washing_source_id=map_provider_source_id,
         has_soap=has_soap,
+        has_soap_source_id=map_provider_source_id,
         has_hand_disinfectant=has_hand_disinfectant,
-        has_hand_creme=get_bool_from_overpass_node_tag(node, "handwashing:creme"),
+        has_hand_disinfectant_source_id=map_provider_source_id,
+        has_hand_creme=get_bool_from_osm_node_tag(osm_node, "handwashing:creme"),
+        has_hand_creme_source_id=map_provider_source_id,
         has_hand_drying=has_hand_drying,
+        has_hand_drying_source_id=map_provider_source_id,
         hand_drying_method=hand_drying_method,
-        has_hot_water=get_bool_from_overpass_node_tag(node, "hot_water"),
-        has_shower=get_bool_from_overpass_node_tag(node, "shower"),
-        has_drinking_water=get_bool_from_overpass_node_tag(node, "drinking_water:legal", "drinking_water"),
+        hand_drying_method_source_id=map_provider_source_id,
+        has_hot_water=get_bool_from_osm_node_tag(osm_node, "hot_water"),
+        has_hot_water_source_id=map_provider_source_id,
+        has_shower=get_bool_from_osm_node_tag(osm_node, "shower"),
+        has_shower_source_id=map_provider_source_id,
+        has_drinking_water=get_bool_from_osm_node_tag(osm_node, "drinking_water:legal", "drinking_water"),
+        has_drinking_water_source_id=map_provider_source_id,
+
+        osm_node_id=osm_node.id,
+        osm_node_id_source_id=map_provider_source_id,
+        osm_node_data=dict(
+            id=osm_node.id,
+            attributes=osm_node.attributes,
+            tags=osm_node.tags,
+            lat=osm_node.lat,
+            lon=osm_node.lon,
+        ),
+        osm_node_data_source_id=map_provider_source_id,
     )
 
-    return {
-        f"{toilet_columns_prefix}{column_name}": column_value
-        for column_name, column_value in unprocessed_column_values.items()
-    }
+
+def get_operator_from_osm_node(osm_node: OsmNodeSchema) -> Optional[str]:
+    return osm_node.tags.get("operator", None)
 
 
-def get_bool_from_overpass_node_tag(node, tag_name: str, *fallback_tag_names: str) -> Optional[bool]:
+@cache
+def get_opening_time_from_osm_node(osm_node: OsmNodeSchema) -> Optional[str]:
+    return osm_node.tags.get("opening_hours", None)
+
+
+def get_bool_from_osm_node_tag(osm_node: OsmNodeSchema, tag_name: str, *fallback_tag_names: str) -> Optional[bool]:
     try:
-        tag_value = node.tags[tag_name]
+        tag_value = osm_node.tags[tag_name]
     except KeyError:
         if fallback_tag_names:
-            return get_bool_from_overpass_node_tag(node, *fallback_tag_names)
+            return get_bool_from_osm_node_tag(osm_node, *fallback_tag_names)
         return None
 
     if tag_value == "yes":
@@ -205,7 +242,7 @@ def get_bool_from_overpass_node_tag(node, tag_name: str, *fallback_tag_names: st
     return None
 
 
-def get_fee_from_overpass_node(node) -> Optional[float]:
+def get_fee_from_osm_node(node) -> Optional[float]:
     try:
         tag_value = node.tags["charge"]
     except KeyError:
@@ -220,48 +257,48 @@ def get_fee_from_overpass_node(node) -> Optional[float]:
     return float(match.group(1))
 
 
-def get_is_customer_only_from_overpass_node(node) -> Optional[bool]:
+def get_is_customer_only_from_osm_node(osm_node: OsmNodeSchema) -> Optional[bool]:
     try:
-        tag_value = node.tags["access"]
+        tag_value = osm_node.tags["access"]
     except KeyError:
         return None
 
     return tag_value == "customers"
 
 
-def get_has_seated_from_overpass_node(node) -> Optional[bool]:
-    positions = get_toilets_positions_from_overpass_node(node)
+def get_has_seated_from_osm_node(osm_node: OsmNodeSchema) -> Optional[bool]:
+    positions = get_toilets_positions_from_osm_node(osm_node)
     return "seated" in positions
 
 
-def get_has_urinal_from_overpass_node(node) -> Optional[bool]:
-    positions = get_toilets_positions_from_overpass_node(node)
+def get_has_urinal_from_osm_node(osm_node: OsmNodeSchema) -> Optional[bool]:
+    positions = get_toilets_positions_from_osm_node(osm_node)
     return "urinal" in positions
 
 
-def get_has_squat_from_overpass_node(node) -> Optional[bool]:
-    positions = get_toilets_positions_from_overpass_node(node)
+def get_has_squat_from_osm_node(osm_node: OsmNodeSchema) -> Optional[bool]:
+    positions = get_toilets_positions_from_osm_node(osm_node)
     return "squat" in positions
 
 
 @cache
-def get_toilets_positions_from_overpass_node(node) -> list[str]:
+def get_toilets_positions_from_osm_node(node) -> list[str]:
     try:
         return node.tags["toilets:position"].split(";")
     except KeyError:
         return []
 
 
-def get_yes_no_limited_from_overpass_node_tag(
-        node,
+def get_yes_no_limited_from_osm_node_tag(
+        osm_node: OsmNodeSchema,
         tag_name: str,
         *fallback_tag_names: str
 ) -> Optional[YesNoLimited]:
     try:
-        tag_value = node.tags[tag_name]
+        tag_value = osm_node.tags[tag_name]
     except KeyError:
         if fallback_tag_names:
-            return get_yes_no_limited_from_overpass_node_tag(node, *fallback_tag_names)
+            return get_yes_no_limited_from_osm_node_tag(osm_node, *fallback_tag_names)
         return None
 
     if tag_value == "yes":
@@ -275,17 +312,17 @@ def get_yes_no_limited_from_overpass_node_tag(
     return None
 
 
-def get_str_from_overpass_node_tag(node, tag_name: str, *fallback_tag_names: str) -> Optional[str]:
+def get_str_from_osm_node_tag(node, tag_name: str, *fallback_tag_names: str) -> Optional[str]:
     try:
         return node.tags[tag_name]
     except KeyError:
         if fallback_tag_names:
-            return get_str_from_overpass_node_tag(node, *fallback_tag_names)
+            return get_str_from_osm_node_tag(node, *fallback_tag_names)
 
     return None
 
 
-def get_hand_drying_method_from_overpass_node(node):
+def get_hand_drying_method_from_osm_node(node):
     try:
         tag_value = node.tags["toilets:hand_drying"]
     except KeyError:

@@ -2,12 +2,13 @@ version: "3.9"
 
 services:
   nginx:
+    container_name: mapsential_nginx
     build:
       context: ./nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "8000:80"
+      - "11111:80"
     environment:
       - NGINX_HOST=127.0.0.1
       - NGINX_PORT=80
@@ -16,6 +17,7 @@ services:
       - "admin_backend"
 
   rest_api:
+    container_name: mapsential_rest_api
     build:
       context: ./rest-api
     ports:
@@ -26,6 +28,7 @@ services:
       - "db"
 
   admin_backend:
+    container_name: mapsential_admin_backend
     build:
       context: .
       dockerfile: ./admin-backend/Dockerfile
@@ -40,6 +43,7 @@ services:
       - "db"
 
   db:
+    container_name: mapsential_db
     image: "postgres"
     volumes:
       - ./db/pgdata:/var/lib/postgresql/data
@@ -53,6 +57,7 @@ services:
       - postgres_password
 
 #  airflow:
+#    container_name: mapsential_airflow
 #    build:
 #      context: .
 #      dockerfile: ./airflow.Dockerfile

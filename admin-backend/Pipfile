@@ -4,23 +4,21 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-tortoise-orm = "*"
 fastapi = "*"
-pydantic = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 piccolo = {extras = ["sqlite", "uvloop"], version = "*"}
 piccolo-admin = "*"
-OSMPythonTools = "*"
-ipython = "*"
 overpy = "*"
 geopy = "*"
-pre-commit = "*"
-mypy = "*"
 requests = "*"
 types-requests = "*"
 gunicorn = "*"
 
 [dev-packages]
+pre-commit = "*"
+pytest = "*"
+mypy = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.9"

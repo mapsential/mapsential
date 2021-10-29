@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class LocationType(str, Enum):
+    DEFIBRILLATOR = "defibrillator"
     DRINKING_FOUNTAIN = "drinking_fountain"
     SOUP_KITCHEN = "soup_kitchen"
     TOILET = "toilet"

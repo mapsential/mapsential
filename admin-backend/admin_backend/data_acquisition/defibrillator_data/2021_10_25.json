@@ -1,0 +1,6492 @@
+[
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5265457,
+        "longitude": 13.3400778,
+        "postleitzahl": "10551",
+        "stadt": "Berlin",
+        "standortName": "Sparkasse Beratungscenter Tiergarten",
+        "strasse": "Turmstr. 33"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5107087,
+        "longitude": 13.4056948,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "HTG Wirtschaftsprüfung GmbH",
+        "strasse": "Neue Grünstr. 25"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53327,
+        "longitude": 13.22485,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "TanQuid Tanklagergesellschaft",
+        "strasse": "Freiheit 16a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4545857,
+        "longitude": 13.5272597,
+        "postleitzahl": "12459",
+        "stadt": "Berlin",
+        "standortName": "First Sensor AG",
+        "strasse": "Peter-Behrens-Str. 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.43179,
+        "longitude": 13.36034,
+        "postleitzahl": "12249",
+        "stadt": "Berlin",
+        "standortName": "Kiriat Bialik Sporthalle",
+        "strasse": "Wedellstraße 57"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4649653,
+        "longitude": 13.3684866,
+        "postleitzahl": "12103",
+        "stadt": "Berlin",
+        "standortName": "TÜV Rheinland Akademie GmbH",
+        "strasse": "Alboinstr. 56"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.43932,
+        "longitude": 13.22397,
+        "postleitzahl": "14129",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Urologie",
+        "strasse": "Bergengrünstr. 10/12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5306473,
+        "longitude": 13.1285495,
+        "postleitzahl": "13591",
+        "stadt": "Berlin",
+        "standortName": "Döring Glas",
+        "strasse": "Am Zeppelinpark 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.546686,
+        "longitude": 13.4167774,
+        "postleitzahl": "10437",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Stargarder Str. 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5196077,
+        "longitude": 13.4027331,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "DDR Museum",
+        "strasse": "Karl Liebknecht Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5126805,
+        "longitude": 13.3130855,
+        "postleitzahl": "10625",
+        "stadt": "Berlin",
+        "standortName": "Ruth Cohn Schule",
+        "strasse": "Bismarckstr. 20"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.3705294,
+        "longitude": 13.5211444,
+        "postleitzahl": "12529",
+        "stadt": "Berlin",
+        "standortName": "Execujet Europe GmbH",
+        "strasse": "GAT Airport Berlin-Schoenefeld"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53275,
+        "longitude": 13.1863581,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "Agentur für Arbeit",
+        "strasse": "Altonaer Str. 70-72"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5268145,
+        "longitude": 13.3058008,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Medizinischer Dienst der Krankenversicherung",
+        "strasse": "Lise-Meitner-Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5268145,
+        "longitude": 13.3058008,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Medizinischer Dienst der Krankenversicherung",
+        "strasse": "Lise-Meitner-Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5268145,
+        "longitude": 13.3058008,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Medizinischer Dienst der Krankenversicherung",
+        "strasse": "Lise-Meitner-Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.530273,
+        "longitude": 13.380333,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Invalidenstr. 42"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5120604,
+        "longitude": 13.3908114,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Zentralverband des Deutschen Handwerks",
+        "strasse": "Mohrenstraße 20/21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5328848,
+        "longitude": 13.3844322,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Evangelisches Werk für Diakonie und Entwicklung e.V.",
+        "strasse": "Caroline Michaelis Str.1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4224447,
+        "longitude": 13.4726785,
+        "postleitzahl": "12353",
+        "stadt": "Berlin",
+        "standortName": "Hermann-von-Helmholtz-Schule",
+        "strasse": "Wutzkyallee 68"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6051538,
+        "longitude": 13.4318497,
+        "postleitzahl": "13127",
+        "stadt": "Berlin",
+        "standortName": "Hugenottenhofkita",
+        "strasse": "Hauptstr. 13 a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50216,
+        "longitude": 13.38274,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Möckernstraße Hotelbetriebsgesellschaft mbH",
+        "strasse": "Möckernstr. 139-141"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4029224,
+        "longitude": 13.5561944,
+        "postleitzahl": "12526",
+        "stadt": "Berlin",
+        "standortName": "BFFT Gesellschaft für Fahrzeugtechnik",
+        "strasse": "Paradiesstr. 206 a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5095923,
+        "longitude": 13.4354922,
+        "postleitzahl": "10557",
+        "stadt": "Berlin",
+        "standortName": "Rail & Fresh WC Center Hauptbahnhof",
+        "strasse": "Europaplatz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4625869,
+        "longitude": 13.3247477,
+        "postleitzahl": "12163",
+        "stadt": "Berlin",
+        "standortName": "Boulevard Shoppingcenter",
+        "strasse": "Schloßstraße 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4345013,
+        "longitude": 13.5332948,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Treptow-Köpenick",
+        "strasse": "Hans Schmidt Str. 18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4160033,
+        "longitude": 13.6580481,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "DAH Ambulanz GmbH",
+        "strasse": "Müggellandstr.  8-10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5078897,
+        "longitude": 13.3814828,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Berlin, Abgeordnetenhaus",
+        "strasse": "Niederkirchnerstraße 3-5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5182775,
+        "longitude": 13.4086443,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Rotes Rathaus",
+        "strasse": "Rathausstr. 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.56351,
+        "longitude": 13.41613,
+        "postleitzahl": "13189",
+        "stadt": "Berlin",
+        "standortName": "SC Drehscheibe e.V.",
+        "strasse": "Binzstr. 61 c"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4345013,
+        "longitude": 13.5332948,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Treptow-Köpenick",
+        "strasse": "Hans Schmidt Str. 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5424833,
+        "longitude": 13.384155,
+        "postleitzahl": "13355",
+        "stadt": "Berlin",
+        "standortName": "SOFHA GmbH",
+        "strasse": "Gustav Meyer Allee 25"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51375729999999,
+        "longitude": 13.4226856,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Berliner Verkehrsbetriebe (BVG) AöR",
+        "strasse": "Holzmarktstraße 15-17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4846363,
+        "longitude": 13.3329281,
+        "postleitzahl": "10715",
+        "stadt": "Berlin",
+        "standortName": "Vattenfall Europe Netzservice GmbH",
+        "strasse": "Prinzregentenstr. 26-30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.41675,
+        "longitude": 13.39135,
+        "postleitzahl": "12277",
+        "stadt": "Berlin",
+        "standortName": "Unfallkasse",
+        "strasse": "Culemeyerstr. 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4479001,
+        "longitude": 13.2787586,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität Henry Ford Bau",
+        "strasse": "Garystr. 35"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5172614,
+        "longitude": 13.3082978,
+        "postleitzahl": "10585",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Charlottenburg",
+        "strasse": "Otto-Suhr-Allee 100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.530383,
+        "longitude": 13.4115028,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "e*Message W.I.S.Deutschland GmbH",
+        "strasse": "Schönhauser Allee 10-11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51749,
+        "longitude": 13.33707,
+        "postleitzahl": "10555",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Flotowstr. 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5187415,
+        "longitude": 13.4137108,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Mitte",
+        "strasse": "Littenstraße 12-17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5287361,
+        "longitude": 13.3815376,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Nord ",
+        "strasse": "Hannoversche Str. 27"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4559585,
+        "longitude": 13.427804,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "Diessner GmbH & Co.KG",
+        "strasse": "Tempelhofer Weg 38-42"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5063235,
+        "longitude": 13.5590165,
+        "postleitzahl": "12683",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Weißenhöher Straße 88/108"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4931991,
+        "longitude": 13.5254555,
+        "postleitzahl": "10319",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude A ",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5228966,
+        "longitude": 13.3759041,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Bundesministerium für Bildung und Forschung",
+        "strasse": "Kapelle-Ufer 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5300233,
+        "longitude": 13.3465208,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Landesamt für Gesundheit und Soziales (LAGeSo) Berlin",
+        "strasse": "Turmstr. 21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4280203,
+        "longitude": 13.5370524,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "LLA Instruments GmbH",
+        "strasse": "Justus von Liebig Str. 9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4418179,
+        "longitude": 13.3563966,
+        "postleitzahl": "12247",
+        "stadt": "Berlin",
+        "standortName": "Oiltanking Deutschland GmbH",
+        "strasse": "Kaiser-Wilhelm-Straße 135"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4160033,
+        "longitude": 13.6580481,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "DAH Ambulanz GmbH",
+        "strasse": "Müggellandstr.  8-10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53534519999999,
+        "longitude": 13.199139,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "Spielbank Berlin",
+        "strasse": "Altstädter Ring 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4682819,
+        "longitude": 13.3061444,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Landesamt für Mess- und Eichwesen",
+        "strasse": "Lentzeallee 100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4376232,
+        "longitude": 13.5287304,
+        "postleitzahl": "10245",
+        "stadt": "Berlin",
+        "standortName": "Freudenberg Spezialdichtungsprodukte GmbH",
+        "strasse": "Boxenhagener Str. 79-82"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4569312,
+        "longitude": 13.5264438,
+        "postleitzahl": "12459",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude G",
+        "strasse": "Wilhelminenhofstr. 75 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.531826,
+        "longitude": 13.178755,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "CONTAG AG",
+        "strasse": "Päwesiner Weg 30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5130038,
+        "longitude": 13.405086,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Novotel Berlin Mitte",
+        "strasse": "Fischerinsel 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.43816,
+        "longitude": 13.54806,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Zahnklinik Ost",
+        "strasse": "Dörpfeldstr. 46"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51073,
+        "longitude": 13.31016,
+        "postleitzahl": "10715",
+        "stadt": "Berlin",
+        "standortName": "arvato direct services Bertelsmann",
+        "strasse": "Badensche Str. 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5146916,
+        "longitude": 13.4624409,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Drogentherapie Zentrum Berlin e.V.",
+        "strasse": "Frankfurter Allee 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4854218,
+        "longitude": 13.3560018,
+        "postleitzahl": "10827",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Hauptstraße 141"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4456931,
+        "longitude": 13.5748486,
+        "postleitzahl": "12555",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Treptow-Köpenick",
+        "strasse": "Alt Köpenick 21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5347252,
+        "longitude": 13.4545559,
+        "postleitzahl": "10407",
+        "stadt": "Berlin",
+        "standortName": "Jobcenter",
+        "strasse": "Storkowerstr. 133"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5248737,
+        "longitude": 13.3453339,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "TEMPUS CORPORATE GmbH - Ein Unternehmen des ZEIT Verlags",
+        "strasse": "Alt-Moabit 94"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5106537,
+        "longitude": 13.3900715,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Bundesverband E-Commerce und Versandhandel Deutschland e.V.",
+        "strasse": "Friedrichstraße 60"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5375901,
+        "longitude": 13.3418892,
+        "postleitzahl": "13353",
+        "stadt": "Berlin",
+        "standortName": "Meditrans GmbH Transporte",
+        "strasse": "Westhafenstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5113998,
+        "longitude": 13.2668986,
+        "postleitzahl": "14052",
+        "stadt": "Berlin",
+        "standortName": "Friends of Heinz Berggruen-Gymnasium e.V.",
+        "strasse": "Bayernallee 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.515932,
+        "longitude": 13.4795665,
+        "postleitzahl": "10367",
+        "stadt": "Berlin",
+        "standortName": "District office Lichtenberg - Town Hall",
+        "strasse": "Möllendorffstraße 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50873,
+        "longitude": 13.4281,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Ver.di Bundesverwaltung",
+        "strasse": "Paula-Thiede-Ufer 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5241609,
+        "longitude": 13.4800781,
+        "postleitzahl": "10367",
+        "stadt": "Berlin",
+        "standortName": "KDW Berlin GmbH",
+        "strasse": "Möllendorffstr. 45"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5155223,
+        "longitude": 13.4166402,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Sozialverband Deutschland e.V.",
+        "strasse": "Stralauer Str.  63"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5256822,
+        "longitude": 13.3209378,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "VHV Versicherungen",
+        "strasse": "Kaiserin-Augusta-Allee 104"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5084,
+        "longitude": 13.39433,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Gasprom International Germany GmbH",
+        "strasse": "Behrenstr. 42"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5193452,
+        "longitude": 13.3855522,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Marsh GmbH",
+        "strasse": "Neustädtische Kirchstr.  8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.521873,
+        "longitude": 13.5710574,
+        "postleitzahl": "12683",
+        "stadt": "Berlin",
+        "standortName": "AMG Ambulanz Marzahn GmbH",
+        "strasse": "Warener Str.5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5146199,
+        "longitude": 13.3307802,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Daimler Vorsorge und Versicherungsdienst GmbH",
+        "strasse": "Englische Str.  30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4955888,
+        "longitude": 13.2641603,
+        "postleitzahl": "14055",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin Ulrike Schönfeld",
+        "strasse": "Zikadenweg 33"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.550589,
+        "longitude": 13.351081,
+        "postleitzahl": "13353",
+        "stadt": "Berlin",
+        "standortName": "Cineplex Alhambra",
+        "strasse": "Seestraße 94"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5340553,
+        "longitude": 13.2681162,
+        "postleitzahl": "13629",
+        "stadt": "Berlin",
+        "standortName": "ISS-World",
+        "strasse": "Wohlrabedamm 32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5055278,
+        "longitude": 13.2436492,
+        "postleitzahl": "14055",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Anästhesie",
+        "strasse": "Johannisburger Allee 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50143629999999,
+        "longitude": 13.3313439,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Park Plaza Berlin Kudamm",
+        "strasse": "Joachimsthaler Straße 28-29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5606406,
+        "longitude": 13.4605265,
+        "postleitzahl": "13086",
+        "stadt": "Berlin",
+        "standortName": "Dialysezentrum Nephrocare",
+        "strasse": "Schönstr. 90"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4124863,
+        "longitude": 13.3785091,
+        "postleitzahl": "12277",
+        "stadt": "Berlin",
+        "standortName": "Zöller Kipper gmbH",
+        "strasse": "Rigistr. 1-3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52413,
+        "longitude": 13.39714,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Serviceplan Berlin GmbH & Co.KG",
+        "strasse": "Oranienburgstr. 18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4862105,
+        "longitude": 13.3164001,
+        "postleitzahl": "10713",
+        "stadt": "Berlin",
+        "standortName": "IT Service Center Berlin (Berlin ITDZ)",
+        "strasse": "Berliner Straße 112-115"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5238721,
+        "longitude": 13.321352,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "ASK allgemeine Sicherheits",
+        "strasse": "Pascalstr. 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5171386,
+        "longitude": 13.3272514,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Avnet EMG GmbH",
+        "strasse": "Englische Str. 27"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5340553,
+        "longitude": 13.2681163,
+        "postleitzahl": "13629",
+        "stadt": "Berlin",
+        "standortName": "Jobcenter",
+        "strasse": "Wohlrabedamm  32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6175889,
+        "longitude": 13.3925862,
+        "postleitzahl": "13159",
+        "stadt": "Berlin",
+        "standortName": "Freie Naturschule im StadtGut",
+        "strasse": "Hauptstr. 24-26"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5497414,
+        "longitude": 13.3892898,
+        "postleitzahl": "13357",
+        "stadt": "Berlin",
+        "standortName": "Gesundheitsbrunnen Center",
+        "strasse": "Badstraße 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5287361,
+        "longitude": 13.3815376,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Nord ",
+        "strasse": "Philippstr. 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.469925,
+        "longitude": 13.334007,
+        "postleitzahl": "12159",
+        "stadt": "Berlin",
+        "standortName": "Hans Lorenz GmbH",
+        "strasse": "Rheinstr. 59"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4989739,
+        "longitude": 13.2998804,
+        "postleitzahl": "10709",
+        "stadt": "Berlin",
+        "standortName": "Diagnostikum",
+        "strasse": "Kurfürstendamm 93"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5152463,
+        "longitude": 13.3976799,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "ARCOTEL John F Berlin",
+        "strasse": "Werderscher Markt 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5906674,
+        "longitude": 13.2809191,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Am Tegeler Hafen 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4268829,
+        "longitude": 13.3562636,
+        "postleitzahl": "12249",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität",
+        "strasse": "Malteser Str. 74-100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5155267,
+        "longitude": 13.3343299,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Gemeinsamer Bundesausschuss",
+        "strasse": "Wegelystr. 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Hausvogteiplatz 5-7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5268145,
+        "longitude": 13.3058008,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Medizinischer Dienst der Krankenversicherung",
+        "strasse": "Lise-Meitner-Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5120905,
+        "longitude": 13.3272509,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Straße des 17. Juni 135"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5143002,
+        "longitude": 13.4740807,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Ring Center I",
+        "strasse": "Frankfurter Allee 111"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.511834,
+        "longitude": 13.4016243,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "spectrumK GmbH",
+        "strasse": "Spittelmarkt 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5043129,
+        "longitude": 13.4507793,
+        "postleitzahl": "10245",
+        "stadt": "Berlin",
+        "standortName": "BASF Services Europe GmbH",
+        "strasse": "Rotherstraße 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5241609,
+        "longitude": 13.4800781,
+        "postleitzahl": "10367",
+        "stadt": "Berlin",
+        "standortName": "KDW Berlin GmbH",
+        "strasse": "Möllendorffstr. 45"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.45442,
+        "longitude": 13.38375,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Tempelhof",
+        "strasse": "Tempelhofer Damm 234"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4526856,
+        "longitude": 13.4359008,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "TM Ausbau",
+        "strasse": "Geradestraße 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4781432,
+        "longitude": 13.3646814,
+        "postleitzahl": "10829",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Wilhelm-Kabus-Straße 77"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 48.17046,
+        "longitude": 11.36283,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "TM Ausbau GmbH",
+        "strasse": "Gradestraße 42"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.44749,
+        "longitude": 13.61714,
+        "postleitzahl": "12587",
+        "stadt": "Berlin",
+        "standortName": "Ambulanz Berlin Köpenick",
+        "strasse": "Charlotte E. Pauly Str. 28"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42887,
+        "longitude": 13.24455,
+        "postleitzahl": "14163",
+        "stadt": "Berlin",
+        "standortName": "MTS Systems GmbH",
+        "strasse": "Hohentwielsteig 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5095348,
+        "longitude": 13.3056986,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Dermatologie",
+        "strasse": "Wilmersdorfer Str. 125"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4910635,
+        "longitude": 13.3604065,
+        "postleitzahl": "10783",
+        "stadt": "Berlin",
+        "standortName": "MYTOYS GROUP",
+        "strasse": "Potsdamer Straße 192"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.56351,
+        "longitude": 13.41613,
+        "postleitzahl": "13189",
+        "stadt": "Berlin",
+        "standortName": "SC Drehscheibe e.V.",
+        "strasse": "Binzstr. 61 c"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4569312,
+        "longitude": 13.5264438,
+        "postleitzahl": "12462",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude B ",
+        "strasse": "Wilhelminenhofstr. 75 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42153,
+        "longitude": 13.24639,
+        "postleitzahl": "14165",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Ernst-Lemmer-Ring 113"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5087366,
+        "longitude": 13.526675,
+        "postleitzahl": "10315",
+        "stadt": "Berlin",
+        "standortName": "HWR Berlin - Gebäude 6A",
+        "strasse": "Alt-Friedrichsfelde 60"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5182775,
+        "longitude": 13.4086443,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Rotes Rathaus",
+        "strasse": "Jüdenstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4191276,
+        "longitude": 13.532105,
+        "postleitzahl": "12524",
+        "stadt": "Berlin",
+        "standortName": "Auto Service Zapke",
+        "strasse": "Rübezahlallee 58"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.504301,
+        "longitude": 13.4526919,
+        "postleitzahl": "10245",
+        "stadt": "Berlin",
+        "standortName": "Arbeiter Samariter Bund Landesgeschäftsstelle",
+        "strasse": "Rudolfstr. 9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.457378,
+        "longitude": 13.507604,
+        "postleitzahl": "12439",
+        "stadt": "Berlin",
+        "standortName": "Zentrum Schöneweide",
+        "strasse": "Schnellerstraße 21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5161182,
+        "longitude": 13.456653,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Frankfurter Allee 32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "",
+        "latitude": 52.5137938,
+        "longitude": 13.3234963,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität Berlin Institut für Architektur",
+        "strasse": "Straße des 17. Juni 152"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.54679,
+        "longitude": 13.1419,
+        "postleitzahl": "13591",
+        "stadt": "Berlin",
+        "standortName": "Medicare by Britta Gabriel GmbH",
+        "strasse": "Seegefelder Weg 398"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5072898,
+        "longitude": 13.2780284,
+        "postleitzahl": "14057",
+        "stadt": "Berlin",
+        "standortName": "Kassenärztliche Vereinigung Berlin",
+        "strasse": "Masurenallee 6A"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.53016179999999,
+        "longitude": 13.4012626,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "ibis Styles Hotel Berlin Mitte",
+        "strasse": "Brunnenstraße 1-2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4936093,
+        "longitude": 13.385916,
+        "postleitzahl": "10966",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Friedrichshain",
+        "strasse": "Yorckstr. 4-12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4479001,
+        "longitude": 13.2787586,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität Henry Ford Bau",
+        "strasse": "Garystr. 39"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52386,
+        "longitude": 13.34699,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Augentagesklinik Spreebogen",
+        "strasse": "Alt Moabit 101 b"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4870584,
+        "longitude": 13.2846437,
+        "postleitzahl": "14193",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Hubertusallee 48"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4542331,
+        "longitude": 13.3963588,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt für Körperschaften",
+        "strasse": "Volkmarstr. 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5120554,
+        "longitude": 13.3790008,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Vertretung des Landes Mecklenburg-Vorpommern beim Bund",
+        "strasse": "In den Ministergärten 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4615862,
+        "longitude": 13.3255113,
+        "postleitzahl": "12163",
+        "stadt": "Berlin",
+        "standortName": "Gemeinschaftspraxis",
+        "strasse": "Schlossstr.111"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5105434,
+        "longitude": 13.3841478,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "GDV Dienstleistungs GmbH",
+        "strasse": "Wilhelmstr. 43/ 43 G"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4525666,
+        "longitude": 13.4302469,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "Konica Minolta Business Solutions Deutschland GmbH",
+        "strasse": "Gradestr. 42"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50556,
+        "longitude": 13.24357,
+        "postleitzahl": "14055",
+        "stadt": "Berlin",
+        "standortName": null,
+        "strasse": "Johannisburger Allee  6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4290196,
+        "longitude": 13.3777428,
+        "postleitzahl": "12277",
+        "stadt": "Berlin",
+        "standortName": "Vattenfall",
+        "strasse": "Wilhelm-von-Siemens-Str. 2-10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4969166,
+        "longitude": 13.520025,
+        "postleitzahl": "10319",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Lichtenberg Bürgeramt 3",
+        "strasse": "Otto-Schmirgal-Straße 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5153359,
+        "longitude": 13.4124099,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Senate Department for the Interior and Sport",
+        "strasse": "Klosterstraße 47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.57749,
+        "longitude": 13.51326,
+        "postleitzahl": "13059",
+        "stadt": "Berlin",
+        "standortName": "Wartenberger sports club e.V. Berlin",
+        "strasse": "Fennpfuhlweg 53"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.3962886,
+        "longitude": 13.5365866,
+        "postleitzahl": "12355",
+        "stadt": "Berlin",
+        "standortName": "Luftfahrt Bundesamt",
+        "strasse": "Jeanette Wolff Str. 11"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5099731,
+        "longitude": 13.4296047,
+        "postleitzahl": "10243",
+        "stadt": "Berlin",
+        "standortName": "ibis Berlin Ostbahnhof",
+        "strasse": "An der Schillingbrücke 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4998705,
+        "longitude": 13.4550134,
+        "postleitzahl": "10245",
+        "stadt": "Berlin",
+        "standortName": "Fernsehwerft GmbH",
+        "strasse": "Stalauer Allee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5063633,
+        "longitude": 13.3335431,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "VBB Verkehrsbetriebe Berlin-Brandenburg",
+        "strasse": "Hardenbergplatz 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4158,
+        "longitude": 13.4074196,
+        "postleitzahl": "12349",
+        "stadt": "Berlin",
+        "standortName": "Riessersee Hotel Betriebsgesellschaft mbH",
+        "strasse": "Marienfelder Chaussee 133"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4889823,
+        "longitude": 13.3116049,
+        "postleitzahl": "10713",
+        "stadt": "Berlin",
+        "standortName": "Ordnungsamt",
+        "strasse": "Hohenzollerndamm 174"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5925957,
+        "longitude": 13.45058,
+        "postleitzahl": "13129",
+        "stadt": "Berlin",
+        "standortName": "NESTOR Bildungsinstitut",
+        "strasse": "Alt Blankenburg 1 a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.48148759999999,
+        "longitude": 13.4352296,
+        "postleitzahl": "12043",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Neukölln",
+        "strasse": "Karl-Marx-Straße 83"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4136429,
+        "longitude": 13.6597639,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "Krankentransporte Vincze",
+        "strasse": "Müggelheimer Damm 261"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5268145,
+        "longitude": 13.3058008,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Medizinischer Dienst der Krankenversicherung",
+        "strasse": "Lise-Meitner-Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4701199,
+        "longitude": 13.3484826,
+        "postleitzahl": "12157",
+        "stadt": "Berlin",
+        "standortName": "Gemeinschaftspraxis",
+        "strasse": "Am Grazer Damm 113-119"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5570264,
+        "longitude": 13.4421579,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Via Humana Pflegeteam GmbH",
+        "strasse": "Küpenicker Str. 103"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.528271,
+        "longitude": 13.370423,
+        "postleitzahl": "10557",
+        "stadt": "Berlin",
+        "standortName": "50Hertz Transmission GmbH",
+        "strasse": "Heidestraße 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47656509999999,
+        "longitude": 13.423,
+        "postleitzahl": "12049",
+        "stadt": "Berlin",
+        "standortName": "Robert A. Holzer",
+        "strasse": "Schillerpromenade 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5060908,
+        "longitude": 13.2950237,
+        "postleitzahl": "14057",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Charlottenburg",
+        "strasse": "Amtsgerichtsplatz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51861,
+        "longitude": 13.27976,
+        "postleitzahl": "14050",
+        "stadt": "Berlin",
+        "standortName": "Krankenhaus Westend",
+        "strasse": "Spandauer Damm 130"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.566053,
+        "longitude": 13.4773183,
+        "postleitzahl": "13088",
+        "stadt": "Berlin",
+        "standortName": "First Sensor AG",
+        "strasse": "Darßer Bogen 19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.566053,
+        "longitude": 13.4773183,
+        "postleitzahl": "13088",
+        "stadt": "Berlin",
+        "standortName": "First Sensor AG",
+        "strasse": "Darßer Bogen 19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51489,
+        "longitude": 13.38799,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "ProCurand Seniorenheim",
+        "strasse": "Französische Str. 55"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5814761,
+        "longitude": 13.3140818,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "KME Brass Germany GmbH",
+        "strasse": "Miraustr. 10-14"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5216052,
+        "longitude": 13.4147599,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Saturn Electro GmbH",
+        "strasse": "Alexanderplatz 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4893304,
+        "longitude": 13.3124791,
+        "postleitzahl": "10713",
+        "stadt": "Berlin",
+        "standortName": "Ordnungsamt",
+        "strasse": "Hohenzollerndamm 174"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5439482,
+        "longitude": 13.5446989,
+        "postleitzahl": "12679",
+        "stadt": "Berlin",
+        "standortName": "Einkaufszentrum Eastgate",
+        "strasse": "Marzahner Promenade 1A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4308358,
+        "longitude": 13.5318675,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Adlershof",
+        "strasse": "Rudower Chaussee 26"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4912354,
+        "longitude": 13.3304567,
+        "postleitzahl": "10717",
+        "stadt": "Berlin",
+        "standortName": "ADAC office & travel agency",
+        "strasse": "Bundesallee 29-30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50816,
+        "longitude": 13.39489,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Storengy Deutschland GmbH / Erdgasspeicher Pekensen",
+        "strasse": "Zimmerstr. 56"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4992662,
+        "longitude": 13.3958772,
+        "postleitzahl": "10969",
+        "stadt": "Berlin",
+        "standortName": "IG Metall Berlin",
+        "strasse": "Alte Jakobstr. 149"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5023038,
+        "longitude": 13.5313559,
+        "postleitzahl": "10319",
+        "stadt": "Berlin",
+        "standortName": "Tierpark Berlin",
+        "strasse": "Am Tierpark 125"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.521181,
+        "longitude": 13.323696,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Ib Vogt GmbH",
+        "strasse": "Helmholtzstr. 2-9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5158493,
+        "longitude": 13.459787,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Frankfurter Allee 27"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5063633,
+        "longitude": 13.3335431,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "VBB Verkehrsverbund Berlin-Brandenburg GmbH",
+        "strasse": "Hardenbergplatz 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5143949,
+        "longitude": 13.4655009,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Frankfurter Allee 54"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.560921,
+        "longitude": 13.4320277,
+        "postleitzahl": "13089",
+        "stadt": "Berlin",
+        "standortName": "Hella Algaia Mobile Version GmbH & Co KG",
+        "strasse": "Teskowstr. 14"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4308358,
+        "longitude": 13.5318675,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Adlershof",
+        "strasse": "Rudower Chaussee 16"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4096542,
+        "longitude": 13.6021601,
+        "postleitzahl": "12527",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Treptow-Köpenick",
+        "strasse": "Sportpromenade 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5308108,
+        "longitude": 13.2979007,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "Carl Zeiss Meditec AG",
+        "strasse": "Max Dohrn Str.8-10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5105998,
+        "longitude": 13.3247083,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Eugene-P.-Wigner-Gebäude",
+        "strasse": "Hardenbergstraße 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4531654,
+        "longitude": 13.3970494,
+        "postleitzahl": "12109",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt",
+        "strasse": "Ullsteinstr. 66"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5235537,
+        "longitude": 13.4164134,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "AHM Areana Hotelmanagement GmbH",
+        "strasse": "Bernhard Weiß Str. 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5015606,
+        "longitude": 13.352361,
+        "postleitzahl": "10787",
+        "stadt": "Berlin",
+        "standortName": "Gewerkschaft Erziehung und Wissenschaft LV Berlin",
+        "strasse": "Ahornstr. 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53640799999999,
+        "longitude": 13.6028697,
+        "postleitzahl": "12627",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Hellersdorferstraße 235"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4932365,
+        "longitude": 13.526021,
+        "postleitzahl": "10321",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude C ",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5952839,
+        "longitude": 13.3333187,
+        "postleitzahl": "13437",
+        "stadt": "Berlin",
+        "standortName": "Medizinisches Versorgungszentrum für Orthopadie und Chirurgie",
+        "strasse": "Oranienburger Str. 86"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4566254,
+        "longitude": 13.3195842,
+        "postleitzahl": "12165",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Schloßstr. 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4427088,
+        "longitude": 13.2410525,
+        "postleitzahl": "14163",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Fischerhüttenstr.  89"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.59306,
+        "longitude": 13.29448,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "Vfl Tegel 1891 e.V.",
+        "strasse": "Hatzfeldtallee 29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5028544,
+        "longitude": 13.3256649,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Spielbank Berlin",
+        "strasse": "Kurfürstendamm 31"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4570053,
+        "longitude": 13.5276024,
+        "postleitzahl": "12459",
+        "stadt": "Berlin",
+        "standortName": "Elektro Innung Berlin",
+        "strasse": "Wilhelminenhofstr. 75"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4928389,
+        "longitude": 13.356884,
+        "postleitzahl": "10781",
+        "stadt": "Berlin",
+        "standortName": "Kammergericht",
+        "strasse": "Elßholzstraße 30-33"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5266546,
+        "longitude": 13.3895442,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Linienstr. 127"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5369,
+        "longitude": 13.379029,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "ECONA Shopping GmbH",
+        "strasse": "Wöhlertstr. 12-13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5199138,
+        "longitude": 13.4157738,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "ALEXA Berlin",
+        "strasse": "Grunerstraße 20"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4294,
+        "longitude": 13.57225,
+        "postleitzahl": "12557",
+        "stadt": "Berlin",
+        "standortName": "Wasserstraßen- und Schifffahrtsamt Spree-Havel, Bauhof Berlin",
+        "strasse": "Grünauer Straße 213"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.46550879999999,
+        "longitude": 13.3277291,
+        "postleitzahl": "12161",
+        "stadt": "Berlin",
+        "standortName": "Schloss-Strassen-Center",
+        "strasse": "Walther-Schreiber-Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52536,
+        "longitude": 13.32306,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "Jones & Redmann Automationstechnik GmbH",
+        "strasse": "Kaiserin Augusta Allee 113"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.3943419,
+        "longitude": 13.4103769,
+        "postleitzahl": "12309",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin Dres. Peer Bornmann, Kathrin Mier",
+        "strasse": "Groß-Ziethener Str. 35"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5174668,
+        "longitude": 13.4141832,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Hans Soldan GmbH",
+        "strasse": "Littenstr.  10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53508,
+        "longitude": 13.22268,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "CEMEX Kies & Splitt GmbH",
+        "strasse": "Sophienwerderweg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.528878,
+        "longitude": 13.456144,
+        "postleitzahl": "10407",
+        "stadt": "Berlin",
+        "standortName": "MKG Chirurgie",
+        "strasse": "Landsberger Allee 117 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.58528,
+        "longitude": 13.31147,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "Nordex Food Deutschland GmbH",
+        "strasse": "Holzhauser Str. 139"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51221,
+        "longitude": 13.39373,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "DIS AG",
+        "strasse": "Markgrafenstraße 33"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5674828,
+        "longitude": 13.5140812,
+        "postleitzahl": "13059",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Lichtenberg Bürgeramt 1",
+        "strasse": "Egon-Erwin-Kisch-Straße 106"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4452589,
+        "longitude": 13.5749378,
+        "postleitzahl": "12435",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Treptow-Köpenick",
+        "strasse": "Neue Krugallee 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51198,
+        "longitude": 13.3908,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Zentralverband des Deutschen Handwerks",
+        "strasse": "Mohrenstr. 20-21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47523469999999,
+        "longitude": 13.1296677,
+        "postleitzahl": "14089",
+        "stadt": "Berlin",
+        "standortName": "Richard-Byrd-Straße 31",
+        "strasse": "Richard-Byrd-Straße 31"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4561649,
+        "longitude": 13.3366279,
+        "postleitzahl": "12169",
+        "stadt": "Berlin",
+        "standortName": "Sochos Sportanlage",
+        "strasse": "Lessingstraße 5-8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5064556,
+        "longitude": 13.397214,
+        "postleitzahl": "10969",
+        "stadt": "Berlin",
+        "standortName": "Betriebskrankenkasse Verkehrsbau Union",
+        "strasse": "Lindenstraße 67"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4540126,
+        "longitude": 13.1449083,
+        "postleitzahl": "14089",
+        "stadt": "Berlin",
+        "standortName": "Evangelische Kirchengemeinde",
+        "strasse": "Kladower Damm 369"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4960199,
+        "longitude": 13.3898399,
+        "postleitzahl": "10961",
+        "stadt": "Berlin",
+        "standortName": "KUKA AG",
+        "strasse": "Blücherstraße 144"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.40844,
+        "longitude": 13.26518,
+        "postleitzahl": "14165 ",
+        "stadt": "Berlin",
+        "standortName": "Weha-Gummiwaren-Fabrik Holzberg GmbH & Co. KG",
+        "strasse": "Kleinmachnower Weg 9 - 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.520318,
+        "longitude": 13.3951235,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Kupfergraben 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.618668,
+        "longitude": 13.3051525,
+        "postleitzahl": "13467",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Heinsestr. 54"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125702,
+        "longitude": 13.3892893,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Hertie School of Governance",
+        "strasse": "Friedrichstr. 180"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51028,
+        "longitude": 13.38431,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Corning Optical Communications",
+        "strasse": "Leipziger Straße 121"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5740718,
+        "longitude": 13.359335,
+        "postleitzahl": "13409",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Residenzstr. 156"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42785,
+        "longitude": 13.16199,
+        "postleitzahl": "14109",
+        "stadt": "Berlin",
+        "standortName": "Drogentherapie Zentrum Berlin e.V.",
+        "strasse": "Am großen Wannsee 31"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5076901,
+        "longitude": 13.372083,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Spielbank Berlin",
+        "strasse": "Marlene-Dietrich-Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5459405,
+        "longitude": 13.4289965,
+        "postleitzahl": "10409",
+        "stadt": "Berlin",
+        "standortName": "AETHERWERK",
+        "strasse": "Prenzlauer Allee 90"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5368633,
+        "longitude": 13.4075633,
+        "postleitzahl": "10435",
+        "stadt": "Berlin",
+        "standortName": "Schwarzkopf u. Schwarzkopf",
+        "strasse": "Kastanienallee 32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4525264,
+        "longitude": 13.2896787,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität",
+        "strasse": "Kaiserwerther Str. 16-18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5199023,
+        "longitude": 13.4147944,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Alexa Center ",
+        "strasse": "Grunerstr. 20"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5076719,
+        "longitude": 13.5242192,
+        "postleitzahl": "10315",
+        "stadt": "Berlin",
+        "standortName": "Gesundheitsamt Lichtenberg - Lebensmittelpersonalhygiene",
+        "strasse": "Alfred-Kowalke-Straße 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50677959999999,
+        "longitude": 13.388737,
+        "postleitzahl": "10969",
+        "stadt": "Berlin",
+        "standortName": "IDEAL Vorsorge GmbH",
+        "strasse": "Kochstraße 26"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.49977,
+        "longitude": 13.38856,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Sozialdemokratische Partei Deutschlands",
+        "strasse": "Wilhelmstr. 141"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4581876,
+        "longitude": 13.5330504,
+        "postleitzahl": "12459",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft",
+        "strasse": "Ostendstr. 25"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53248,
+        "longitude": 13.17129,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "DMG Berlin Vertriebs- und Service GmbH",
+        "strasse": "Egelpfuhlstr. 42a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5086627,
+        "longitude": 13.3839682,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Bundesministerium der Finanzen",
+        "strasse": "Niederkirchnerstr. 3-4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5035294,
+        "longitude": 13.328449,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Lupa Bürodienstleistungsges. mbH Torsten Martini",
+        "strasse": "Kurfürstendamm 26a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4931991,
+        "longitude": 13.5254555,
+        "postleitzahl": "10318",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude F ",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5153878,
+        "longitude": 13.4617979,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Friedrichshain",
+        "strasse": "Frankfurter Allee 35/37"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4800003,
+        "longitude": 13.3483051,
+        "postleitzahl": "10827",
+        "stadt": "Berlin",
+        "standortName": "Hausverwaltung Kadler",
+        "strasse": "Gutzkowstr. 9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5830834,
+        "longitude": 13.2864263,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "WashTec Cleaning Technology GmbH",
+        "strasse": "Am Borsigturm 56"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5275238,
+        "longitude": 13.2041161,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "ALBA Facility Solutions GmbH",
+        "strasse": "Am Oberhafen 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.523887,
+        "longitude": 13.3235639,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Produktionstechnisches Zentrum",
+        "strasse": "Pascalstraße 8-9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Ernst Reuter Platz 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5095204,
+        "longitude": 13.2633757,
+        "postleitzahl": "14052",
+        "stadt": "Berlin",
+        "standortName": "Moser Schule",
+        "strasse": "Badenallee 31/32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5276871,
+        "longitude": 13.3779909,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Kaiserin Friedrich Stiftung für das ärztliche Fortbildungswesen",
+        "strasse": "Robert Koch Platz 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50627,
+        "longitude": 13.28869,
+        "postleitzahl": "14057",
+        "stadt": "Berlin",
+        "standortName": "Smarvet GmbH",
+        "strasse": "Kuno Fischer Str. 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5132666,
+        "longitude": 13.2289634,
+        "postleitzahl": "14053",
+        "stadt": "Berlin",
+        "standortName": "Horst Korber Sportzentrum",
+        "strasse": "Glockenturmstraße 3+5"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.46094410000001,
+        "longitude": 13.4495616,
+        "postleitzahl": "12359",
+        "stadt": "Berlin",
+        "standortName": "BIOTRONIK Corporate Services SE",
+        "strasse": "Sieversufer 7-9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5231598,
+        "longitude": 13.3866917,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Solair GmbH",
+        "strasse": "Schiffbauerdamm 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5143384,
+        "longitude": 13.4893811,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Lichtenberg",
+        "strasse": "Roedeliusplatz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.49121,
+        "longitude": 13.29945,
+        "postleitzahl": "10709",
+        "stadt": "Berlin",
+        "standortName": "Müller & Bleher Berlin GmbH & Co. KG",
+        "strasse": "Nestorstraße 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5873,
+        "longitude": 13.32507,
+        "postleitzahl": "13403",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Reinickendorf",
+        "strasse": "Eichborndamm 208"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.541257,
+        "longitude": 13.382642,
+        "postleitzahl": "13355",
+        "stadt": "Berlin",
+        "standortName": "LASERLINE Digitales Druckzentrum Bucec & Co. Berlin KG",
+        "strasse": "Scheringstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4335593,
+        "longitude": 13.4049297,
+        "postleitzahl": "12107",
+        "stadt": "Berlin",
+        "standortName": "SV Weißblau Allianz",
+        "strasse": "Wildspitzweg 12-46"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4564933,
+        "longitude": 13.3213094,
+        "postleitzahl": "12165",
+        "stadt": "Berlin",
+        "standortName": "Steglitz International Berlin",
+        "strasse": "Albrechtstr. 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5678608,
+        "longitude": 13.5723345,
+        "postleitzahl": "12689",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Wörlitzer Str. 3 a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.514475,
+        "longitude": 13.320227,
+        "postleitzahl": "10585",
+        "stadt": "Berlin",
+        "standortName": "Db Kredit Service Gmbh",
+        "strasse": "Otto-Suhr-Allee 6 - 16"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5136631,
+        "longitude": 13.4227986,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Berliner Verkehrsbetriebe",
+        "strasse": "Holzmarktstraße 15-17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.59028,
+        "longitude": 13.29175,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Gorkistr. 46"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4160033,
+        "longitude": 13.6580481,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "DAH Ambulanz GmbH",
+        "strasse": "Müggellandstr.  8-10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5478224,
+        "longitude": 13.2718171,
+        "postleitzahl": "13629",
+        "stadt": "Berlin",
+        "standortName": "Landesruderverband Berlin e.V.",
+        "strasse": "Jungfernheideweg 80"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.54736,
+        "longitude": 13.20466,
+        "postleitzahl": "13585",
+        "stadt": "Berlin",
+        "standortName": "Verein zur Förderung alternativer Publizistik und alternativer Lebensformen e.V.",
+        "strasse": "Jagowstraße 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4910259,
+        "longitude": 13.2948844,
+        "postleitzahl": "14193",
+        "stadt": "Berlin",
+        "standortName": "Berliner Bogenschützen e.V.",
+        "strasse": "Friedrichsruher Str. 26"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4372943,
+        "longitude": 13.30807,
+        "postleitzahl": "12203",
+        "stadt": "Berlin",
+        "standortName": "Schöneberg District Court II",
+        "strasse": "Ringstraße 9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5679,
+        "longitude": 13.52567,
+        "postleitzahl": "13057",
+        "stadt": "Berlin",
+        "standortName": "Praxis für innere Medizin",
+        "strasse": "Falkenberger Chaussee 134"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52194490000001,
+        "longitude": 13.4036132,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Scholz & Friends Group GmbH",
+        "strasse": "Litfaßplatz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5544088,
+        "longitude": 13.3829312,
+        "postleitzahl": "13357",
+        "stadt": "Berlin",
+        "standortName": "Dr. Thiedig & Co. KG",
+        "strasse": "Prinzenallee 78-79"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6236593,
+        "longitude": 13.301943,
+        "postleitzahl": "13467",
+        "stadt": "Berlin",
+        "standortName": null,
+        "strasse": "Hohefeldstr. 41"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5410725,
+        "longitude": 13.3901781,
+        "postleitzahl": "13355",
+        "stadt": "Berlin",
+        "standortName": "DIGALOG GmbH",
+        "strasse": "Wattstr. 11-13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51731,
+        "longitude": 13.52001,
+        "postleitzahl": "12683",
+        "stadt": "Berlin",
+        "standortName": "ASK Krankentransport GmbH",
+        "strasse": "Alt Friedrichsfelde 63B"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.44188,
+        "longitude": 13.22601,
+        "postleitzahl": "14129",
+        "stadt": "Berlin",
+        "standortName": "Caroline von Heydebrand Heim und Schule e.V.",
+        "strasse": "Klopstockstr. 36/42"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.57073,
+        "longitude": 13.32232,
+        "postleitzahl": "13403",
+        "stadt": "Berlin",
+        "standortName": "Reinickendorfer Krankenbeförderung e.K.",
+        "strasse": "Saalmannstr. 14"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6352345,
+        "longitude": 13.5040831,
+        "postleitzahl": "13125",
+        "stadt": "Berlin",
+        "standortName": "Helios Klinikum Berlin-Buch GmbH",
+        "strasse": "Schwanebecker Chaussee 505"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.473107,
+        "longitude": 13.458782,
+        "postleitzahl": "12057",
+        "stadt": "Berlin",
+        "standortName": "Hotel Estrel ",
+        "strasse": "Sonnenallee 225"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5171386,
+        "longitude": 13.3272514,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "AVENT EMG GmbH",
+        "strasse": "Englische Str. 27"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5301367,
+        "longitude": 13.4616695,
+        "postleitzahl": "10369",
+        "stadt": "Berlin",
+        "standortName": "FitX Gym",
+        "strasse": "Oderbruchstraße 14"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5384837,
+        "longitude": 13.2064187,
+        "postleitzahl": "12165",
+        "stadt": "Berlin",
+        "standortName": "Cineplex Spandau",
+        "strasse": "Havelstr. 48"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5508859,
+        "longitude": 13.3755236,
+        "postleitzahl": "13357",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Wedding",
+        "strasse": "Brunnenplatz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.464197,
+        "longitude": 13.326597,
+        "postleitzahl": "12163",
+        "stadt": "Berlin",
+        "standortName": "Cineplex Titania",
+        "strasse": "Gutsmuthsstraße 27/28"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53275,
+        "longitude": 13.1863581,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "Jobcenter",
+        "strasse": "Altonaer Str. 70/72"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5459405,
+        "longitude": 13.4289965,
+        "postleitzahl": "10409",
+        "stadt": "Berlin",
+        "standortName": "AETHERWERK",
+        "strasse": "Prenzlauer Allee 90"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5226965,
+        "longitude": 13.3380649,
+        "postleitzahl": "10555",
+        "stadt": "Berlin",
+        "standortName": "Staatliche Technikerschule Berlin",
+        "strasse": "Bochumer Str. 8b"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.528271,
+        "longitude": 13.3704229,
+        "postleitzahl": "12435",
+        "stadt": "Berlin",
+        "standortName": "50 Hertz Transmission GmbH",
+        "strasse": "Eichenstraße 3A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4496289,
+        "longitude": 13.2687246,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Westklinik Dahlem",
+        "strasse": "Schweinfurthstr. 43-47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4988024,
+        "longitude": 13.303244,
+        "postleitzahl": "10709",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Kurfürstendamm 156"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5058984,
+        "longitude": 13.4458913,
+        "postleitzahl": "10243",
+        "stadt": "Berlin",
+        "standortName": "FitX",
+        "strasse": "Tamara-Danz-Straße 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5232174,
+        "longitude": 13.4985171,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "KTF-Berlin GmbH",
+        "strasse": "Josef-Orlopp-Straße 101"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4304669,
+        "longitude": 13.2372568,
+        "postleitzahl": "14163",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität Klinik für Kleine Haustiere",
+        "strasse": "Oertzenweg 19 b, Haus 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.441635,
+        "longitude": 13.587726,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "Allende-Center",
+        "strasse": "Pablo-Neruda-Straße 2-4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.504931,
+        "longitude": 13.3812189,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin Dr. Anton Kugler",
+        "strasse": "Askanischer Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4211191,
+        "longitude": 13.1699104,
+        "postleitzahl": "14109",
+        "stadt": "Berlin",
+        "standortName": "Potsdamer Yacht Club e.V.",
+        "strasse": "Königstraße 3A"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "",
+        "latitude": 52.52424,
+        "longitude": 13.3344,
+        "postleitzahl": "13585",
+        "stadt": "Berlin",
+        "standortName": "Jagow gmbh",
+        "strasse": "Jagowstraße 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.48798499999999,
+        "longitude": 13.3406317,
+        "postleitzahl": "10825",
+        "stadt": "Berlin",
+        "standortName": "MVZ für Gastroenterologie am Bayerischen Platz",
+        "strasse": "Innsbrucker Straße 58"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4931991,
+        "longitude": 13.5254555,
+        "postleitzahl": "10318",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude D ",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5296161,
+        "longitude": 13.4103097,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "Ableton AG",
+        "strasse": "Schönhauser Allee 6- 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52719099999999,
+        "longitude": 13.3438505,
+        "postleitzahl": "10551",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Stromstraße 11-17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4532108,
+        "longitude": 13.4295763,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "Total Walther GmbH",
+        "strasse": "Gradestr 46-50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52998,
+        "longitude": 13.347158,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Landesamt für Gesundheit und Soziales",
+        "strasse": "Turmstr. 21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4302905,
+        "longitude": 13.5355486,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Osypka Medical GmbH",
+        "strasse": "Albert Einstein Str.  3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.538624,
+        "longitude": 13.2382004,
+        "postleitzahl": "13599",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Spandau",
+        "strasse": "Nonnendammallee 21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5169758,
+        "longitude": 13.4151643,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Feuerwehr Berlin Mitte",
+        "strasse": "Voltairestraße 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47695280000001,
+        "longitude": 13.4393884,
+        "postleitzahl": "12043",
+        "stadt": "Berlin",
+        "standortName": "Heimathafen Neukölln",
+        "strasse": "Karl-Marx-Straße 141"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.46542,
+        "longitude": 13.38593,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Tempelhofer Damm 145"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42887,
+        "longitude": 13.24455,
+        "postleitzahl": "14163",
+        "stadt": "Berlin",
+        "standortName": "MTS Systems GmbH",
+        "strasse": "Hohentwielsteig 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5117987,
+        "longitude": 13.2391791,
+        "postleitzahl": "14053",
+        "stadt": "Berlin",
+        "standortName": "Landessportbund",
+        "strasse": "Jesse-Owens-Allee 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5293942,
+        "longitude": 13.4567422,
+        "postleitzahl": "10407",
+        "stadt": "Berlin",
+        "standortName": "Vienna House Easy Berlin",
+        "strasse": "Storkower Str. 162"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52263,
+        "longitude": 13.36342,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Bundesministerium des Innern",
+        "strasse": "Alt-Moabit 101d"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52413,
+        "longitude": 13.39714,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "HDK Berlin",
+        "strasse": "Oranienburger Str. 18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.46318,
+        "longitude": 13.33951,
+        "postleitzahl": "12157",
+        "stadt": "Berlin",
+        "standortName": "Dr. Matthias Keilich",
+        "strasse": "Bismarckstraße 72/73"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.412099,
+        "longitude": 13.319774,
+        "postleitzahl": "12207",
+        "stadt": "Berlin",
+        "standortName": "Praxisgemeinschaft Dres. Thomas Kellermann, Thomas Rieger, Kai Braker",
+        "strasse": "Osdorfer Str. 50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50282,
+        "longitude": 13.31657,
+        "postleitzahl": "10629",
+        "stadt": "Berlin",
+        "standortName": "Praxis für innere Medizin Dres. Mathias und Roswitha Vallée",
+        "strasse": "Schlüterstr. 35"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.4814113,
+        "longitude": 13.3558184,
+        "postleitzahl": "10829",
+        "stadt": "Berlin",
+        "standortName": "ubitricity Charging Station",
+        "strasse": "EUREF-Campus 7-8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5226744,
+        "longitude": 13.3638208,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Bundesministerium des Innern",
+        "strasse": "Alt-Moabit 101d"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Berlin Institute of Technology",
+        "strasse": "Straße des 17. Juni 135"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51768029999999,
+        "longitude": 13.4124787,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Kulturprojekte Berlin GmbH",
+        "strasse": "Klosterstraße 68"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5847925,
+        "longitude": 13.286022,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "Hallen Am Borsigturm",
+        "strasse": "Am Borsigturm 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.41971,
+        "longitude": 13.26086,
+        "postleitzahl": "14165",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Anästhesie",
+        "strasse": "Leuchtenburgstr. 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4688591,
+        "longitude": 13.3821291,
+        "postleitzahl": "12103",
+        "stadt": "Berlin",
+        "standortName": "Berliner Stadtreinigung",
+        "strasse": "Ringbahnstraße 96"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6395033,
+        "longitude": 13.5216235,
+        "postleitzahl": "13125",
+        "stadt": "Berlin",
+        "standortName": "mecum Krankentransporte GmbH",
+        "strasse": "Am Stener Berg 41"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5234045,
+        "longitude": 13.3488963,
+        "postleitzahl": "10557",
+        "stadt": "Berlin",
+        "standortName": "Verwaltungsgericht Berlin",
+        "strasse": "Kirchstraße 7"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5303989,
+        "longitude": 13.3817237,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Mercure Hotel Berlin City",
+        "strasse": "Invalidenstraße 38"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5049,
+        "longitude": 13.38511,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Relexa hotel Stuttgarter Hof",
+        "strasse": "Anhalter Straße 8-9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4636074,
+        "longitude": 13.3337973,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Müller-BBM GmbH",
+        "strasse": "Schöneberger Str. 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5571624,
+        "longitude": 13.374445,
+        "postleitzahl": "13359",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Wedding",
+        "strasse": "Osloer Str. 37"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5338859,
+        "longitude": 13.2687495,
+        "postleitzahl": "13629",
+        "stadt": "Berlin",
+        "standortName": "arvato CRM Healthcare GmbH",
+        "strasse": "Wohlrabedamm 32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5122318,
+        "longitude": 13.3341618,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "ehemalige Versuchsanstalt für Wasserbau und Schiffbau (VWS) (Berlin )",
+        "strasse": "Müller-Breslau-Straße 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52014920000001,
+        "longitude": 13.4037404,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "CityQuartier DomAquarée",
+        "strasse": "Karl-Liebknecht-Straße 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4938015,
+        "longitude": 13.3852771,
+        "postleitzahl": "10965",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Friedrichshain",
+        "strasse": "Yorckstr. 4-11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50891,
+        "longitude": 13.43298,
+        "postleitzahl": "10243",
+        "stadt": "Berlin",
+        "standortName": "pbr Planungsbüro Rohling AG",
+        "strasse": "Stralauer Platz 34"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4274206,
+        "longitude": 13.1617152,
+        "postleitzahl": "14109",
+        "stadt": "Berlin",
+        "standortName": "Fachklinik Lago",
+        "strasse": "Am Großen Wannsee  29-31"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5059419,
+        "longitude": 13.3432172,
+        "postleitzahl": "10787",
+        "stadt": "Berlin",
+        "standortName": "Funk Versicherungsmarkler GmbH",
+        "strasse": "Budapesterstr. 31"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4800062,
+        "longitude": 13.3464106,
+        "postleitzahl": "10827",
+        "stadt": "Berlin",
+        "standortName": "Berliner Volksbank SB-Standort",
+        "strasse": "Hauptstraße 104"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4383402,
+        "longitude": 13.343259,
+        "postleitzahl": "12247",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Steglitz-Zehlendorf Amt für Soziales",
+        "strasse": "Hanna-Renate-Laurien-Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5195799,
+        "longitude": 13.4027302,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Radisson Blu Hotel",
+        "strasse": "Karl-Liebknecht-Str.3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4302905,
+        "longitude": 13.5355486,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Osypka Medical GmbH",
+        "strasse": "Albert Einstein Str. 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5152177,
+        "longitude": 13.3315525,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Avnet Abacus",
+        "strasse": "Englische Str. 27"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5280681,
+        "longitude": 13.3240915,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "Siemens AG",
+        "strasse": "Huttenstr.  12-16"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5078512,
+        "longitude": 13.3738851,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Potsdamer Platz Arcaden",
+        "strasse": "Alte Potsdamer Straße 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5349204,
+        "longitude": 13.200466,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "Gesundheitsamt Spandau",
+        "strasse": "Carl Schurz Str. 2/6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5321298,
+        "longitude": 13.344344,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Mercure Hotel MOA Berlin",
+        "strasse": "Stephanstr.  41"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5423696,
+        "longitude": 13.3266416,
+        "postleitzahl": "13351",
+        "stadt": "Berlin",
+        "standortName": "Tennisclub Longline",
+        "strasse": "Nordufer 28a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5322589,
+        "longitude": 13.2957813,
+        "postleitzahl": "10589",
+        "stadt": "Berlin",
+        "standortName": "adviqo GmbH",
+        "strasse": "Max-Dohrn-Straße 8-10"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5380239,
+        "longitude": 13.410595,
+        "postleitzahl": "10435",
+        "stadt": "Berlin",
+        "standortName": "Hotel Oderberger Berlin",
+        "strasse": "Oderberger Straße 57"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4236256,
+        "longitude": 13.3979488,
+        "postleitzahl": "12107",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Mariendorfer Damm 409"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Einsteinufer 17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4931991,
+        "longitude": 13.5254555,
+        "postleitzahl": "10318",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Berlin",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4730765,
+        "longitude": 13.4588285,
+        "postleitzahl": "12057",
+        "stadt": "Berlin",
+        "standortName": "Estrel Hotel Berlin",
+        "strasse": "Sonnenallee 225"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.45151,
+        "longitude": 13.3695401,
+        "postleitzahl": "12105",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Attilastr. 30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5378886,
+        "longitude": 13.2066987,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Breite Str. 33-34"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4430103,
+        "longitude": 13.2531625,
+        "postleitzahl": "14169",
+        "stadt": "Berlin",
+        "standortName": "Ernst Reuter Sportanlage",
+        "strasse": "Onkel-Tom-Straße 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Straße des 17. Juni 136"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4569312,
+        "longitude": 13.5264438,
+        "postleitzahl": "12463",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude A ",
+        "strasse": "Wilhelminenhofstr. 75 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Burgstr. 26"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5060414,
+        "longitude": 13.6220581,
+        "postleitzahl": "12623",
+        "stadt": "Berlin",
+        "standortName": "Ingenieurbüro Rainer Siebert",
+        "strasse": "Landsberger Str. 246"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.527337,
+        "longitude": 13.3157367,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "Alliance Healthcare Deutschland AG",
+        "strasse": "Neues Ufer 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.60894,
+        "longitude": 13.32716,
+        "postleitzahl": "13469",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis dental total - Dr. Martin Kaminsky MSc., Dr. Khadijeh Karim Zadeh",
+        "strasse": "Zabel-Krüger-Damm 17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5171386,
+        "longitude": 13.3272514,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "AVNET EMG GmbH",
+        "strasse": "Gutenbergstr. 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51256,
+        "longitude": 13.37874,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Vertretung des Landes Rheinland-Pfalz",
+        "strasse": "In den Ministergärten 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5686241,
+        "longitude": 13.2023961,
+        "postleitzahl": "13587",
+        "stadt": "Berlin",
+        "standortName": "SUTOS e.V.",
+        "strasse": "Wichernstr. 53"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52481,
+        "longitude": 13.4163,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "BIM Berliner Immobilienmanagement GmbH",
+        "strasse": "Keibelstr. 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5422039,
+        "longitude": 13.469967,
+        "postleitzahl": "13053",
+        "stadt": "Berlin",
+        "standortName": "Berliner-Kindl-Schultheiss-Brauerei",
+        "strasse": "Indira-Gandhi-Straße 66-69"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5214812,
+        "longitude": 13.3884334,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Meliá Berlin",
+        "strasse": "Friedrichstraße 103"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5173871,
+        "longitude": 13.3870259,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Zweites Deutsches Fernsehen",
+        "strasse": "Mittelstr. 49"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5077912,
+        "longitude": 13.197471,
+        "postleitzahl": "13595",
+        "stadt": "Berlin",
+        "standortName": "DLRG Landesverband Berlin",
+        "strasse": "Am Pichelssee 20-21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.3903851,
+        "longitude": 13.127536599999999,
+        "postleitzahl": "14109",
+        "stadt": "Berlin",
+        "standortName": "Mobile Anästhesien Berlin/Brandenburg",
+        "strasse": "Teltower Str. 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5349204,
+        "longitude": 13.200466,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "Rathaus Spandau",
+        "strasse": "Carl Schurz Str. 2/6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5296161,
+        "longitude": 13.4103097,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "Ableton AG",
+        "strasse": "Schönhauser Allee 6- 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5296161,
+        "longitude": 13.4103097,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "Ableton AG",
+        "strasse": "Schönhauser Allee 6- 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5811907,
+        "longitude": 13.317318,
+        "postleitzahl": "13403",
+        "stadt": "Berlin",
+        "standortName": "TOV Rheinland Akademie GmbH",
+        "strasse": "Eichborndamm 129"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4341457,
+        "longitude": 13.5312908,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Treptow-Köpenick",
+        "strasse": "Zum Großen Windkanal 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50186,
+        "longitude": 13.32312,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "RTL Radio Center Berlin GmbH",
+        "strasse": "Kurfürstendamm 207 - 208"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.445528,
+        "longitude": 13.4428884,
+        "postleitzahl": "12359",
+        "stadt": "Berlin",
+        "standortName": "Albert-Einstein-Gymnasium",
+        "strasse": "Parchimer Allee 109"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4518511,
+        "longitude": 13.2882643,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität",
+        "strasse": "Habelschwerdter Allee 45"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4321838,
+        "longitude": 13.2403413,
+        "postleitzahl": "14163",
+        "stadt": "Berlin",
+        "standortName": "Arbeiter-Samariter-Bund Gemeinschaftsunterkunft Zehlendorf",
+        "strasse": "Hohentwielsteig 27-29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4235734,
+        "longitude": 13.4354161,
+        "postleitzahl": "12349",
+        "stadt": "Berlin",
+        "standortName": "Augenarztpraxis",
+        "strasse": "Alt Bockow 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5500676,
+        "longitude": 13.3700523,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "SHD Sozialer Hilfsdienst Süd/Nord GmbH",
+        "strasse": "Staakener Str. 53-63"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6352648,
+        "longitude": 13.4951884,
+        "postleitzahl": "13125",
+        "stadt": "Berlin",
+        "standortName": "Betriebskrankenkasse Verkehrsbau Union",
+        "strasse": "Wiltbergstraße 9-11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5172672,
+        "longitude": 13.3082899,
+        "postleitzahl": "10585",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Charlottenburg",
+        "strasse": "Otto-Suhr-Allee 100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5091188,
+        "longitude": 13.3752627,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Freshfields Bruckhaus Deringer Rechtsanwälte Steuerberater PartG mbB",
+        "strasse": "Potsdamer Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4158,
+        "longitude": 13.4074196,
+        "postleitzahl": "10715",
+        "stadt": "Berlin",
+        "standortName": "Allianz Versicherungs Finanzhaus",
+        "strasse": "Berliner Str. 17"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.511734,
+        "longitude": 13.304476,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Wilmersdorfer Str. 62"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5106038,
+        "longitude": 13.3910928,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Mediplaza",
+        "strasse": "Friedrichstr. 58"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5078449,
+        "longitude": 13.6092776,
+        "postleitzahl": "12623",
+        "stadt": "Berlin",
+        "standortName": "Gemeinschaftpraxis-Dialyse",
+        "strasse": "Thorner 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.45593,
+        "longitude": 13.389,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "assona GmbH",
+        "strasse": "Lorenzweg 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.465596,
+        "longitude": 13.3276961,
+        "postleitzahl": "12161",
+        "stadt": "Berlin",
+        "standortName": "Schloss Strassen Center",
+        "strasse": "Walther-Schreiber-Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.462,
+        "longitude": 13.46675,
+        "postleitzahl": "12057",
+        "stadt": "Berlin",
+        "standortName": "Ambulanz Express Witt GmbH",
+        "strasse": "Boschweg 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5226965,
+        "longitude": 13.3380649,
+        "postleitzahl": "10555",
+        "stadt": "Berlin",
+        "standortName": "Staatl. Technical School Berlin",
+        "strasse": "Bochumer Straße 8B"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4400904,
+        "longitude": 13.596682,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Urologie",
+        "strasse": "Salvador-Allende-Str. 2-8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4817301,
+        "longitude": 13.3664862,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "PostCon Konsolidierung GmbH",
+        "strasse": "Alboinstr. 17-23"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4701199,
+        "longitude": 13.3484826,
+        "postleitzahl": "12157",
+        "stadt": "Berlin",
+        "standortName": "Kinderarztpraxis",
+        "strasse": "Grazer Damm 113-1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4979808,
+        "longitude": 13.3040572,
+        "postleitzahl": "10709",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Wilmersdorf",
+        "strasse": "Albrecht-Achilles-Straße 61-64"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5264618,
+        "longitude": 13.3766245,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Charieté Berlin",
+        "strasse": "Charitéstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4515034,
+        "longitude": 13.3208468,
+        "postleitzahl": "12167",
+        "stadt": "Berlin",
+        "standortName": "Jobcenter",
+        "strasse": "Birkbuschstr.10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5119491,
+        "longitude": 13.5495968,
+        "postleitzahl": "12683",
+        "stadt": "Berlin",
+        "standortName": "Otto-Nagel-Gymnasium",
+        "strasse": "Schulstraße 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.496213,
+        "longitude": 13.4545881,
+        "postleitzahl": "12435",
+        "stadt": "Berlin",
+        "standortName": "50Hertz Transmission GmbH",
+        "strasse": "Eichenstraße 3A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4569312,
+        "longitude": 13.5264438,
+        "postleitzahl": "12461",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude C ",
+        "strasse": "Wilhelminenhofstr. 75 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5123423,
+        "longitude": 13.3296242,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität Berlin, Institut für Chemie",
+        "strasse": "Straße des 17. Juni"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5063143,
+        "longitude": 13.4436316,
+        "postleitzahl": "10243",
+        "stadt": "Berlin",
+        "standortName": "Mercedes Benz Arena",
+        "strasse": "Mercedes-Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5500676,
+        "longitude": 13.3700523,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "Sozialer Hilfsdienst Süd/Nord GmbH",
+        "strasse": "Gottschedstr. 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5456,
+        "longitude": 13.45039,
+        "postleitzahl": "10409",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin Silvia Ost",
+        "strasse": "Gürtelstr. 33"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Geschwister Scholl Str. 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5369752,
+        "longitude": 13.6035437,
+        "postleitzahl": "12627",
+        "stadt": "Berlin",
+        "standortName": "Betriebskrankenkasse Verkehrsbau Union",
+        "strasse": "Fritz-Lang-Straße 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5508859,
+        "longitude": 13.3755236,
+        "postleitzahl": "13357",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Wedding",
+        "strasse": "Schönstedtstraße 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Fasanenstr. 88"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.539242,
+        "longitude": 13.437835,
+        "postleitzahl": "10405",
+        "stadt": "Berlin",
+        "standortName": "Schüßler Plan Ingenieurgesellschaft mbH",
+        "strasse": "Greifswalder Str. 80 a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42749999999999,
+        "longitude": 13.47869,
+        "postleitzahl": "12357",
+        "stadt": "Berlin",
+        "standortName": "Gross",
+        "strasse": "Hopfenweg 21a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4233694,
+        "longitude": 13.3824096,
+        "postleitzahl": "12277",
+        "stadt": "Berlin",
+        "standortName": "HGM Hanseatic Gesundheits Management GmbH",
+        "strasse": "Dalmlerstr. 112"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5152938,
+        "longitude": 13.3906497,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Regent Berlin",
+        "strasse": "Charlottenstraße 49"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4308358,
+        "longitude": 13.5318675,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Adlershof",
+        "strasse": "Rudower Chaussee 18"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5348153,
+        "longitude": 13.2001665,
+        "postleitzahl": "13597",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Spandau",
+        "strasse": "Carl Schurz Str. 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51922,
+        "longitude": 13.19747,
+        "postleitzahl": "13595",
+        "stadt": "Berlin",
+        "standortName": "HNO Praxis",
+        "strasse": "Pichelsdorfer Str. 61"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4569312,
+        "longitude": 13.5264438,
+        "postleitzahl": "12460",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude F ",
+        "strasse": "Wilhelminenhofstr. 75 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5227689,
+        "longitude": 13.4129548,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Park Inn by Radisson",
+        "strasse": "Alexanderplatz 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52318,
+        "longitude": 13.49631,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "MEDICOR MOBIL GmbH",
+        "strasse": "Josef Orlopp Str.  89"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4931991,
+        "longitude": 13.5254556,
+        "postleitzahl": "10318",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Berlin",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.505597,
+        "longitude": 13.354924,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Sheraton Fitnesslounge",
+        "strasse": "Lützowufer 15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5236587,
+        "longitude": 13.3669643,
+        "postleitzahl": "10557",
+        "stadt": "Berlin",
+        "standortName": "InterCityHotel Berlin Hauptbahnhof ",
+        "strasse": "Katharina-Paulus-Str. 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.49985,
+        "longitude": 13.29823,
+        "postleitzahl": "10707",
+        "stadt": "Berlin",
+        "standortName": "T-Mobile Deutschland GmbH",
+        "strasse": "Fehrbelliner Platz 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.63275,
+        "longitude": 13.29138,
+        "postleitzahl": "13465",
+        "stadt": "Berlin",
+        "standortName": "Medizinisches Versorgungszentrum Zeltinger Platz",
+        "strasse": "Zeltinger Platz 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4556537,
+        "longitude": 13.589169,
+        "postleitzahl": "12555",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Treptow-Köpenick",
+        "strasse": "Seelenbinderstraße 99"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5217221,
+        "longitude": 13.3846747,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Hauptverband der Berufsgenossenschaften, Büro Berlin",
+        "strasse": "Albrechtstr. 10b"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5274,
+        "longitude": 13.3712747,
+        "postleitzahl": "10557",
+        "stadt": "Berlin",
+        "standortName": "Sozialgericht",
+        "strasse": "Invalidenstr. 52"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5079686,
+        "longitude": 13.3918784,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Riser ID Services GmbH",
+        "strasse": "Charlottenstr. 80"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5398272,
+        "longitude": 13.2183912,
+        "postleitzahl": "13599",
+        "stadt": "Berlin",
+        "standortName": "Herzsprung Drehteile GmbH",
+        "strasse": "Zitadellenweg 34"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.567429,
+        "longitude": 13.4114392,
+        "postleitzahl": "13187",
+        "stadt": "Berlin",
+        "standortName": "Klinik am Garbatyplatz",
+        "strasse": "Garbatyplatz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4362209,
+        "longitude": 13.5356543,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Vissio Servicegroup GmbH",
+        "strasse": "Wagner-Régeny-Straße 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52413,
+        "longitude": 13.39714,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "HDK Berlin",
+        "strasse": "Oranienburger Str. 18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4302905,
+        "longitude": 13.5355486,
+        "postleitzahl": "12489",
+        "stadt": "Berlin",
+        "standortName": "Osypka Medical GmbH",
+        "strasse": "Albert Einstein Str.  3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.54685,
+        "longitude": 13.34415,
+        "postleitzahl": "13353",
+        "stadt": "Berlin",
+        "standortName": "Arbeiter Samariter Bund",
+        "strasse": "Seestraße 121"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.4691804,
+        "longitude": 13.3860852,
+        "postleitzahl": "12099 ",
+        "stadt": "Berlin",
+        "standortName": "Intensivpflege-Wohngemeinschaft \"Am Tempelhofer Feld\"",
+        "strasse": "Tempelhofer Damm 119"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4662072,
+        "longitude": 13.3146531,
+        "postleitzahl": "14197",
+        "stadt": "Berlin",
+        "standortName": "Sportanlage Kreuznacher Straße",
+        "strasse": "Kreuznacher Straße 29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52318,
+        "longitude": 13.49631,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "MEDICOR MOBIL GmbH",
+        "strasse": "Josef Orlopp Str.  89"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5202445,
+        "longitude": 13.4091412,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Spielbank Berlin",
+        "strasse": "Panoramastraße 1A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.54294,
+        "longitude": 13.20577,
+        "postleitzahl": "13585",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Feldstr. 56"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47589,
+        "longitude": 13.4428401,
+        "postleitzahl": "12043",
+        "stadt": "Berlin",
+        "standortName": "Krankentransport Haeberer",
+        "strasse": "Richardstr. 29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47589,
+        "longitude": 13.4428401,
+        "postleitzahl": "12043",
+        "stadt": "Berlin",
+        "standortName": "Krankentransport Haeberer",
+        "strasse": "Richardstr. 29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5323377,
+        "longitude": 13.4101882,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "JBB Rechtsanwälte",
+        "strasse": "Christinenstraße 18/19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4820801,
+        "longitude": 13.432025,
+        "postleitzahl": "12043",
+        "stadt": "Berlin",
+        "standortName": "Cineplex Neukölln",
+        "strasse": "Karl-Marx-Straße 66"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.58386,
+        "longitude": 13.288307,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Orthopädie",
+        "strasse": "Berliner Str. 105"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52318,
+        "longitude": 13.49631,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "MEDICOR MOBIL GmbH",
+        "strasse": "Josef Orlopp Str.  89"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4568924,
+        "longitude": 13.5106884,
+        "postleitzahl": "12439",
+        "stadt": "Berlin",
+        "standortName": "Zahnarztpraxis",
+        "strasse": "Brückenstr. 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.501979,
+        "longitude": 13.3313401,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Hotel H10 Berlin Ku'damm",
+        "strasse": "Joachimsthaler Straße 31-32"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5241296,
+        "longitude": 13.3245977,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Pascalstr. 8-9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42974,
+        "longitude": 13.3260901,
+        "postleitzahl": "12487",
+        "stadt": "Berlin",
+        "standortName": "HNO Praxis",
+        "strasse": "Wrightallee 17 c"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5283227,
+        "longitude": 13.3160937,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "Menzel Elektromotoren GmbH",
+        "strasse": "Neues Ufer 19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.491783,
+        "longitude": 13.524321,
+        "postleitzahl": "10318",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Römerweg 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.41675,
+        "longitude": 13.39135,
+        "postleitzahl": "12277",
+        "stadt": "Berlin",
+        "standortName": "Unfallkasse",
+        "strasse": "Culemeyerstr. 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5305726,
+        "longitude": 13.3791755,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Naturkundemuseum",
+        "strasse": "Invalidenstr. 43"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Marchstr. 23"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4540126,
+        "longitude": 13.1449083,
+        "postleitzahl": "14089",
+        "stadt": "Berlin",
+        "standortName": "Evangelische Kirchengemeinde",
+        "strasse": "Kladower Damm 369"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10587",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Ernst Reuter Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5089974,
+        "longitude": 13.389589,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "GDF SUEZ Energie Deutschland AG",
+        "strasse": "Friedrichstr. 200"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42543,
+        "longitude": 13.3307,
+        "postleitzahl": "12209",
+        "stadt": "Berlin",
+        "standortName": "Zenker & Partner",
+        "strasse": "Ferdinandstraße 21"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5045353,
+        "longitude": 13.3830003,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Novotel Suites Berlin City Potsdamer Platz",
+        "strasse": "Anhalter Straße 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5045706,
+        "longitude": 13.3381842,
+        "postleitzahl": "10789",
+        "stadt": "Berlin",
+        "standortName": "Europa Center",
+        "strasse": "Tauentzienstr. 9-12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.532285,
+        "longitude": 13.384316,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Project A Services GmbH & Co.KG",
+        "strasse": "Julie Wolfthorn Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.58420090000001,
+        "longitude": 13.2866668,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "Hallen Am Borsigturm",
+        "strasse": "Am Borsigturm 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5483129,
+        "longitude": 13.5039321,
+        "postleitzahl": "13055",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Hauptstr. 9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5247258,
+        "longitude": 13.3930329,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Delivery Hero GmbH",
+        "strasse": "Oranienburger Str. 70"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.45593,
+        "longitude": 13.389,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "assona GmbH",
+        "strasse": "Lorenzweg 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.497776,
+        "longitude": 13.360955,
+        "postleitzahl": "10783",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Bülowstr. 23"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5164696,
+        "longitude": 13.2792528,
+        "postleitzahl": "14050",
+        "stadt": "Berlin",
+        "standortName": "Bundesanstalt Technisches Hilfswerk - Ortsverband Berlin Charlottenburg-Wilmersdorf",
+        "strasse": "Soorstraße 84"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4400791,
+        "longitude": 13.3795921,
+        "postleitzahl": "12107",
+        "stadt": "Berlin",
+        "standortName": "Manfred Narr GmbH",
+        "strasse": "Großbeerenstr. 2-10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4532108,
+        "longitude": 13.4295763,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "ADT Deutschland GmbH",
+        "strasse": "Gradestr. 46-50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4655937,
+        "longitude": 13.1478941,
+        "postleitzahl": "14089",
+        "stadt": "Berlin",
+        "standortName": "Berliner Golf Club e.V.",
+        "strasse": "Sparnecker Weg 100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52185,
+        "longitude": 13.37999,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Luisenstr. 56"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Straße des 17. Juni 152"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Albrecht Thaer Weg 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5837596,
+        "longitude": 13.3020961,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "Annen-Apotheke Borsigwalde",
+        "strasse": "Ernststr. 62"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4308818,
+        "longitude": 13.4999604,
+        "postleitzahl": "12357",
+        "stadt": "Berlin",
+        "standortName": "Viessmann Werke Berlin GmbH",
+        "strasse": "Kanalstr. 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5232836,
+        "longitude": 13.4167681,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Alexanderstraße 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52212,
+        "longitude": 13.40149,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Deutscher Gewerkschaftsbund",
+        "strasse": "Henriette-Herz-Platz 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4333034,
+        "longitude": 13.3558852,
+        "postleitzahl": "12249",
+        "stadt": "Berlin",
+        "standortName": "INJOY Berlin - Fitness Club",
+        "strasse": "Kamenzer Damm 30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.521873,
+        "longitude": 13.5710574,
+        "postleitzahl": "12683",
+        "stadt": "Berlin",
+        "standortName": "AMG Ambulanz Marzahn GmbH",
+        "strasse": "Warener Str. 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5120604,
+        "longitude": 13.3908114,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Zentralverband des Deutschen Handwerks",
+        "strasse": "Mohrenstr. 20/21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.3903632,
+        "longitude": 13.3881518,
+        "postleitzahl": "12307",
+        "stadt": "Berlin",
+        "standortName": "Tennisclub Berlin Lichtenrade",
+        "strasse": "Franziusweg 114-128"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4158,
+        "longitude": 13.15016,
+        "postleitzahl": "12307",
+        "stadt": "Berlin",
+        "standortName": "Tennisclub Lichtenrade",
+        "strasse": "Hohenzollernstr. 18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5006303,
+        "longitude": 13.3106669,
+        "postleitzahl": "10707",
+        "stadt": "Berlin",
+        "standortName": "KU 64 Die Zahnspezialisten",
+        "strasse": "Kurfürstendamm 64"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5117109,
+        "longitude": 13.3036261,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Finanzamt Charlottenburg",
+        "strasse": "Bismarckstraße 48"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5063147,
+        "longitude": 13.5026479,
+        "postleitzahl": "10315",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Archenholdstr. 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5077058,
+        "longitude": 13.3720683,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Spielbank Berlin",
+        "strasse": "Marlene Dietrich Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4554145,
+        "longitude": 13.3946838,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "Johanniter-Akademie Berlin/Brandenburg",
+        "strasse": "Colditzstraße 34"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.546816,
+        "longitude": 13.210638,
+        "postleitzahl": "13585",
+        "stadt": "Berlin",
+        "standortName": "Centrovital Hotel",
+        "strasse": "Neuendorfer Strasse 25 "
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5183895,
+        "longitude": 13.3890398,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Dussmann Service Deutschland GmbH",
+        "strasse": "Pariser Platz 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.595304,
+        "longitude": 13.324647,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "GST Beweggrund e.V.",
+        "strasse": "Karolinenstr.  21 c"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51296,
+        "longitude": 13.39736,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Verband Forschender Arzneimittelhersteller e.V.",
+        "strasse": "Hausvogteiplatz 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4541142,
+        "longitude": 13.3876924,
+        "postleitzahl": "12109",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Ullsteinstraße 128"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4921158,
+        "longitude": 13.4563297,
+        "postleitzahl": "12435",
+        "stadt": "Berlin",
+        "standortName": "Bundeskriminalamt",
+        "strasse": "Am Treptower Park 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4924467,
+        "longitude": 13.4558498,
+        "postleitzahl": "12435",
+        "stadt": "Berlin",
+        "standortName": "Bundeskriminalamt",
+        "strasse": "Am Treptower Park 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5126805,
+        "longitude": 13.3130855,
+        "postleitzahl": "10625",
+        "stadt": "Berlin",
+        "standortName": "Ruth Cohn Schule",
+        "strasse": "Bismarckstr. 20"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47589,
+        "longitude": 13.44284,
+        "postleitzahl": "12043",
+        "stadt": "Berlin",
+        "standortName": "Krankentransport Haeberer",
+        "strasse": "Richardstr. 29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5152463,
+        "longitude": 13.3976799,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Hotel Arcotel John F",
+        "strasse": "Werderscher Markt 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4471823,
+        "longitude": 13.575899,
+        "postleitzahl": "12555",
+        "stadt": "Berlin",
+        "standortName": "Gelenk- und Rückenzentrum Köpenik",
+        "strasse": "Freiheit 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4406415,
+        "longitude": 13.5961768,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": null,
+        "strasse": "Salvador Allende Str. 2-8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5282501,
+        "longitude": 13.2684901,
+        "postleitzahl": "14050",
+        "stadt": "Berlin",
+        "standortName": "City Ambulance Uhlig & Fleischer ohG",
+        "strasse": "Fürstenbrunner Weg 99"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5282501,
+        "longitude": 13.2684901,
+        "postleitzahl": "14050",
+        "stadt": "Berlin",
+        "standortName": "City Ambulance Uhlig & Fleischer ohG",
+        "strasse": "Fürstenbrunner Weg 99"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.43805769999999,
+        "longitude": 13.3682444,
+        "postleitzahl": "12107",
+        "stadt": "Berlin",
+        "standortName": "BrewDog DogTap Berlin",
+        "strasse": "Im Marienpark 23"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4274206,
+        "longitude": 13.1617152,
+        "postleitzahl": "14109",
+        "stadt": "Berlin",
+        "standortName": "Fachklinik Lago",
+        "strasse": "Am Großen Wannsee 29-31"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.41623,
+        "longitude": 13.42658,
+        "postleitzahl": "12349",
+        "stadt": "Berlin",
+        "standortName": "Leonardo da Vinci Schule",
+        "strasse": "Haerwererweg 35"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4558892,
+        "longitude": 13.2972013,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität",
+        "strasse": "Königin Luise Str. 47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5049,
+        "longitude": 13.38511,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "relexa hotel Stuttgarter Hof",
+        "strasse": "Anhalter Straße 8-9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5078897,
+        "longitude": 13.3814828,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Wachzentrale Abgeordnetenhaus",
+        "strasse": "Niederkirchnerstraße 5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5161042,
+        "longitude": 13.4220275,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Mosaik-Werkstätten für Behinderte",
+        "strasse": "Ifflandstr 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5056903,
+        "longitude": 13.3290618,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Theater des Westens",
+        "strasse": "Kantstraße 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5491794,
+        "longitude": 13.2404888,
+        "postleitzahl": "13629",
+        "stadt": "Berlin",
+        "standortName": "FST Industrie GmbH",
+        "strasse": "Motardstr. 54"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5077912,
+        "longitude": 13.197471,
+        "postleitzahl": "13595",
+        "stadt": "Berlin",
+        "standortName": "Deutsche Lebens Rettungs Gesellschaft Landesverband",
+        "strasse": "Am Pichelssee 20-21"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52655,
+        "longitude": 13.5273701,
+        "postleitzahl": "12681",
+        "stadt": "Berlin",
+        "standortName": "Jobcenter Berlin Marzahn-Hellersdorf",
+        "strasse": "Allee der Kosmonauten 29"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.43098,
+        "longitude": 13.67768,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "JenLab GmbH",
+        "strasse": "Strasse zum Müggelhort 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4477971,
+        "longitude": 13.281953,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität Bibliothek Rechtswissenschaft",
+        "strasse": "Vant Hoff Str. 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4971688,
+        "longitude": 13.3067169,
+        "postleitzahl": "10709",
+        "stadt": "Berlin",
+        "standortName": "Friedels Fairsicherungsbüro Langer & Salzburg GmbH",
+        "strasse": "Paderborner Str. 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5153878,
+        "longitude": 13.4617979,
+        "postleitzahl": "10247",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Friedrichshain",
+        "strasse": "Frankfurter Allee 35/37"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51731,
+        "longitude": 13.52001,
+        "postleitzahl": "12681",
+        "stadt": "Berlin",
+        "standortName": "Krankentransport Thomas Krebs",
+        "strasse": "Rhinstr. 46"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4533648,
+        "longitude": 13.3870567,
+        "postleitzahl": "12109",
+        "stadt": "Berlin",
+        "standortName": "HELLA Aglaia Mobile Vision GmbH",
+        "strasse": "Ullsteinstraße 140"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4040178,
+        "longitude": 13.0745866,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "ORACLE Deutschland B.V. & Co.KG",
+        "strasse": "Karl Liebknecht Str.  5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5106556,
+        "longitude": 13.3308943,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Universitätsbibliothek",
+        "strasse": "Fasanenstraße 88"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51888940000001,
+        "longitude": 13.3887832,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "German Business Protection GmbH",
+        "strasse": "Friedrichstraße 95"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5006303,
+        "longitude": 13.3106669,
+        "postleitzahl": "10707",
+        "stadt": "Berlin",
+        "standortName": "KU 64 Die Zahnspezialisten",
+        "strasse": "Kurfürstendamm 64"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5515264,
+        "longitude": 13.516979,
+        "postleitzahl": "13057",
+        "stadt": "Berlin",
+        "standortName": "Krankentransport Stahl GmbH",
+        "strasse": "Randowstr.30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5173702,
+        "longitude": 13.3978681,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Bertelsmann AG",
+        "strasse": "Unter den Linden 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.45434,
+        "longitude": 13.47371,
+        "postleitzahl": "12437",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Baumschulenweg",
+        "strasse": "Späthstr. 80/81"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5226965,
+        "longitude": 13.3380649,
+        "postleitzahl": "10555",
+        "stadt": "Berlin",
+        "standortName": "Staatliche Technikerschule",
+        "strasse": "Bochumer Str. 8 b"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.454336,
+        "longitude": 13.268212,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Cole Sport Center",
+        "strasse": "Hüttenweg 43"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5977285,
+        "longitude": 13.3558512,
+        "postleitzahl": "13439",
+        "stadt": "Berlin",
+        "standortName": "Praxisgemeinschaft für Allgemeinmedizin ",
+        "strasse": "Senftenberger Ring 5A"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.51558,
+        "longitude": 13.41273,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Senatsverwaltung für Finanzen",
+        "strasse": "Klosterstraße 59"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42901,
+        "longitude": 13.3119,
+        "postleitzahl": "12207",
+        "stadt": "Berlin",
+        "standortName": "Hemmersbach Industriebedarf GmbH",
+        "strasse": "Barnackufer 23A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4553208,
+        "longitude": 13.5794168,
+        "postleitzahl": "12555",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Köpenick",
+        "strasse": "Mandrellaplatz 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5369,
+        "longitude": 13.379029,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "SPARWELT GmbH",
+        "strasse": "Wöhlerstr. 12-13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4713516,
+        "longitude": 13.4551365,
+        "postleitzahl": "12059",
+        "stadt": "Berlin",
+        "standortName": "Weidling GmbH",
+        "strasse": "Sonnenallee 224c"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.48673,
+        "longitude": 13.32365,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Sportschule Randori-Pro Charlottenburg GmbH",
+        "strasse": "Wilmersdorfer Str. 60/61"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Lentzeallee 55/57"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52318,
+        "longitude": 13.49631,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "MEDICOR MOBIL GmbH",
+        "strasse": "Josef Orlopp Str.  89"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4815672,
+        "longitude": 13.3567367,
+        "postleitzahl": "10829",
+        "stadt": "Berlin",
+        "standortName": "EUREF",
+        "strasse": "Euref-Campus 22"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5321298,
+        "longitude": 13.344344,
+        "postleitzahl": "10559",
+        "stadt": "Berlin",
+        "standortName": "Mercure Hotel MOA Berlin",
+        "strasse": "Stephanstr.  41"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Dorotheenstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.43098,
+        "longitude": 13.67768,
+        "postleitzahl": "12559",
+        "stadt": "Berlin",
+        "standortName": "JenLab GmbH",
+        "strasse": "Strasse zum Müggelhort 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.47572,
+        "longitude": 13.35607,
+        "postleitzahl": "10829",
+        "stadt": "Berlin",
+        "standortName": "Gerhard Schlegel Sportschule",
+        "strasse": "Priesterweg 4-6 B"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4875154,
+        "longitude": 13.3184634,
+        "postleitzahl": "10713",
+        "stadt": "Berlin",
+        "standortName": "Der Paritätische Wohlfahrtsverband Landesverband Berlin e.V.",
+        "strasse": "Brandenburgische Straße 80"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5182775,
+        "longitude": 13.4086443,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Rotes Rathaus Berlin",
+        "strasse": "Karl-Liebknecht-Straße 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5200769,
+        "longitude": 13.277364,
+        "postleitzahl": "14050",
+        "stadt": "Berlin",
+        "standortName": "DRK Deutsches Rotes Kreuz Kliniken",
+        "strasse": "Spandauer Damm 130"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53695,
+        "longitude": 13.4083601,
+        "postleitzahl": "10435",
+        "stadt": "Berlin",
+        "standortName": "GLS Campus Berlin",
+        "strasse": "Kastanienallee 82"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5026185,
+        "longitude": 13.338482,
+        "postleitzahl": "10789",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Nuklearmedizin",
+        "strasse": "Nürnberger Str. 14-15"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50087,
+        "longitude": 13.34243,
+        "postleitzahl": "10789",
+        "stadt": "Berlin",
+        "standortName": "Mercure Hotel Berlin",
+        "strasse": "Wittenbergplatz 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5121271,
+        "longitude": 13.3925505,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Hilton Berlin",
+        "strasse": "Mohrenstraße 30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.54713,
+        "longitude": 13.49481,
+        "postleitzahl": "13053",
+        "stadt": "Berlin",
+        "standortName": "Kinder- und Jugendgesundheitsdienst Lichtenberg Beratungsstelle für Risikokinder Oberseestraße",
+        "strasse": "Oberseestraße 98"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5644684,
+        "longitude": 13.5061081,
+        "postleitzahl": "13051",
+        "stadt": "Berlin",
+        "standortName": "Linden Center",
+        "strasse": "Prerower Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5328729,
+        "longitude": 13.4122526,
+        "postleitzahl": "13086",
+        "stadt": "Berlin",
+        "standortName": "SMH Krankentransport GmbH",
+        "strasse": "Gustav Adolf Str. 106a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5033202,
+        "longitude": 13.4022106,
+        "postleitzahl": "10969",
+        "stadt": "Berlin",
+        "standortName": "Freie Waldorfschule Kreuzberg",
+        "strasse": "Ritterstr. 78"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.524005,
+        "longitude": 13.3766181,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Charieté Berlin",
+        "strasse": "Charitéstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.49987,
+        "longitude": 13.3815501,
+        "postleitzahl": "10963",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht",
+        "strasse": "Möckernstr. 130"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.595304,
+        "longitude": 13.324647,
+        "postleitzahl": "13437",
+        "stadt": "Berlin",
+        "standortName": "GST Beweggrund e.V.",
+        "strasse": "Spießweg 100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51177,
+        "longitude": 13.30474,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Praxisklinik Charlottenburg GmbH",
+        "strasse": "Bismarckstr. 45-47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5798392,
+        "longitude": 13.2954227,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "Berliner Volksbank - Consulting Center for corporate clients",
+        "strasse": "Wittestraße 30 R"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4544245,
+        "longitude": 13.4298767,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "Kieback & Peter GmbH & Co. KG",
+        "strasse": "Tempelhofer Weg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4544245,
+        "longitude": 13.4298767,
+        "postleitzahl": "12347",
+        "stadt": "Berlin",
+        "standortName": "Kieback & Peter GmbH & Co. KG",
+        "strasse": "Tempelhofer Weg  50"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.40146,
+        "longitude": 13.41292,
+        "postleitzahl": "12309",
+        "stadt": "Berlin",
+        "standortName": "Jochum Medizintechnik GmbH",
+        "strasse": "Straße 9 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5846312,
+        "longitude": 13.3116113,
+        "postleitzahl": "13509",
+        "stadt": "Berlin",
+        "standortName": "Kieser Training",
+        "strasse": "Holzhauser Straße 140D"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5055547,
+        "longitude": 13.1978578,
+        "postleitzahl": "13595",
+        "stadt": "Berlin",
+        "standortName": "IG Metall Bildungszentrum Berlin",
+        "strasse": "Am Pichelssee 30"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5335003,
+        "longitude": 13.2696692,
+        "postleitzahl": "13629",
+        "stadt": "Berlin",
+        "standortName": "Turbine Airfoll Coating and Repair",
+        "strasse": "Rohrdamm 7, Haus 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5668803,
+        "longitude": 13.3787883,
+        "postleitzahl": "13409",
+        "stadt": "Berlin",
+        "standortName": "Carl Kühne AG ",
+        "strasse": "Provinzstr. 39"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4645895,
+        "longitude": 13.3262992,
+        "postleitzahl": "12163",
+        "stadt": "Berlin",
+        "standortName": "Docmorris Apotheke im Forum Steglitz",
+        "strasse": "Schlossstr. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5127873,
+        "longitude": 13.4959073,
+        "postleitzahl": "10365",
+        "stadt": "Berlin",
+        "standortName": "Betriebskrankenkasse Verkehrsbau Union",
+        "strasse": "Frankfurterallee 231 A"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5280681,
+        "longitude": 13.3240915,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "Siemens AG",
+        "strasse": "Huttenstr.  12-16"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.49557,
+        "longitude": 13.32149,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Sab GmbH",
+        "strasse": "Düsseldorfer Str. 69"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5286217,
+        "longitude": 13.4835342,
+        "postleitzahl": "10367",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Innere Medizin",
+        "strasse": "Elli-Voigt-Str.9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52082,
+        "longitude": 13.40189,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Helmholtz - Gemeinschaft Deutscher Forschungszentren",
+        "strasse": "Anna-Louisa-Karsch-Str. 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5647777,
+        "longitude": 13.4662815,
+        "postleitzahl": "13088",
+        "stadt": "Berlin",
+        "standortName": "Hermes Logistik Gruppe Deutschland GmbH",
+        "strasse": "Nüßlerstr. 35"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.52158,
+        "longitude": 13.38422,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Hauptverband der Berufsgenossenschaften",
+        "strasse": "Albrechtstr. 10b"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4675293,
+        "longitude": 13.2107326,
+        "postleitzahl": "14193",
+        "stadt": "Berlin",
+        "standortName": "Deutsche Lebens Rettungs Gesellschaft Lieper Bucht",
+        "strasse": "Havelchassee"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5133018,
+        "longitude": 13.4190926,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Beauty Trend Holding GmbH",
+        "strasse": "Rungestr.  22-24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5346203,
+        "longitude": 13.519073,
+        "postleitzahl": "12681",
+        "stadt": "Berlin",
+        "standortName": "Comer Immobilienmanagement GmbH & Co. KG",
+        "strasse": "Landsberger Allee 366"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Geschwister Scholl Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4937557,
+        "longitude": 13.3199036,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Park Inn by Radisson",
+        "strasse": "Emser Straße 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.508313,
+        "longitude": 13.3137631,
+        "postleitzahl": "10625",
+        "stadt": "Berlin",
+        "standortName": "Evangelische Kirchengemeinde",
+        "strasse": "Leibnizstr. 79"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5280681,
+        "longitude": 13.3240915,
+        "postleitzahl": "10553",
+        "stadt": "Berlin",
+        "standortName": "Siemens AG",
+        "strasse": "Huttenstraße 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5323377,
+        "longitude": 13.4101882,
+        "postleitzahl": "10119",
+        "stadt": "Berlin",
+        "standortName": "JBB Rechtsanwälte Jaschinski Biere Brexl Partnerschaft mbB",
+        "strasse": "Christinenstr. 18/19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5133,
+        "longitude": 13.32689,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Einsteinzentrum Mathematik Berlin ECMath",
+        "strasse": "Straße des 17. Juni 136"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5369,
+        "longitude": 13.379029,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Sparwelt GmbH",
+        "strasse": "Wöhlertstr. 12- 13"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53339,
+        "longitude": 13.51983,
+        "postleitzahl": "12681",
+        "stadt": "Berlin",
+        "standortName": "Sport Reha",
+        "strasse": "Alte Rhinstr. 16"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5078897,
+        "longitude": 13.3814828,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Berlin, Abgeordnetenhaus",
+        "strasse": "Niederkirchnerstraße 3-5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.442379,
+        "longitude": 13.345055,
+        "postleitzahl": "12247",
+        "stadt": "Berlin",
+        "standortName": "Tennisklub Blau-Gold-Steglitz e.V.",
+        "strasse": "Leonorenstr. 37-39"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5000223,
+        "longitude": 13.3464407,
+        "postleitzahl": "10777",
+        "stadt": "Berlin",
+        "standortName": "Med. Dienste der Krankenvers.",
+        "strasse": "Martin-Luther-Str. 3-7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.507334,
+        "longitude": 13.374821,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Toll Collect GmbH",
+        "strasse": "Linkstr. 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.507334,
+        "longitude": 13.374821,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Toll Collect GmbH",
+        "strasse": "Linkstr. 4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5241808,
+        "longitude": 13.4023844,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "TCHOBAN VOSS Architekten GmbH",
+        "strasse": "Rosenthaler Str. 40- 41"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5180669,
+        "longitude": 13.389109,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Vivid Plus",
+        "strasse": "Mittelstraße 37"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5090293,
+        "longitude": 13.390566,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Deutsche Leasing AG",
+        "strasse": "Friedrichstr. 50-55"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51081,
+        "longitude": 13.41784,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Vattenfall Europe Wärme AG",
+        "strasse": "Köpeniker Str. 60"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Dorotheenstr. 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.390382,
+        "longitude": 13.1275335,
+        "postleitzahl": "14109",
+        "stadt": "Berlin",
+        "standortName": "Hr. Gordon Westphal",
+        "strasse": "Teltower Straße 24"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5360815,
+        "longitude": 13.4539156,
+        "postleitzahl": "10407",
+        "stadt": "Berlin",
+        "standortName": "Steremat AFS GmbH",
+        "strasse": "Storkower Str. 115"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125834,
+        "longitude": 13.5409112,
+        "postleitzahl": "12683",
+        "stadt": "Berlin",
+        "standortName": "ASK Krankentransport GmbH",
+        "strasse": "Alt Friedrichsfelde 63B"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.53275,
+        "longitude": 13.1863581,
+        "postleitzahl": "13581",
+        "stadt": "Berlin",
+        "standortName": "Jobcenter",
+        "strasse": "Altonaer Str.  70/72"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50404,
+        "longitude": 13.3501978,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Berliner Volksbank Immobilien GmbH",
+        "strasse": "Schillstr. 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5188353,
+        "longitude": 13.2770757,
+        "postleitzahl": "14050",
+        "stadt": "Berlin",
+        "standortName": "City Ambulance Uhlig&Fleischer OHG",
+        "strasse": "Spandauer Damm 130"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5118133,
+        "longitude": 13.239635,
+        "postleitzahl": "14053",
+        "stadt": "Berlin",
+        "standortName": "Landessportbund",
+        "strasse": "Jesse-Owens-Allee 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.63192,
+        "longitude": 13.28579,
+        "postleitzahl": "13465",
+        "stadt": "Berlin",
+        "standortName": "Aqua Medical Akademie",
+        "strasse": "Sigismundkorso 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.541257,
+        "longitude": 13.382642,
+        "postleitzahl": "13355",
+        "stadt": "Berlin",
+        "standortName": "LAZERLINE DDZ Bucec & Co. Berlin KG",
+        "strasse": "Scheringstr.1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4931991,
+        "longitude": 13.5254555,
+        "postleitzahl": "10318",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude B ",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5095923,
+        "longitude": 13.4354922,
+        "postleitzahl": "10243",
+        "stadt": "Berlin",
+        "standortName": "Rail & Fresh WC Center Ostbahnhof",
+        "strasse": "Am Ostbahnhof 9"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125752,
+        "longitude": 13.3939054,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Wella Studio Berlin",
+        "strasse": "Markgrafenstr. 34"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5209593,
+        "longitude": 13.4030792,
+        "postleitzahl": "10178",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Mitte",
+        "strasse": "Spandauer Str. 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4617713,
+        "longitude": 13.3286906,
+        "postleitzahl": "12207",
+        "stadt": "Berlin",
+        "standortName": "Oberstufenzentrum Bürowirtschaft I",
+        "strasse": "Ostpreußendamm 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4506019,
+        "longitude": 13.3315404,
+        "postleitzahl": "12167",
+        "stadt": "Berlin",
+        "standortName": "Evangelische Schule Steglitz",
+        "strasse": "Beymestraße 7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5121214,
+        "longitude": 13.419942,
+        "postleitzahl": "10179",
+        "stadt": "Berlin",
+        "standortName": "Die Johanniter, Ausbildungszentrum Berlin",
+        "strasse": "Rungestraße 18"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.513085,
+        "longitude": 13.3949034,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Merck Finck & Co. ",
+        "strasse": "Taubenstr. 23"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5086627,
+        "longitude": 13.3839682,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Bundesministerium der Finanzen",
+        "strasse": "Leipzigerstraße 126"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4547846,
+        "longitude": 13.3177974,
+        "postleitzahl": "12165",
+        "stadt": "Berlin",
+        "standortName": "Adria Filmtheater",
+        "strasse": "Schloßstraße 48"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4932365,
+        "longitude": 13.526021,
+        "postleitzahl": "10320",
+        "stadt": "Berlin",
+        "standortName": "Hochschule für Technik und Wirtschaft Gebäude A ",
+        "strasse": "Treskowallee 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4580606,
+        "longitude": 13.452418,
+        "postleitzahl": "12359",
+        "stadt": "Berlin",
+        "standortName": "Oberstufenzentrum Informations- und Medizintechnik",
+        "strasse": "Haarlemer Str. 23-27"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5015464,
+        "longitude": 13.3215157,
+        "postleitzahl": "10719",
+        "stadt": "Berlin",
+        "standortName": "Hollywood Media Hotel GmbH",
+        "strasse": "Kurfürstendamm 202"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4971697,
+        "longitude": 13.415765,
+        "postleitzahl": "10999",
+        "stadt": "Berlin",
+        "standortName": "Mosaik Fördergruppe Kreuzberg",
+        "strasse": "Kohlfurter Str. 10"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4592965,
+        "longitude": 13.3080563,
+        "postleitzahl": "12165",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität",
+        "strasse": "Grunewaldstr. 34 a"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4564933,
+        "longitude": 13.3213094,
+        "postleitzahl": "12165",
+        "stadt": "Berlin",
+        "standortName": "Steglitz International",
+        "strasse": "Albrechtstraße/Schloßstraße 2"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.6078783,
+        "longitude": 13.3249638,
+        "postleitzahl": "13469",
+        "stadt": "Berlin",
+        "standortName": "FitX Fitnessstudio",
+        "strasse": "Oraniendamm 6"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.48899,
+        "longitude": 13.3460158,
+        "postleitzahl": "10823",
+        "stadt": "Berlin",
+        "standortName": "Amtsgericht Schöneberg",
+        "strasse": "Grunewaldstraße 66-67"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4548107,
+        "longitude": 13.2958176,
+        "postleitzahl": "14195",
+        "stadt": "Berlin",
+        "standortName": "Freie Universität Fachbereich Chemie",
+        "strasse": "Takustr. 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5021954,
+        "longitude": 13.3444579,
+        "postleitzahl": "10787",
+        "stadt": "Berlin",
+        "standortName": "GEMA Generaldirektion",
+        "strasse": "Bayreuther Str. 37"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5138018,
+        "longitude": 13.5196673,
+        "postleitzahl": "10315",
+        "stadt": "Berlin",
+        "standortName": "Gemeinschaftspraxis",
+        "strasse": "Seddiner Str. 22"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.560921,
+        "longitude": 13.4320277,
+        "postleitzahl": "13089",
+        "stadt": "Berlin",
+        "standortName": "Hella Algaia Mobile Version GmbH & Co KG",
+        "strasse": "Treskowstr. 14"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.46843,
+        "longitude": 13.447441,
+        "postleitzahl": "12055",
+        "stadt": "Berlin",
+        "standortName": "Arbeiter Samariter Bund",
+        "strasse": "Lahnstraße 52"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.469022,
+        "longitude": 13.1959832,
+        "postleitzahl": "14193",
+        "stadt": "Berlin",
+        "standortName": "DLRG WRS Lieper Bucht",
+        "strasse": "Havelchassee"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5079196,
+        "longitude": 13.3377547,
+        "postleitzahl": "10787",
+        "stadt": "Berlin",
+        "standortName": "Berlin Zoological Garden",
+        "strasse": "Hardenbergplatz 8"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4542095,
+        "longitude": 13.4092935,
+        "postleitzahl": "12099",
+        "stadt": "Berlin",
+        "standortName": "Züblin Umwelttechnik GmbH",
+        "strasse": "Gottlieb-Dunkel-Strasse 33-40 "
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4951959,
+        "longitude": 13.398369,
+        "postleitzahl": "10961",
+        "stadt": "Berlin",
+        "standortName": "AWO Bundesverband e.V.",
+        "strasse": "Blücherstraße 62"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5091936,
+        "longitude": 13.3749272,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Morrison & Foerster LLP",
+        "strasse": "Potsdamer Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5249677,
+        "longitude": 13.479974,
+        "postleitzahl": "10367",
+        "stadt": "Berlin",
+        "standortName": "Radiologie Möllendorffstraße",
+        "strasse": "Möllendorffstraße 52"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.508964,
+        "longitude": 13.2810776,
+        "postleitzahl": "14057",
+        "stadt": "Berlin",
+        "standortName": "Tax office",
+        "strasse": "Bredtschneiderstraße 5"
+    },
+    {
+        "dauerhaftOffen": true,
+        "land": "Germany",
+        "latitude": 52.5715715,
+        "longitude": 13.4372472,
+        "postleitzahl": "13089",
+        "stadt": "Berlin",
+        "standortName": "Freiwillige Feuerwehr Heinersdorf",
+        "strasse": "Romain-Rolland-Straße 105"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5125322,
+        "longitude": 13.3269446,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Technische Universität",
+        "strasse": "Hardenbergstr. 36"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5287361,
+        "longitude": 13.3815376,
+        "postleitzahl": "10115",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität",
+        "strasse": "Hessische Str. 1-4"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4896495,
+        "longitude": 13.3887208,
+        "postleitzahl": "10961",
+        "stadt": "Berlin",
+        "standortName": "Diagnostikum",
+        "strasse": "Bergmannstr. 5-7"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5459405,
+        "longitude": 13.4289965,
+        "postleitzahl": "10409",
+        "stadt": "Berlin",
+        "standortName": "AETHERWERK-ANÄSTHESIE",
+        "strasse": "Prenzlauer Allee 90"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.42974,
+        "longitude": 13.45727,
+        "postleitzahl": "12353",
+        "stadt": "Berlin",
+        "standortName": "Praxis für  Lunge- und Bronchialkunde",
+        "strasse": "Imbuschweg 40"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.50239209999999,
+        "longitude": 13.3362218,
+        "postleitzahl": "10789",
+        "stadt": "Berlin",
+        "standortName": "Spielbank Berlin",
+        "strasse": "Los-Angeles-Platz 1"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5105044,
+        "longitude": 13.3761911,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "Linklaters LLP",
+        "strasse": "Potsdamer Platz  5"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.4713516,
+        "longitude": 13.4551365,
+        "postleitzahl": "12059",
+        "stadt": "Berlin",
+        "standortName": "Weidling GmbH",
+        "strasse": "Sonnenallee 224 c"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5269036,
+        "longitude": 13.5424998,
+        "postleitzahl": "12681",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Nuklearmedizin",
+        "strasse": "Helene-Weigel-Platz 11"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.54530099999999,
+        "longitude": 13.500236,
+        "postleitzahl": "13055",
+        "stadt": "Berlin",
+        "standortName": "Bezirksamt Lichtenberg, Ordnungsamt",
+        "strasse": "Große-Leege-Straße 103"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5064615,
+        "longitude": 13.3282235,
+        "postleitzahl": "10623",
+        "stadt": "Berlin",
+        "standortName": "Ludwig Erhard Haus",
+        "strasse": "Fasanenstraße 85"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5692035,
+        "longitude": 13.3988627,
+        "postleitzahl": "13187",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Kinder- und Jugendpsychiatrie ",
+        "strasse": "Wilhelm-Kuhr-Str. 86"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51177,
+        "longitude": 13.30474,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Praxisklinik Charlottenburg GmbH",
+        "strasse": "Bismarckstr. 45-47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51177,
+        "longitude": 13.30474,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Praxisklinik Charlottenburg GmbH",
+        "strasse": "Bismarckstr. 45-47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51177,
+        "longitude": 13.30474,
+        "postleitzahl": "10627",
+        "stadt": "Berlin",
+        "standortName": "Praxisklinik Charlottenburg GmbH",
+        "strasse": "Bismarckstr. 45-47"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.510001,
+        "longitude": 13.381359,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Apotheke am Leipziger Platz",
+        "strasse": "Leipziger Platz 12"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.51226,
+        "longitude": 13.39429,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "young leaders GmbH",
+        "strasse": "Charlottenstr. 57"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5839137,
+        "longitude": 13.2795942,
+        "postleitzahl": "13507",
+        "stadt": "Berlin",
+        "standortName": "Amazon City Logistik AF München GmbH",
+        "strasse": "Am Borsigturm 100"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.546909,
+        "longitude": 13.519417,
+        "postleitzahl": "13053",
+        "stadt": "Berlin",
+        "standortName": "GEHE Pharma Handel GmbH",
+        "strasse": "Marzahner Str.  19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.529498,
+        "longitude": 13.5926553,
+        "postleitzahl": "12619",
+        "stadt": "Berlin",
+        "standortName": "Praxis für Allgemeinmedizin",
+        "strasse": "Neue Grottkauer Str. 3"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5095456,
+        "longitude": 13.3877474,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Bundesministerium der Finanzen",
+        "strasse": "Mauerstraße 75"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.517883,
+        "longitude": 13.3936551,
+        "postleitzahl": "10117",
+        "stadt": "Berlin",
+        "standortName": "Humboldt Universität Campus Mitte",
+        "strasse": "Universitätsstr. 3 b"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.503922,
+        "longitude": 13.4499008,
+        "postleitzahl": "10245",
+        "stadt": "Berlin",
+        "standortName": "adesso SE",
+        "strasse": "Rotherstraße 19"
+    },
+    {
+        "dauerhaftOffen": false,
+        "land": "Germany",
+        "latitude": 52.5019637,
+        "longitude": 13.3552026,
+        "postleitzahl": "10785",
+        "stadt": "Berlin",
+        "standortName": "X Verleih",
+        "strasse": "Kurfürstenstr. 57"
+    }
+]

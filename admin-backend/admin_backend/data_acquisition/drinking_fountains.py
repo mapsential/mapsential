@@ -15,9 +15,10 @@ if __name__ == "__main__":
 
 from utils.dirs_and_files import unzip, make_tmp_dir
 from enums import LocationType
-from admin.tables import Locations, DataAcquisitionLocations, Details, DataAcquisitionDetailsDrinkingFountain
-from crud import delete_all_locations_by_type, create_or_update_source
-
+from admin.tables import Locations, DataAcquisitionLocations, Details, DataAcquisitionDetailsDrinkingFountain, \
+    DetailsDrinkingFountain
+from crud import delete_all_locations_by_type, create_or_update_source, construct_locations_and_da_row, \
+    construct_details_drinking_fountain_and_da_row, repopulate_with_locations_and_details
 
 GOOGLE_MAPS_DRINKING_FOUNTAIN_KMZ_URL = \
     "https://www.google.com/maps/d/u/0/kml?forcekml=0&mid=1XJunMq4YF0zaZxh4AVtyA5v6FWjYV90I&lid=1RcQnxo4AnQ"
@@ -38,70 +39,77 @@ class BWBParsedLocation:
 
 
 async def repopulate_with_drinking_fountains() -> None:
-    await delete_all_locations_by_type(LocationType.DRINKING_FOUNTAIN)
-    await populate_with_drinking_fountains()
+    locations_rows, da_locations_rows, details_rows, da_details_rows = await construct_locations_and_details_rows()
+
+    await repopulate_with_locations_and_details(
+        LocationType.DRINKING_FOUNTAIN,
+        locations_rows,
+        da_locations_rows,
+        details_rows,
+        da_details_rows,
+    )
 
 
-async def populate_with_drinking_fountains() -> None:
-    locations, da_locations = await get_location_rows_and_create_details()
-
-    await Locations.insert(*locations).run()
-    await DataAcquisitionLocations.insert(*da_locations).run()
-
-
-async def get_location_rows_and_create_details() -> tuple[
+async def construct_locations_and_details_rows() -> tuple[
     list[Locations],
     list[DataAcquisitionLocations],
+    list[DetailsDrinkingFountain],
+    list[DataAcquisitionDetailsDrinkingFountain],
 ]:
-    locations = []
-    da_locations = []
+    locations_rows = []
+    da_locations_rows = []
+    details_rows = []
+    da_details_rows = []
 
-    bwb_source_id = await create_or_update_bwb_source(datetime.datetime.now())
+    operator_source_id = await create_or_update_bwb_source(datetime.datetime.now())
 
     for parsed_location in get_bwb_parsed_locations_from_kmz_url(GOOGLE_MAPS_DRINKING_FOUNTAIN_KMZ_URL):
-        common_details_kwargs = dict(
-            operator=BERLINER_WASSERBETRIEBE_OPERATOR,
-            operator_source_id=bwb_source_id,
-            opening_times=parsed_location.operating_times,
-            opening_times_source_id=bwb_source_id,
+        locations_row, da_locations_row = construct_locations_and_da_row_from_parsed_location(
+            operator_source_id,
+            parsed_location,
+        )
+        details_row, da_details_row = construct_details_and_da_row_from_parsed_location(
+            operator_source_id,
+            parsed_location,
         )
 
-        details_result = await Details.insert(Details(**common_details_kwargs)).run()
-        details_id = details_result[0]["id"]
+        locations_rows.append(locations_row)
+        da_locations_rows.append(da_locations_row)
+        details_rows.append(details_row)
+        da_details_rows.append(da_details_row)
 
-        da_details_result = await DataAcquisitionDetailsDrinkingFountain.insert(
-            DataAcquisitionDetailsDrinkingFountain(
-                **common_details_kwargs,
-                **dict(
-                    google_maps_kml_placemark=parsed_location.kml_dict,
-                    google_maps_kml_placemark_source_id=bwb_source_id,
-                )
-            )).run()
-        da_details_id = da_details_result[0]["id"]
+    return locations_rows, da_locations_rows, details_rows, da_details_rows
 
-        common_location_kwargs = dict(
-            type=LocationType.DRINKING_FOUNTAIN,
-            name=parsed_location.name,
-            name_source_id=bwb_source_id,
-            address=parsed_location.address,
-            address_source_id=bwb_source_id,
-            latitude=parsed_location.latitude,
-            latitude_source_id=bwb_source_id,
-            longitude=parsed_location.longitude,
-            longitude_source_id=bwb_source_id,
-        )
 
-        locations.append(Locations(
-            **common_location_kwargs,
-            details_id=details_id,
-        ))
+def construct_locations_and_da_row_from_parsed_location(
+        operator_source_id: int,
+        parsed_location: BWBParsedLocation,
+) -> tuple[Locations, DataAcquisitionLocations]:
+    return construct_locations_and_da_row(
+        type=LocationType.DRINKING_FOUNTAIN,
+        name=parsed_location.name,
+        name_source_id=operator_source_id,
+        address=parsed_location.address,
+        address_source_id=operator_source_id,
+        latitude=parsed_location.latitude,
+        latitude_source_id=operator_source_id,
+        longitude=parsed_location.longitude,
+        longitude_source_id=operator_source_id,
+    )
 
-        da_locations.append(DataAcquisitionLocations(
-            **common_location_kwargs,
-            details_id=da_details_id,
-        ))
 
-    return locations, da_locations
+def construct_details_and_da_row_from_parsed_location(
+        operator_source_id: int,
+        parsed_location: BWBParsedLocation,
+) -> tuple[DetailsDrinkingFountain, DataAcquisitionDetailsDrinkingFountain]:
+    return construct_details_drinking_fountain_and_da_row(
+        operator=BERLINER_WASSERBETRIEBE_OPERATOR,
+        operator_source_id=operator_source_id,
+        opening_times=parsed_location.operating_times,
+        opening_times_source_id=operator_source_id,
+        google_maps_kml_placemark=parsed_location.kml_dict,
+        google_maps_kml_placemark_source_id=operator_source_id,
+    )
 
 
 async def create_or_update_bwb_source(access_time: datetime.datetime) -> int:
