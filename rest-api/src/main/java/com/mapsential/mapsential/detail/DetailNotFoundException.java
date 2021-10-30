@@ -5,14 +5,14 @@ public class DetailNotFoundException extends RuntimeException {
     private String detailType;
     private Long detailId;
 
-    DetailNotFoundException(String type, Long id) {
+    DetailNotFoundException(String type, Long detailId) {
         super(
                 "Could not find " + type.replace("_", " ") + " details "
-                        + " with id \"" + id + "\""
+                        + " with id \"" + detailId + "\""
         );
 
         this.detailType = type;
-        this.detailId = id;
+        this.detailId = detailId;
     }
 
     public String getDetailType() {

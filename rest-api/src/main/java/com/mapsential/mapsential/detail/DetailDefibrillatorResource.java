@@ -27,5 +27,5 @@ public class DetailDefibrillatorResource implements Serializable {
     private String operator;
 
     @Column(name = "opening_times")
-    private String opening_times;
+    private String openingTimes;
 }

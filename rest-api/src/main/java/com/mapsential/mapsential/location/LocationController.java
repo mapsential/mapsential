@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @NoArgsConstructor
@@ -21,12 +20,10 @@ public class LocationController {
     LocationRepository locationRepository;
 
     @GetMapping(path = "/api/location/{locationId}", produces = "application/json")
-    public Object getLocationById(@PathVariable Long locationId) {
-        Optional<LocationResource> locationResourceOptional = locationService.findById(locationId);
-        if (!locationResourceOptional.isPresent()) {
-            return ("Location with ID " + locationId + " could not be found");
-        }
-        return locationResourceOptional;
+    public LocationResource getLocationById(@PathVariable Long locationId) {
+        return locationService.findById(locationId).orElseThrow(
+                () -> new LocationNotFoundException(locationId)
+        );
     }
 
     @GetMapping(value = "/api/location", produces = "application/json")
