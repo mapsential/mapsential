@@ -13,19 +13,44 @@ import java.util.Optional;
 @NoArgsConstructor
 @RestController
 public class DetailController {
-    @Autowired
-    DetailService detailService;
 
     @Autowired
-    DetailRepository detailRepository;
+    DetailDefibrillatorRepository detailDefibrillatorRepository;
 
-    @GetMapping(path = "/api/details/{detailId}", produces = "application/json")
-    public Object getDetailsById(@PathVariable Long detailId) {
-        Optional<DetailResource> detailResourceOptional = detailService.findById(detailId);
-        if (!detailResourceOptional.isPresent()) {
-            return ("Details with ID " + detailId + " could not be found");
-        }
-        return detailResourceOptional;
+    @Autowired
+    DetailDrinkingFountainRepository detailDrinkingFountainRepository;
+
+    @Autowired
+    DetailSoupKitchenRepository detailSoupKitchenRepository;
+
+    @Autowired
+    DetailToiletRepository detailToiletRepository;
+
+    @GetMapping(path = "/api/details/defibrillator/{detailId}", produces = "application/json")
+    public Object getDetailDefibrillatorById(@PathVariable Long detailId) {
+        return detailDefibrillatorRepository.findById(
+                detailId
+        ).orElseThrow(() -> new DetailNotFoundException("defibrillator", detailId));
     }
 
+    @GetMapping(path = "/api/details/drinking_fountain/{detailId}", produces = "application/json")
+    public Object getDetailDrinkingFountainById(@PathVariable Long detailId) {
+        return detailDrinkingFountainRepository.findById(
+                detailId
+        ).orElseThrow(() -> new DetailNotFoundException("drinking_fountain", detailId));
+    }
+
+    @GetMapping(path = "/api/details/soup_kitchen/{detailId}", produces = "application/json")
+    public Object getDetailSoupKitchenById(@PathVariable Long detailId) {
+        return detailSoupKitchenRepository.findById(
+                detailId
+        ).orElseThrow(() -> new DetailNotFoundException("soup_kitchen", detailId));
+    }
+
+    @GetMapping(path = "/api/details/toilet/{detailId}", produces = "application/json")
+    public Object getDetailToiletById(@PathVariable Long detailId) {
+        return detailToiletRepository.findById(
+                detailId
+        ).orElseThrow(() -> new DetailNotFoundException("toilet", detailId));
+    }
 }

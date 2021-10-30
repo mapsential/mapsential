@@ -16,14 +16,16 @@ import java.io.Serializable;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
-@Table(name = "details")
-public class DetailResource implements Serializable {
+@Table(name = "details_defibrillator")
+public class DetailDefibrillatorResource implements Serializable {
 
     @Id
     @Column(name = "id")
     private Long detailId;
 
-    @Column(name = "opening_times")
-    private String openingTime;
+    @Column(name = "operator")
+    private String operator;
 
+    @Column(name = "opening_times")
+    private String opening_times;
 }
