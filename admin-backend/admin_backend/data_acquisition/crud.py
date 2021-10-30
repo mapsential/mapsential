@@ -309,7 +309,7 @@ def construct_details_toilet_and_da_row(
         wheelchair_accessible=wheelchair_accessible,
         wheelchair_accessible_source_id=wheelchair_accessible_source_id,
         wheelchair_access_info=wheelchair_access_info,
-        wheelchair_access_info_source_id=wheelchair_accessible_source_id,
+        wheelchair_access_info_source_id=wheelchair_access_info_source_id,
 
         has_hand_washing=has_hand_washing,
         has_hand_washing_source_id=has_hand_washing_source_id,
