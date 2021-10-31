@@ -16,28 +16,10 @@ export default function Marker(text: Markerprops) {
     const [currentAnchor, setAnchor] = useState<any>()
     return (
         <Box>
-            <IconButton
-                onClick={(event) => {
-                    setOpen(true)
-                    setAnchor(event.currentTarget)
-                }
-                }
-            >
+            <IconButton onClick={(event) => {setOpen(true);setAnchor(event.currentTarget)}}>
                 <PushPin/>
             </IconButton>
-            <Popover
-                id={'sdfsd'}
-                open={open}
-                anchorEl={currentAnchor}
-                onClose={() => {
-                    setOpen(false)
-                }
-                }
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                }}
-            >
+            <Popover id={'sdfsd'} open={open} anchorEl={currentAnchor} onClose={() => {setOpen(false)}} anchorOrigin={{vertical: 'bottom', horizontal: 'left',}}>
                 <MarkerDescription lat={text.lat} lng={text.lng} name={text.name} type={text.type} adress={text.adress}/>
             </Popover>
         </Box>
