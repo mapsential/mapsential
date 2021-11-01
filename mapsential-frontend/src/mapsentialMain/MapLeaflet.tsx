@@ -38,8 +38,7 @@ export default function MapLeaflet(){
     },[store.locations.toilet_locations,store.locations.defibrillator_locations,store.locations.drinking_fountain_locations,store.locations.soup_Kitchen_locations])
     return(
         <div>
-            <MapContainer center={[52.520008, 13.404954]} zoom={13} minZoom={5} scrollWheelZoom={true} style={{height: "100vh",}} tap={false}
-            >
+            <MapContainer center={[52.520008, 13.404954]} zoom={13} minZoom={5} scrollWheelZoom={true} style={{height: "95vh",}} tap={false}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -15,7 +15,7 @@ export const Navbar = () => {
 
     return (
         <Box>
-            <AppBar>
+            <AppBar position="static">
                 <Toolbar>
                     <IconButton color="inherit" aria-label="menu" sx={{mr: 2}} onClick={() => {setOpen(true)}}>
                         <Menu/>
@@ -24,7 +24,7 @@ export const Navbar = () => {
                     <Typography variant="h6" sx={{flexGrow: 1}}>
                        Mapsential
                     </Typography>
-                    <Button color="inherit" disabled={true}>Tipps</Button>
+                    <Button color="inherit">Tipps</Button>
                 </Toolbar>
             </AppBar>
             <Drawer variant="temporary" open={open} onClose={() => {setOpen(false)}}>
