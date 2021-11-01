@@ -8,6 +8,9 @@ locationType.set('soup_kitchen', 'Tafel')
 locationType.set('drinking_fountain', 'Trinkbrunnen')
 locationType.set('toilet', 'Toilette')
 locationType.set('defibrillator', 'Defibrillator')
+locationType.set("yes","Ja")
+locationType.set("no","Nein")
+locationType.set("limited","Limitiert")
 
 export default function LocationInformation(marker : locationDetails)  {
     marker.locationType === "toilet" ? console.log(marker) : console.log()
@@ -44,7 +47,7 @@ export default function LocationInformation(marker : locationDetails)  {
                 {("male" in marker) && (marker.male ? <span>M: Ja<br/></span> : <span>M: Nein<br/></span>)}
                 {("female" in marker) && (marker.female ? <span>W: Ja<br/></span> : <span>W: Nein<br/></span>)}
                 {("unisex" in marker) && (marker.unisex ? <span>Unisex: Ja<br/></span> : <span>Unisex Nein<br/></span>)}
-                {("wheelchairAccessible" in marker )&& <span>Rollstuhlgerecht: {marker.wheelchairAccessible}<br/></span>}
+                {("wheelchairAccessible" in marker )&& <span>Rollstuhlgerecht: {locationType.get(marker.wheelchairAccessible)}<br/></span>}
                 {("hasFee" in marker) &&(marker.hasFee ? <span>Kostenlos: Nein<br/></span>: <span>Kostenlos: Ja<br/></span>)}
                 {("hasHandWashing" in marker )&&(marker.hasHandWashing ? <span>Waschbecken: Ja<br/></span>: <span>Waschbecken: Nein<br/></span>)}
                 {("hasPaper" in marker )&&(marker.hasPaper ? <span>Papier: Ja<br/></span>: <span>Papier: Nein<br/></span>)}

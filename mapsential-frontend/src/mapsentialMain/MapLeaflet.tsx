@@ -44,7 +44,7 @@ export default function MapLeaflet(){
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <MarkerClusterGroup>
+                <MarkerClusterGroup disableClusteringAtZoom={18} spiderfyOnMaxZoom={false}>
                     {store.checkboxes.drinking_fountain_checkbox && drinkingMarkers}
                     {store.checkboxes.soup_Kitchen_checkbox && soupMarkers}
                     {store.checkboxes.toilet_checkbox && toiletMarkers}
