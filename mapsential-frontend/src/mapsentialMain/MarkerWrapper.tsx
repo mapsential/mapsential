@@ -1,9 +1,9 @@
 import {Marker, Popup} from "react-leaflet";
-import {Typography} from "@mui/material";
 import React, {useMemo, useState} from "react";
 import {locationDetails} from "./Types";
 import LocationInformation from "./LoctionInformation";
 import * as L from "leaflet"
+
 const axios = require('axios')
 
 const locationType = new Map()
@@ -16,37 +16,27 @@ let icon : any
 
 export default function MarkerWrapper(marker : locationDetails) {
 
-    let redIcon = L.icon({
-        iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|990000&chf=a,s,ee00FFFF',
-    })
-    let blueIcon = L.icon({
-        iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|2ACAEA&chf=a,s,ee00FFFF',
-    })
-    let greenIcon = L.icon({
-        iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|00FF00&chf=a,s,ee00FFFF',
-    })
-    let yellowIcon = L.icon({
-        iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFFF00&chf=a,s,ee00FFFF',
-    })
-    //  Use the state hook:
-
     if(marker.locationType === "toilet"){
-        icon = greenIcon
+        icon = L.icon({
+            iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|00FF00&chf=a,s,ee00FFFF',
+        })
     }
     else if(marker.locationType ==="drinking_fountain"){
-        icon = blueIcon
+        icon = L.icon({
+            iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|2ACAEA&chf=a,s,ee00FFFF',
+        })
     }
     else if(marker.locationType ==="soup_kitchen"){
-        icon = yellowIcon
+        icon = L.icon({
+            iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FFFF00&chf=a,s,ee00FFFF',
+        })
     }
     else if(marker.locationType ==="defibrillator"){
-        icon = redIcon
+        icon = L.icon({
+            iconUrl: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|990000&chf=a,s,ee00FFFF',
+        })
     }
-    const [locationInformation,setLocationInformation] = useState<any>(
-        <div>
-
-        </div>
-    )
+    const [locationInformation,setLocationInformation] = useState<any>()
     const eventHandlers = useMemo(
         () => ({
             click() {
@@ -61,7 +51,7 @@ export default function MarkerWrapper(marker : locationDetails) {
     )
     return (
         <Marker position={[marker.latitude, marker.longitude]} icon={icon} eventHandlers={eventHandlers}>
-            <Popup>
+            <Popup maxWidth={1001}>
                 {locationInformation}
             </Popup>
         </Marker>

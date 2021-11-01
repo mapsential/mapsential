@@ -1,40 +1,10 @@
 import React, {createContext, useEffect, useState} from 'react'
-import {locationList} from "./Types";
-import {locationDefault} from "./Defaults"
+import {locationDefault, storeContextDefault} from "./Defaults"
 import axios from "axios";
 
-export const StoreContext = createContext({
-    checkboxes: {
-        drinking_fountain_checkbox: true,
-        setDrinking_Fountain_checkbox: (value: boolean): void => {
-        },
-        soup_Kitchen_checkbox: true,
-        setSoup_Kitchen_checkbox: (value: boolean): void => {
-        },
-        toilet_checkbox: true,
-        setToilet_checkbox: (value: boolean): void => {
-        },
-        defibrillator_checkbox: true,
-        setDefibrillator_checkbox: (value: boolean): void => {
-        }
-    },
-    locations: {
-        drinking_fountain_locations: [locationDefault],
-        setDrinking_Fountain_locations: (value: locationList): void => {
-        },
-        soup_Kitchen_locations: [locationDefault],
-        setSoup_Kitchen_locations: (value: locationList): void => {
-        },
-        toilet_locations: [locationDefault],
-        setToilet_locations: (value: locationList): void => {
-        },
-        defibrillator_locations: [locationDefault],
-        setDefibrillator_locations: (value: locationList): void => {
-        }
-    }
-})
+export const StoreContext = createContext(storeContextDefault)
 
-export default function Contexts ({children} : any) {
+export default function Store ({children} : any) {
 
     const [drinking_fountain_checkbox,setDrinking_Fountain_checkbox] = useState(true)
     const [soup_Kitchen_checkbox,setSoup_Kitchen_checkbox] = useState(true)

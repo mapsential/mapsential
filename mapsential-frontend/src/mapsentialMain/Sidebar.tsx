@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Box, Checkbox, FormControl, FormControlLabel, FormLabel, RadioGroup} from "@mui/material";
-import {StoreContext} from "./Contexts";
+import {StoreContext} from "./Store";
 
 export default function Sidebar() {
     const store = useContext(StoreContext)
