@@ -51,7 +51,7 @@ export default function MarkerWrapper(marker : locationDetails) {
     )
     return (
         <Marker position={[marker.latitude, marker.longitude]} icon={icon} eventHandlers={eventHandlers}>
-            <Popup maxWidth={1001}>
+            <Popup>
                 {locationInformation}
             </Popup>
         </Marker>
