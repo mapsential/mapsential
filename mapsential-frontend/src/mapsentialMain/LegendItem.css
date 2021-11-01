@@ -1,0 +1,13 @@
+.LegendItem {
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.LegendItem-ColorBox {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid grey;
+}
