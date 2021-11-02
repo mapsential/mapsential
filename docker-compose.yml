@@ -8,13 +8,21 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "11111:80"
+      - "8000:8000"
     environment:
       - NGINX_HOST=127.0.0.1
-      - NGINX_PORT=80
+      - NGINX_PORT=8000
     depends_on:
       - "rest_api"
       - "admin_backend"
+      - "frontend"
+
+  frontend:
+    container_name: mapsential_frontend
+    build:
+      context: ./mapsential-frontend
+    ports:
+      - "8100:8100"
 
   rest_api:
     container_name: mapsential_rest_api
@@ -26,6 +34,15 @@ services:
       - postgres_password
     depends_on:
       - "db"
+
+  swagger_ui:
+    container_name: mapsential_swagger_ui
+    build:
+      context: ./swagger_ui
+    ports:
+      - "8120:8120"
+    depends_on:
+      - "rest_api"
 
   admin_backend:
     container_name: mapsential_admin_backend
