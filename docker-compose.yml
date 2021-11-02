@@ -15,6 +15,12 @@ services:
     depends_on:
       - "rest_api"
       - "admin_backend"
+      - "frontend"
+
+  frontend:
+    container_name: mapsential_frontend
+    build:
+      context: ./mapsential-frontend
 
   rest_api:
     container_name: mapsential_rest_api
