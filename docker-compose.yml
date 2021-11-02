@@ -38,7 +38,7 @@ services:
   swagger_ui:
     container_name: mapsential_swagger_ui
     build:
-      context: ./swagger-ui
+      context: ./swagger_ui
     ports:
       - "8120:8120"
     depends_on:
