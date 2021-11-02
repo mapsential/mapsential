@@ -38,7 +38,7 @@ export default function MarkerWrapper(marker : locationDetails) {
     }
     const [locationInformation,setLocationInformation] = useState<any>()
     useEffect(() => {
-        axios.get("http://87.138.112.67:11180//api/details/" + marker.locationType + "/" + marker.detailsId).then((response : any) => {
+        axios.get("http://mapsential.de//api/details/" + marker.locationType + "/" + marker.detailsId).then((response : any) => {
             setLocationInformation(
                 <LocationInformation {...marker} {...response.data}/>
         )})
