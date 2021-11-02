@@ -24,7 +24,7 @@ export const Navbar = () => {
                     <Typography variant="h6" sx={{flexGrow: 1}}>
                        Mapsential
                     </Typography>
-                    <Button color="inherit">Tipps</Button>
+                    <Button color="inherit" disabled>Tipps</Button>
                 </Toolbar>
             </AppBar>
             <Drawer variant="temporary" open={open} onClose={() => {setOpen(false)}}>

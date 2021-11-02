@@ -1,5 +1,5 @@
 import {Marker, Popup} from "react-leaflet";
-import React, {useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {locationDetails} from "./Types";
 import LocationInformation from "./LoctionInformation";
 import * as L from "leaflet"
@@ -37,20 +37,14 @@ export default function MarkerWrapper(marker : locationDetails) {
         })
     }
     const [locationInformation,setLocationInformation] = useState<any>()
-    const eventHandlers = useMemo(
-        () => ({
-            click() {
-                axios.get("http://87.138.112.67:11180//api/details/" + marker.locationType + "/" + marker.detailsId).then((response : any) => {
-                    setLocationInformation(
-                        <LocationInformation {...marker} {...response.data}/>
-                    )
-                })
-            },
-        }),
-        [],
-    )
+    useEffect(() => {
+        axios.get("http://87.138.112.67:11180//api/details/" + marker.locationType + "/" + marker.detailsId).then((response : any) => {
+            setLocationInformation(
+                <LocationInformation {...marker} {...response.data}/>
+        )})
+    },[])
     return (
-        <Marker position={[marker.latitude, marker.longitude]} icon={icon} eventHandlers={eventHandlers}>
+        <Marker position={[marker.latitude, marker.longitude]} icon={icon}>
             <Popup>
                 {locationInformation}
             </Popup>
