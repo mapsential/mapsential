@@ -42,6 +42,9 @@ export default function MarkerWrapper(marker : locationDetails) {
             setLocationInformation(
                 <LocationInformation {...marker} {...response.data}/>
         )})
+            .catch((error:any) => {
+                console.log(error)
+            })
     },[])
     return (
         <Marker position={[marker.latitude, marker.longitude]} icon={icon}>

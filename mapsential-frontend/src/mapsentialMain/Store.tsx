@@ -42,15 +42,27 @@ export default function Store ({children} : any) {
         axios.get("http://87.138.112.67:11180/api/filter_location/drinking_fountain").then((response: any) => {
             store.locations.setDrinking_Fountain_locations(response.data)
         })
+            .catch((error:any) => {
+                console.log(error)
+            })
         axios.get("http://87.138.112.67:11180/api/filter_location/soup_kitchen").then((response: any) => {
             store.locations.setSoup_Kitchen_locations(response.data)
         })
+            .catch((error:any) => {
+                console.log(error)
+            })
         axios.get("http://87.138.112.67:11180/api/filter_location/toilet").then((response: any) => {
             store.locations.setToilet_locations(response.data)
         })
+            .catch((error:any) => {
+                console.log(error)
+            })
         axios.get("http://87.138.112.67:11180/api/filter_location/defibrillator").then((response: any) => {
             store.locations.setDefibrillator_locations(response.data)
         })
+            .catch((error:any) => {
+                console.log(error)
+            })
     },[])
     return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
 
