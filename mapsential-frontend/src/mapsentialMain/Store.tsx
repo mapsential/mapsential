@@ -39,25 +39,25 @@ export default function Store ({children} : any) {
         }
     }
     useEffect(() => {
-        axios.get("http://mapsential.de/api/filter_location/drinking_fountain").then((response: any) => {
+        axios.get("https://mapsential.de/api/filter_location/drinking_fountain").then((response: any) => {
             store.locations.setDrinking_Fountain_locations(response.data)
         })
             .catch((error:any) => {
                 console.log(error)
             })
-        axios.get("http://mapsential.de/api/filter_location/soup_kitchen").then((response: any) => {
+        axios.get("https://mapsential.de/api/filter_location/soup_kitchen").then((response: any) => {
             store.locations.setSoup_Kitchen_locations(response.data)
         })
             .catch((error:any) => {
                 console.log(error)
             })
-        axios.get("http://mapsential.de/api/filter_location/toilet").then((response: any) => {
+        axios.get("https://mapsential.de/api/filter_location/toilet").then((response: any) => {
             store.locations.setToilet_locations(response.data)
         })
             .catch((error:any) => {
                 console.log(error)
             })
-        axios.get("http://mapsential.de/api/filter_location/defibrillator").then((response: any) => {
+        axios.get("https://mapsential.de/api/filter_location/defibrillator").then((response: any) => {
             store.locations.setDefibrillator_locations(response.data)
         })
             .catch((error:any) => {
