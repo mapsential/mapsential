@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Sidebar from "./Sidebar";
-import {Menu, Public, ArrowForwardIos, ArrowBackIos} from "@mui/icons-material";
+import {Menu, Public, ArrowForwardIos, ArrowBackIos, CloseRounded} from "@mui/icons-material";
 import './Navbar.css'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'
@@ -53,6 +53,9 @@ export const Navbar = () => {
                     <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
                         <div className="tip-container"> 
+                            <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 2}} onClick={closePopup}>
+                                <CloseRounded/>
+                            </IconButton>
                             <h1>{tips[currentTipIndex]}</h1>
                             <div className="tip-navigation">
                                 <IconButton color="inherit" aria-label="back" sx={{mr: 2}} onClick={previousTip}>
