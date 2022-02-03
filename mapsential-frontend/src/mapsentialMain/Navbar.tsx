@@ -9,10 +9,12 @@ import IconButton from '@mui/material/IconButton';
 import Sidebar from "./Sidebar";
 import {Menu, Public} from "@mui/icons-material";
 import './Navbar.css'
+import Popup from 'reactjs-popup';
 
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
-
+    const [popupOpen, setPopupOpen] = useState(false);
+    const closePopup = () => setPopupOpen(false);
     return (
         <Box>
             <AppBar position="static">
@@ -24,7 +26,10 @@ export const Navbar = () => {
                     <Typography variant="h6" sx={{flexGrow: 1}}>
                        Mapsential
                     </Typography>
-                    <Button color="inherit" disabled>Tipps</Button>
+                    <Button color="inherit" >Tipps</Button>
+                    <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
+                        
+                    </Popup>                   
                 </Toolbar>
             </AppBar>
             <Drawer variant="temporary" open={open} onClose={() => {setOpen(false)}}>
