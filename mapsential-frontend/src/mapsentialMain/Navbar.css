@@ -27,8 +27,5 @@
 }
 
 .popup-close {
-    position: absolute;
-    right: 30px;
-    cursor: pointer;
-    
+    align-self: flex-end;
 }

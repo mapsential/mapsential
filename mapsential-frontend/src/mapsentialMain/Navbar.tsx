@@ -52,10 +52,10 @@ export const Navbar = () => {
                     </Typography>
                     <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
-                        <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 2}} onClick={closePopup}>
-                            <CloseRounded/>
-                        </IconButton>
-                        <div className="tip-container">  
+                        <div className="tip-container"> 
+                            <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 2}} onClick={closePopup}>
+                                <CloseRounded/>
+                            </IconButton>
                             <h1>{tips[currentTipIndex]}</h1>
                             <div className="tip-navigation">
                                 <IconButton color="inherit" aria-label="back" sx={{mr: 2}} onClick={previousTip}>
