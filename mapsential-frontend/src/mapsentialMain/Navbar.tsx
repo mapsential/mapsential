@@ -15,6 +15,7 @@ export const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
+    const openPopup = () => setPopupOpen(true);
     return (
         <Box>
             <AppBar position="static">
@@ -26,7 +27,7 @@ export const Navbar = () => {
                     <Typography variant="h6" sx={{flexGrow: 1}}>
                        Mapsential
                     </Typography>
-                    <Button color="inherit" >Tipps</Button>
+                    <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
                         
                     </Popup>                   
