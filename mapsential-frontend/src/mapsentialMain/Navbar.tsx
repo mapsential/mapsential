@@ -7,15 +7,38 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Sidebar from "./Sidebar";
-import {Menu, Public} from "@mui/icons-material";
+import {Menu, Public, ArrowForwardIos, ArrowBackIos} from "@mui/icons-material";
 import './Navbar.css'
 import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css'
 
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
+    const tips = ["test", "test2", "test3", "test4", "test5"];
+    const [currentTipIndex, setCurrentTipIndex] = useState(0);
+    const nextTip = () => {
+        
+        if(currentTipIndex + 1 >= tips.length) {
+            setCurrentTipIndex(0);
+        } else {
+            setCurrentTipIndex(currentTipIndex + 1);
+        }
+
+    }
+
+    const previousTip = () => {
+        
+        if(currentTipIndex - 1 < 0) {
+            setCurrentTipIndex(tips.length - 1);
+        } else {
+            setCurrentTipIndex(currentTipIndex - 1);
+        }
+
+    }
+
     return (
         <Box>
             <AppBar position="static">
@@ -29,7 +52,17 @@ export const Navbar = () => {
                     </Typography>
                     <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
-                        
+                        <div className="tip-container"> 
+                            <h1>{tips[currentTipIndex]}</h1>
+                            <div className="tip-navigation">
+                                <IconButton color="inherit" aria-label="back" sx={{mr: 2}} onClick={previousTip}>
+                                    <ArrowBackIos/>
+                                </IconButton>
+                                <IconButton color="inherit" aria-label="forward" sx={{mr: 2}} onClick={nextTip}>
+                                    <ArrowForwardIos/>
+                                </IconButton>
+                            </div>
+                        </div>        
                     </Popup>                   
                 </Toolbar>
             </AppBar>

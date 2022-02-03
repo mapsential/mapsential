@@ -10,3 +10,18 @@
         width: 100px !important;
     }
 }
+
+.tip-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tip-navigation {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 2rem;
+}
