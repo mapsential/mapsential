@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MapsentialMain from "./mapsentialMain/MapsentialMain";
+import MapsentialMain from './mapsentialMain/MapsentialMain';
 
+import 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
