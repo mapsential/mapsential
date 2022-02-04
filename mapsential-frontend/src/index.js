@@ -5,6 +5,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MapsentialMain from "./mapsentialMain/MapsentialMain";
 
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
 
 ReactDOM.render(
     <React.StrictMode>
