@@ -18,8 +18,8 @@
     align-items: center;
     gap: 2rem;
     text-align: center;
-    min-height: 8em;
-    font-size: 1em;
+    height: 24em;
+    font-size: 0.75em;
 }
 
 .tip-navigation {
@@ -27,6 +27,7 @@
     align-content: center;
     align-items: center;
     gap: 2rem;
+    align-self: flex-end;
 }
 
 .popup-close {
