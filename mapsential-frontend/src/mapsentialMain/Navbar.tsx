@@ -18,7 +18,7 @@ export const Navbar = () => {
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
     let tips: string[] = [];
-    fetch("../tips/tips.json")
+    fetch("tips/tips.json")
         .then(response => {
             console.log("Zeile 23 +\n", JSON.stringify(response));
             return response.json();
