@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Drawer} from '@mui/material'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Sidebar from "./Sidebar";
-import {Menu, Public, ArrowForwardIos, ArrowBackIos, CloseRounded} from "@mui/icons-material";
+import {Menu, Public, ArrowForwardIos, ArrowBackIosNew, CloseRounded} from "@mui/icons-material";
 import './Navbar.css'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'
@@ -17,7 +17,21 @@ export const Navbar = () => {
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
-    const tips = ["test", "test2", "test3", "test4", "test5"];
+    //let tips: string[] = [];
+    const getTips = () => 
+        fetch("tips/tips.json")
+        .then(response => {
+            console.log("Zeile 23 +\n", JSON.stringify(response));
+            return response.json();
+        }).then(json => {
+            console.log("Zeile 26 +\n", json);
+            setTips(json.tips);
+            console.log("Zeile 28 +\n", tips);
+        });
+    useEffect(() => {
+        getTips();
+    }, []);
+    const [tips, setTips] = useState([]);
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const nextTip = () => {
         
@@ -53,15 +67,15 @@ export const Navbar = () => {
                     <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
                         <div className="tip-container"> 
-                            <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 2}} onClick={closePopup}>
+                            <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 0}} onClick={closePopup}>
                                 <CloseRounded/>
                             </IconButton>
                             <h1>{tips[currentTipIndex]}</h1>
                             <div className="tip-navigation">
-                                <IconButton color="inherit" aria-label="back" sx={{mr: 2}} onClick={previousTip}>
-                                    <ArrowBackIos/>
+                                <IconButton color="inherit" aria-label="back" sx={{ml: 0}} onClick={previousTip}>
+                                    <ArrowBackIosNew/>
                                 </IconButton>
-                                <IconButton color="inherit" aria-label="forward" sx={{mr: 2}} onClick={nextTip}>
+                                <IconButton color="inherit" aria-label="forward" sx={{mr: 0}} onClick={nextTip}>
                                     <ArrowForwardIos/>
                                 </IconButton>
                             </div>
