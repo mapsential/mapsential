@@ -17,6 +17,9 @@
     align-content: center;
     align-items: center;
     gap: 2rem;
+    text-align: center;
+    min-height: 8em;
+    font-size: 1em;
 }
 
 .tip-navigation {
