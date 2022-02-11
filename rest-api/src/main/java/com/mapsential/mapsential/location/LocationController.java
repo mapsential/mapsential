@@ -41,9 +41,4 @@ public class LocationController {
         return locationService.getLocationsByTypes(locationTypes);
     }
 
-    @GetMapping(value = "/api/location/{latitude}/{longitude}", produces = "application/json")
-    public List<LocationResource> getLocationsInChunk(@PathVariable Double longitude, @PathVariable Double latitude){
-        return locationService.getLocationsInChunk(longitude, latitude);
-    }
-
 }
