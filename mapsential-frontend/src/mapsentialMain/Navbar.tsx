@@ -17,7 +17,7 @@ export const Navbar = () => {
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
-    let tips: string[] = [];
+    //let tips: string[] = [];
     const getTips = () => 
         fetch("tips/tips.json")
         .then(response => {
@@ -25,12 +25,13 @@ export const Navbar = () => {
             return response.json();
         }).then(json => {
             console.log("Zeile 26 +\n", json);
-            tips = json.tips;
+            setTips(json.tips);
             console.log("Zeile 28 +\n", tips);
         });
     useEffect(() => {
         getTips();
     }, []);
+    const [tips, setTips] = useState([]);
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const nextTip = () => {
         
