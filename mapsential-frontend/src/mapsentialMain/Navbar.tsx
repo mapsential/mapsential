@@ -20,9 +20,12 @@ export const Navbar = () => {
     let tips: string[] = [];
     fetch("../tips/tips.json")
         .then(response => {
-            return response.json()
+            console.log("Zeile 23 +\n", JSON.stringify(response));
+            return response.json();
         }).then(json => {
+            console.log("Zeile 26 +\n", json);
             tips = json.tips;
+            console.log("Zeile 28 +\n", tips);
         });
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const nextTip = () => {
