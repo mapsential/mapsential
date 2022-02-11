@@ -5,14 +5,19 @@ export type LocationInformation = {
     type?: string
 }
 
-export type locationDetails = {
+export type LocationType = "defibrillator" | "drinking_fountain" | "soup_kitchen" | "toilet"
+
+export type Location = {
     locationId: number,
     detailsId: number,
-    locationType: string,
+    locationType: LocationType,
     locationName: string,
     locationAddress: string,
     longitude: number,
-    latitude: number,
+    latitude: number
+}
+
+export type LocationDetails = {
     operator?:string,
     openingTimes? : string,
     hasFee? : boolean,
@@ -37,15 +42,10 @@ export type locationDetails = {
     hasHotWater ? : boolean,
     hasDrinkingWater ? : boolean,
     info? : string
-
 }
 
-export type locationList = {
-    locationId: number,
-    detailsId: number,
-    locationType: string,
-    locationName: string,
-    locationAddress: string,
-    longitude: number,
-    latitude: number
-}[]
+export type locationList = Location[]
+
+export type FilterLocationResponse = {
+    data: LocationInformation[],
+}
