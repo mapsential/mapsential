@@ -9,8 +9,6 @@ import java.util.Optional;
 @Service
 public class LocationService {
 
-    public static final Double CHUNK_SIZE = 1.0;
-
     @Autowired
     private LocationRepository locationRepository;
 
@@ -30,7 +28,4 @@ public class LocationService {
         return locationRepository.findByLocationTypes(locationType);
     }
 
-    public List<LocationResource> getLocationsInChunk(Double longitude, Double latitude) {
-        return locationRepository.findLocationInChunk(longitude, longitude + CHUNK_SIZE, latitude, latitude + CHUNK_SIZE);
-    }
 }
