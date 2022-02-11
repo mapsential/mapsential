@@ -61,7 +61,7 @@ export const Navbar = () => {
                                 <IconButton color="inherit" aria-label="back" sx={{mr: 0}} onClick={previousTip}>
                                     <ArrowBackIos/>
                                 </IconButton>
-                                <IconButton color="inherit" aria-label="forward" sx={{mr: 2}} onClick={nextTip}>
+                                <IconButton color="inherit" aria-label="forward" sx={{mr: 0}} onClick={nextTip}>
                                     <ArrowForwardIos/>
                                 </IconButton>
                             </div>
