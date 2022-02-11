@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Drawer} from '@mui/material'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -18,7 +18,8 @@ export const Navbar = () => {
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
     let tips: string[] = [];
-    fetch("tips/tips.json")
+    const getTips = () => 
+        fetch("tips/tips.json")
         .then(response => {
             console.log("Zeile 23 +\n", JSON.stringify(response));
             return response.json();
@@ -27,6 +28,9 @@ export const Navbar = () => {
             tips = json.tips;
             console.log("Zeile 28 +\n", tips);
         });
+    useEffect(() => {
+        getTips();
+    }, []);
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const nextTip = () => {
         
