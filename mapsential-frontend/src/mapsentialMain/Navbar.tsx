@@ -53,12 +53,12 @@ export const Navbar = () => {
                     <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
                         <div className="tip-container"> 
-                            <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 2}} onClick={closePopup}>
+                            <IconButton className="popup-close" color="inherit" aria-label="close" sx={{mr: 0}} onClick={closePopup}>
                                 <CloseRounded/>
                             </IconButton>
                             <h1>{tips[currentTipIndex]}</h1>
                             <div className="tip-navigation">
-                                <IconButton color="inherit" aria-label="back" sx={{mr: 0}} onClick={previousTip}>
+                                <IconButton color="inherit" aria-label="back" sx={{mr: "6px"}} onClick={previousTip}>
                                     <ArrowBackIos/>
                                 </IconButton>
                                 <IconButton color="inherit" aria-label="forward" sx={{mr: 0}} onClick={nextTip}>
