@@ -1,6 +1,6 @@
 import React from 'react'
 import {LocationDetails, Location} from "./Types";
-import {Typography} from "@mui/material";
+import {Typography, Button} from "@mui/material";
 import {Dvr, FoodBank, Water, Wc} from "@mui/icons-material";
 
 const translations = new Map()
@@ -46,6 +46,7 @@ export default function LocationInformation({location, details}: {location: Loca
             {"hasHandWashing" in details && (details.hasHandWashing ? <span>Waschbecken: Ja<br/></span>: <span>Waschbecken: Nein<br/></span>)}
             {"hasPaper" in details && (details.hasPaper ? <span>Papier: Ja<br/></span>: <span>Papier: Nein<br/></span>)}
             {"changeTable" in details && (details.changeTable ? <span>Wickeltisch: Ja<br/></span> : <span>Wickeltisch: Ja<br/></span>)}
+            <Button id={`locationButton${location.locationId}`}>Route anzeigen</Button>
         </div>
     )
 }

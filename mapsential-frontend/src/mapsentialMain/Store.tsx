@@ -6,6 +6,7 @@ import Leaflet from "leaflet";
 import {getMapIcons} from "./MapIcons";
 import ReactDOM from "react-dom";
 import LocationInformation from "./LoctionInformation";
+import 'leaflet-routing-machine';
 
 export const StoreContext = createContext<IStoreContext>(storeContextDefault);
 
@@ -65,6 +66,30 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
                         inner
                     );
                     popup.setContent(inner.outerHTML);
+
+                    const onShowRoute = (location: Location, currentLocation: Leaflet.LatLng) => {
+                        if (store.currentRoutingControl !== null) {
+                            store.map.removeControl(store.currentRoutingControl)
+                        }
+
+                        const leafletDestinationLocation = new Leaflet.LatLng(location.latitude, location.longitude)
+
+                        const routingControl = Leaflet.Routing.control({
+                            waypoints: [
+                                currentLocation,
+                                leafletDestinationLocation,
+                            ],
+                        })
+                        routingControl.addTo(store.map)
+                        store.currentRoutingControl = routingControl;
+                    }
+
+                    (
+                        document.getElementById(`locationButton${location.locationId}`) as HTMLElement
+                    ).addEventListener(
+                        'click',
+                        () => onShowRoute(location, store.currentLocation as unknown as Leaflet.LatLng)
+                    )
                 }).catch((error: AxiosError) => console.error(error))
             });
             marker.bindPopup(Leaflet.popup());
@@ -98,6 +123,23 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
     }
 
     useEffect(() => {
+        store.map.on('locationfound', (e) => {
+            store.currentLocation = e.latlng
+        })
+
+        store.map.on('locationerror', (err) => {
+            console.error(`Could not find location: ${err}`)
+        })
+
+        store.map.on('click', () => {
+            if (store.currentRoutingControl !== null) {
+                store.map.removeControl(store.currentRoutingControl);
+            }
+            store.currentRoutingControl = null;
+        })
+
+        store.map.locate({watch: true})
+
         const initializeLocationTypeFromRequest = async (
             [locationType, setLocations]: [LocationType, (locations: Location[]) => void],
         ) => {

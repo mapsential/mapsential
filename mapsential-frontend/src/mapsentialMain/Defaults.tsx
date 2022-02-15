@@ -36,6 +36,8 @@ export interface IStoreContext {
     mapDiv: HTMLDivElement,
     mapLayers: Partial<Record<LocationType, Leaflet.Layer>>,
     mapLayersRenderStatus: Record<LocationType, boolean>,
+    currentLocation: Leaflet.LatLng | null,
+    currentRoutingControl: Leaflet.Routing.Control | null,
 }
 
 export const storeContextDefault: IStoreContext = {
@@ -74,16 +76,21 @@ export const storeContextDefault: IStoreContext = {
         "drinking_fountain": false,
         "soup_kitchen": false,
         "toilet": false,
-    }
+    },
+    currentLocation: null,
+    currentRoutingControl: null,
 }
 
 function createMapAndMapDiv(): {map: Leaflet.Map, mapDiv: HTMLDivElement, mapClusterLayer: Leaflet.LayerGroup} {
+    // Create div and use div for leaflet map
     const mapDiv = document.createElement('div')
     mapDiv.classList.add('map')
     const map = Leaflet.map(mapDiv).setView(MAP_CENTER, MAP_ZOOM)
 
+    // Add openstreet maps tiles
     Leaflet.tileLayer(MAP_TILES_URL_TEMPLATE, MAP_TILES_LAYER_OPTIONS).addTo(map)
 
+    // Add cluster layer for location markers
     const mapClusterLayer = Leaflet.markerClusterGroup();
     map.addLayer(mapClusterLayer);
 
