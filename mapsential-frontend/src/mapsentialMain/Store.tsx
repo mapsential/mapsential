@@ -1,14 +1,17 @@
 import React, {createContext, useEffect, useState} from 'react'
 import axios, {AxiosError} from "axios";
-import {Location, LocationDetails, locationList, LocationType} from "./Types";
+import {Location, LocationDetails, locationList, LocationType, RouteStatus} from "./Types";
 import {storeContextDefault, IStoreContext} from "./Defaults";
 import Leaflet from "leaflet";
 import {getMapIcons} from "./MapIcons";
 import ReactDOM from "react-dom";
 import LocationInformation from "./LoctionInformation";
-import 'leaflet-routing-machine';
+import "leaflet-routing-machine"
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css"
 
-let polyline = require('polyline')
+
+const FORCE_SHOW_ROUTE_AFTER_MS = 5000
+
 
 export const StoreContext = createContext<IStoreContext>(storeContextDefault);
 
@@ -22,7 +25,8 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
     const [soup_Kitchen_locations, setSoup_Kitchen_locations] = useState<Location[]>([])
     const [toilet_locations, setToilet_locations] = useState<Location[]>([])
     const [defibrillator_locations, setDefibrillator_locations] = useState<Location[]>([])
-    const [currentRoutingControl, setCurrentRoutingControl] = useState<Leaflet.Routing.Control | null>(null)
+    
+    const [routeStatus, setRouteStatus] = useState<RouteStatus>("no-route")
 
     const store: IStoreContext = {
         ...storeContextDefault,
@@ -45,8 +49,8 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
             defibrillator_locations,
             setDefibrillator_locations
         },
-        currentRoutingControl,
-        setCurrentRoutingControl,
+        routeStatus,
+        setRouteStatus,
     }
 
     async function addMapLocationsLayer(locationsType: LocationType, locations: locationList) {
@@ -72,48 +76,47 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
                     );
                     popup.setContent(inner.outerHTML);
 
-                    const onShowRoute = (location: Location, currentLocation: Leaflet.LatLng) => {
-                        if (store.currentRoutingControl !== null) {
-                            store.map.removeControl(store.currentRoutingControl)
+                    const onShowRoute = (location: Location) => {
+                        if (store.currentLocation === null) {
+                            // TODO: Display error message to user
+                            throw new Error("User's current location could not be established")
                         }
 
-                        setCurrentRoutingControl(null)
+                        store.mapRoutingPlan.setWaypoints([
+                            store.currentLocation,
+                            new Leaflet.LatLng(location.latitude, location.longitude),
+                        ])
 
-                        const leafletDestinationLocation = new Leaflet.LatLng(location.latitude, location.longitude)
+                        setRouteStatus("loading")
+                        store.mapRoutingControl.addTo(store.map)
+                        store.mapRoutingControl.hide()
 
-                        console.log(process.env.REACT_APP_MAP_BOX_API_TOKEN)
+                        const showRoute = () => {
+                            store.mapRoutingControl.show()
 
-                        const routingControl = (Leaflet.Routing as any).control({
-                            waypoints: [
-                                currentLocation,
-                                leafletDestinationLocation,
-                            ],
-                            router:  Leaflet.Routing.mapbox(process.env.REACT_APP_MAP_BOX_API_TOKEN as string,{
-                                profile: "mapbox/walking",
-                                language: "de"
-                            }),
-                            lineOptions: {
-                                addWaypoints: false,
-                            },
-                            createMarker: function(i: any, waypoint: any, n:any){
-                                return null
+                            setRouteStatus("loaded")
+
+                            marker.getPopup()?.remove()
+                        }
+
+                        store.mapRoutingControl.on('routesfound', showRoute)
+                        setTimeout(() => {
+                            if (routeStatus !== "loading") {
+                                return
                             }
-                        })
-                        routingControl.addTo(store.map)
-                        setCurrentRoutingControl(routingControl)
-                        store.currentRoutingControl = routingControl
+
+                            console.warn(
+                                `Failed to load route within ${FORCE_SHOW_ROUTE_AFTER_MS} milliseconds, attempting to display anyway`
+                            )
+                            showRoute()
+                        }, FORCE_SHOW_ROUTE_AFTER_MS)
                     }
 
                     (
                         document.getElementById(`locationButton${location.locationId}`) as HTMLElement
                     ).addEventListener(
                         'click',
-                        () => {
-                            if (store.currentRoutingControl !== null) {
-                                store.map.removeControl(store.currentRoutingControl);
-                            }
-                            store.currentRoutingControl = null;
-                            onShowRoute(location, store.currentLocation as unknown as Leaflet.LatLng)}
+                        () => onShowRoute(location),
                     )
                 }).catch((error: AxiosError) => console.error(error))
             });

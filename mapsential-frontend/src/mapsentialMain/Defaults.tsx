@@ -1,6 +1,7 @@
-import {Location, LocationType} from "./Types";
+import {Location, LocationType, RouteStatus} from "./Types";
 import Leaflet from "leaflet";
 import 'leaflet.markercluster/dist/leaflet.markercluster.js';
+import 'leaflet-routing-machine';
 
 const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
 const MAP_ZOOM = 13;
@@ -9,6 +10,7 @@ const MAP_TILES_LAYER_OPTIONS: Leaflet.TileLayerOptions = {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     minZoom: 5,
 }
+const MAP_OSRM_URL = "https://routing.openstreetmap.de/routed-foot/route/v1"
 
 export interface IStoreContext {
     checkboxes: {
@@ -36,9 +38,11 @@ export interface IStoreContext {
     mapDiv: HTMLDivElement,
     mapLayers: Partial<Record<LocationType, Leaflet.Layer>>,
     mapLayersRenderStatus: Record<LocationType, boolean>,
+    mapRoutingControl: Leaflet.Routing.Control,
+    mapRoutingPlan: Leaflet.Routing.Plan,
     currentLocation: Leaflet.LatLng | null,
-    currentRoutingControl: Leaflet.Routing.Control | null,
-    setCurrentRoutingControl: (routingControl: Leaflet.Routing.Control | null) => void,
+    routeStatus: RouteStatus,
+    setRouteStatus: (status: RouteStatus) => void,
 }
 
 export const storeContextDefault: IStoreContext = {
@@ -79,11 +83,17 @@ export const storeContextDefault: IStoreContext = {
         "toilet": false,
     },
     currentLocation: null,
-    currentRoutingControl: null,
-    setCurrentRoutingControl: () => {}
+    routeStatus: "no-route",
+    setRouteStatus: () => {},
 }
 
-function createMapAndMapDiv(): {map: Leaflet.Map, mapDiv: HTMLDivElement, mapClusterLayer: Leaflet.LayerGroup} {
+function createMapAndMapDiv(): {
+    map: Leaflet.Map, 
+    mapDiv: HTMLDivElement, 
+    mapClusterLayer: Leaflet.LayerGroup,
+    mapRoutingControl: Leaflet.Routing.Control,
+    mapRoutingPlan: Leaflet.Routing.Plan,
+} {
     // Create div and use div for leaflet map
     const mapDiv = document.createElement('div')
     mapDiv.classList.add('map')
@@ -93,8 +103,24 @@ function createMapAndMapDiv(): {map: Leaflet.Map, mapDiv: HTMLDivElement, mapClu
     Leaflet.tileLayer(MAP_TILES_URL_TEMPLATE, MAP_TILES_LAYER_OPTIONS).addTo(map)
 
     // Add cluster layer for location markers
-    const mapClusterLayer = Leaflet.markerClusterGroup();
-    map.addLayer(mapClusterLayer);
+    const mapClusterLayer = Leaflet.markerClusterGroup()
+    map.addLayer(mapClusterLayer)
 
-    return {map, mapDiv, mapClusterLayer}
+    // Add routing
+    const mapRoutingPlan = Leaflet.Routing.plan([], {
+        createMarker: (waypointIndex: number, waypoint: Leaflet.Routing.Waypoint, numberWaypoints: number) => {
+            return null as unknown as Leaflet.Marker<any>
+        },
+
+    })
+    const mapRoutingControl = Leaflet.Routing.control({
+        plan: mapRoutingPlan,
+        router: Leaflet.Routing.osrmv1({
+            serviceUrl: MAP_OSRM_URL,
+            language: "de",
+        }),
+        addWaypoints: false,
+    })
+
+    return {map, mapDiv, mapClusterLayer, mapRoutingControl, mapRoutingPlan}
 }

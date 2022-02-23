@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import {StoreContext} from "./Store";
 import "./MapLeaflet.css";
+import RemoveRouteButton from './RemoveRouteButton';
 
 export default function MapLeaflet(){
     const store = useContext(StoreContext)
@@ -10,5 +11,7 @@ export default function MapLeaflet(){
             el.appendChild(store.mapDiv);
             store.map.invalidateSize();
         }
-    }} />;
+    }}>
+        {store.routeStatus === "loaded" && <RemoveRouteButton className='remove-route-btn' />}
+    </div>;
 }
