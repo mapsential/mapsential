@@ -20,6 +20,7 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
     const [soup_Kitchen_locations, setSoup_Kitchen_locations] = useState<Location[]>([])
     const [toilet_locations, setToilet_locations] = useState<Location[]>([])
     const [defibrillator_locations, setDefibrillator_locations] = useState<Location[]>([])
+    const [currentRoutingControl, setCurrentRoutingControl] = useState<Leaflet.Routing.Control | null>(null)
 
     const store: IStoreContext = {
         ...storeContextDefault,
@@ -42,6 +43,8 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
             defibrillator_locations,
             setDefibrillator_locations
         },
+        currentRoutingControl,
+        setCurrentRoutingControl,
     }
 
     async function addMapLocationsLayer(locationsType: LocationType, locations: locationList) {
@@ -72,6 +75,8 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
                             store.map.removeControl(store.currentRoutingControl)
                         }
 
+                        setCurrentRoutingControl(null)
+
                         const leafletDestinationLocation = new Leaflet.LatLng(location.latitude, location.longitude)
 
                         const routingControl = Leaflet.Routing.control({
@@ -81,7 +86,8 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
                             ],
                         })
                         routingControl.addTo(store.map)
-                        store.currentRoutingControl = routingControl;
+                        setCurrentRoutingControl(routingControl)
+                        store.currentRoutingControl = routingControl
                     }
 
                     (
@@ -129,13 +135,6 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
 
         store.map.on('locationerror', (err) => {
             console.error(`Could not find location: ${err}`)
-        })
-
-        store.map.on('click', () => {
-            if (store.currentRoutingControl !== null) {
-                store.map.removeControl(store.currentRoutingControl);
-            }
-            store.currentRoutingControl = null;
         })
 
         store.map.locate({watch: true})

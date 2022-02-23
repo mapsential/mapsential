@@ -1,4 +1,3 @@
-import React from 'react'
 import './LegendItem.css'
 
 export default function LocationInformationItem({name, color}: { name: string, color: string }): JSX.Element {

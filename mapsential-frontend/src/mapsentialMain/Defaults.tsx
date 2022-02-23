@@ -38,6 +38,7 @@ export interface IStoreContext {
     mapLayersRenderStatus: Record<LocationType, boolean>,
     currentLocation: Leaflet.LatLng | null,
     currentRoutingControl: Leaflet.Routing.Control | null,
+    setCurrentRoutingControl: (routingControl: Leaflet.Routing.Control | null) => void,
 }
 
 export const storeContextDefault: IStoreContext = {
@@ -79,6 +80,7 @@ export const storeContextDefault: IStoreContext = {
     },
     currentLocation: null,
     currentRoutingControl: null,
+    setCurrentRoutingControl: () => {}
 }
 
 function createMapAndMapDiv(): {map: Leaflet.Map, mapDiv: HTMLDivElement, mapClusterLayer: Leaflet.LayerGroup} {
