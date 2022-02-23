@@ -8,6 +8,8 @@ import ReactDOM from "react-dom";
 import LocationInformation from "./LoctionInformation";
 import 'leaflet-routing-machine';
 
+let polyline = require('polyline')
+
 export const StoreContext = createContext<IStoreContext>(storeContextDefault);
 
 export default function Store ({children}: {children: React.ReactNode | React.ReactNode[]}) {
@@ -79,11 +81,23 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
 
                         const leafletDestinationLocation = new Leaflet.LatLng(location.latitude, location.longitude)
 
-                        const routingControl = Leaflet.Routing.control({
+                        console.log(process.env.REACT_APP_MAP_BOX_API_TOKEN)
+
+                        const routingControl = (Leaflet.Routing as any).control({
                             waypoints: [
                                 currentLocation,
                                 leafletDestinationLocation,
                             ],
+                            router:  Leaflet.Routing.mapbox(process.env.REACT_APP_MAP_BOX_API_TOKEN as string,{
+                                profile: "mapbox/walking",
+                                language: "de"
+                            }),
+                            lineOptions: {
+                                addWaypoints: false,
+                            },
+                            createMarker: function(i: any, waypoint: any, n:any){
+                                return null
+                            }
                         })
                         routingControl.addTo(store.map)
                         setCurrentRoutingControl(routingControl)
@@ -94,7 +108,12 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
                         document.getElementById(`locationButton${location.locationId}`) as HTMLElement
                     ).addEventListener(
                         'click',
-                        () => onShowRoute(location, store.currentLocation as unknown as Leaflet.LatLng)
+                        () => {
+                            if (store.currentRoutingControl !== null) {
+                                store.map.removeControl(store.currentRoutingControl);
+                            }
+                            store.currentRoutingControl = null;
+                            onShowRoute(location, store.currentLocation as unknown as Leaflet.LatLng)}
                     )
                 }).catch((error: AxiosError) => console.error(error))
             });
