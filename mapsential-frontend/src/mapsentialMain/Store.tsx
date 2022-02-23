@@ -78,8 +78,23 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
 
                     const onShowRoute = (location: Location) => {
                         if (store.currentLocation === null) {
-                            // TODO: Display error message to user
-                            throw new Error("User's current location could not be established")
+                            store.mapRoutingPlan.spliceWaypoints(
+                                1,
+                                store.mapRoutingPlan.getWaypoints().length,
+                                new Leaflet.Routing.Waypoint(
+                                    new Leaflet.LatLng(location.latitude, location.longitude),
+                                    "",
+                                    {}
+                                )
+                            )
+
+                            store.mapRoutingControl.addTo(store.map)
+
+                            setRouteStatus("loaded")
+
+                            marker.getPopup()?.remove()
+
+                            return
                         }
 
                         store.mapRoutingPlan.setWaypoints([

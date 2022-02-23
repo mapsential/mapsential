@@ -1,7 +1,9 @@
-import {Location, LocationType, RouteStatus} from "./Types";
-import Leaflet from "leaflet";
-import 'leaflet.markercluster/dist/leaflet.markercluster.js';
-import 'leaflet-routing-machine';
+import {Location, LocationType, RouteStatus} from "./Types"
+import Leaflet from "leaflet"
+import 'leaflet.markercluster/dist/leaflet.markercluster.js'
+import 'leaflet-routing-machine'
+import 'leaflet-control-geocoder'
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
 
 const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
 const MAP_ZOOM = 13;
@@ -108,10 +110,13 @@ function createMapAndMapDiv(): {
 
     // Add routing
     const mapRoutingPlan = Leaflet.Routing.plan([], {
+        geocoder: (Leaflet.Control as any).Geocoder.nominatim({
+            language: "de",
+        }),
         createMarker: (waypointIndex: number, waypoint: Leaflet.Routing.Waypoint, numberWaypoints: number) => {
             return null as unknown as Leaflet.Marker<any>
         },
-
+        language: "de",
     })
     const mapRoutingControl = Leaflet.Routing.control({
         plan: mapRoutingPlan,
@@ -120,7 +125,7 @@ function createMapAndMapDiv(): {
             language: "de",
         }),
         addWaypoints: false,
-    })
+    });
 
     return {map, mapDiv, mapClusterLayer, mapRoutingControl, mapRoutingPlan}
 }
