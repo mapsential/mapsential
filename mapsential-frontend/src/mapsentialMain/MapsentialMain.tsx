@@ -4,6 +4,7 @@ import {Box} from '@mui/material'
 import Store from "./Store"
 import Legend from "./Legend"
 import RemoveRouteButton from './RemoveRouteButton';
+import CommentDialog from "./CommentDialog";
 
 export default function MapsentialMain() {
     return (
@@ -14,6 +15,7 @@ export default function MapsentialMain() {
                 <MapLeaflet />
                 <Legend />
                 <RemoveRouteButton />
+                <CommentDialog />
             </Box>
         </Store>
     )

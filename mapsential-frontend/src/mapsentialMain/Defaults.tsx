@@ -1,4 +1,4 @@
-import {Location, LocationType} from "./Types";
+import {Location, LocationType,CommentList} from "./Types";
 import Leaflet from "leaflet";
 import 'leaflet.markercluster/dist/leaflet.markercluster.js';
 
@@ -39,6 +39,11 @@ export interface IStoreContext {
     currentLocation: Leaflet.LatLng | null,
     currentRoutingControl: Leaflet.Routing.Control | null,
     setCurrentRoutingControl: (routingControl: Leaflet.Routing.Control | null) => void,
+    commentDialogOpen: boolean,
+    setCommentDialogOpen: (open: boolean) => void
+    currentComments: number,
+    setCurrentComments: (detailsId: number) => void,
+    commentMap: Map<number, CommentList>
 }
 
 export const storeContextDefault: IStoreContext = {
@@ -80,7 +85,12 @@ export const storeContextDefault: IStoreContext = {
     },
     currentLocation: null,
     currentRoutingControl: null,
-    setCurrentRoutingControl: () => {}
+    setCurrentRoutingControl: () => {},
+    commentDialogOpen: false,
+    setCommentDialogOpen: (open : boolean): void => {},
+    currentComments: 0,
+    setCurrentComments: (locationId: number) : void => {},
+    commentMap: new Map<number,CommentList>()
 }
 
 function createMapAndMapDiv(): {map: Leaflet.Map, mapDiv: HTMLDivElement, mapClusterLayer: Leaflet.LayerGroup} {

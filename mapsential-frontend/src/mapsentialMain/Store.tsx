@@ -1,12 +1,13 @@
 import React, {createContext, useEffect, useState} from 'react'
 import axios, {AxiosError} from "axios";
-import {Location, LocationDetails, locationList, LocationType} from "./Types";
+import {Location, LocationDetails, locationList, LocationType, CommentList} from "./Types";
 import {storeContextDefault, IStoreContext} from "./Defaults";
 import Leaflet from "leaflet";
 import {getMapIcons} from "./MapIcons";
 import ReactDOM from "react-dom";
 import LocationInformation from "./LoctionInformation";
 import 'leaflet-routing-machine';
+import {Dialog} from "@mui/material";
 
 let polyline = require('polyline')
 
@@ -23,6 +24,11 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
     const [toilet_locations, setToilet_locations] = useState<Location[]>([])
     const [defibrillator_locations, setDefibrillator_locations] = useState<Location[]>([])
     const [currentRoutingControl, setCurrentRoutingControl] = useState<Leaflet.Routing.Control | null>(null)
+
+    const [commentDialogOpen,setCommentDialogOpen] = useState<boolean>(false)
+    const [currentComments, setCurrentComments] = useState<number>(0)
+
+    const commentMap = new Map<number, CommentList>()
 
     const store: IStoreContext = {
         ...storeContextDefault,
@@ -47,6 +53,11 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
         },
         currentRoutingControl,
         setCurrentRoutingControl,
+        commentDialogOpen,
+        setCommentDialogOpen,
+        currentComments,
+        setCurrentComments,
+        commentMap
     }
 
     async function addMapLocationsLayer(locationsType: LocationType, locations: locationList) {
@@ -114,7 +125,20 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
                             }
                             store.currentRoutingControl = null;
                             onShowRoute(location, store.currentLocation as unknown as Leaflet.LatLng)}
+                    );
+
+                    (
+                        document.getElementById(`commentButton:${location.locationId}`) as HTMLElement
+                    ).addEventListener(
+                        'click',
+                        () => {
+                            setCommentDialogOpen(true)
+                            setCurrentComments(5)
+                            setTimeout(() => {console.log(currentComments);}, 1000)
+                            getComments(location.locationId)
+                        }
                     )
+
                 }).catch((error: AxiosError) => console.error(error))
             });
             marker.bindPopup(Leaflet.popup());
@@ -124,6 +148,50 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
         store.mapLayers[locationsType] = layer;
     }
 
+    function getComments(locationId: number){
+        if(!commentMap.has(locationId)){
+            if(locationId % 4 === 0){
+                commentMap.set(locationId, [{
+                    timestamp: "0",
+                    content: "Kommentar 0",
+                    authorName: "Tester 0",
+                    detailsId: locationId,
+                    commentId: 0,
+                }])
+
+            }
+            if(locationId % 4 === 1){
+                commentMap.set(locationId, [{
+                    timestamp: "1",
+                    content: "Kommentar 1",
+                    authorName: "Tester 1",
+                    detailsId: locationId,
+                    commentId: 1,
+                }])
+
+            }
+            if(locationId % 4 === 2){
+                commentMap.set(locationId, [{
+                    timestamp: "2",
+                    content: "Kommentar 2",
+                    authorName: "Tester 2",
+                    detailsId: locationId,
+                    commentId: 2,
+                }])
+
+            }
+            if(locationId % 4 === 3){
+                commentMap.set(locationId, [{
+                    timestamp: "3",
+                    content: "Kommentar 3",
+                    authorName: "Tester 3",
+                    detailsId: locationId,
+                    commentId: 3,
+                }])
+
+            }
+        }
+    }
     function updateMapRenderedLocationTypes(layersRenderStatusUpdate: Partial<Record<LocationType, boolean>>) {
         for (const [locationType, newRenderStatus] of Object.entries<boolean>(layersRenderStatusUpdate)) {
             const currentRenderStatus = store.mapLayersRenderStatus[locationType as LocationType]
@@ -157,7 +225,6 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
         })
 
         store.map.locate({watch: true})
-
         const initializeLocationTypeFromRequest = async (
             [locationType, setLocations]: [LocationType, (locations: Location[]) => void],
         ) => {

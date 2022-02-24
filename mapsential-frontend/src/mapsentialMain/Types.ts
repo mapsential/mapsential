@@ -43,7 +43,15 @@ export type LocationDetails = {
     hasDrinkingWater ? : boolean,
     info? : string
 }
+export type CommentDetails = {
+    commentId: number,
+    detailsId: number,
+    authorName: string,
+    content: string,
+    timestamp: string
+}
 
+export type CommentList = CommentDetails[]
 export type locationList = Location[]
 
 export type FilterLocationResponse = {

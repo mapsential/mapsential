@@ -47,6 +47,7 @@ export default function LocationInformation({location, details}: {location: Loca
             {"hasPaper" in details && (details.hasPaper ? <span>Papier: Ja<br/></span>: <span>Papier: Nein<br/></span>)}
             {"changeTable" in details && (details.changeTable ? <span>Wickeltisch: Ja<br/></span> : <span>Wickeltisch: Ja<br/></span>)}
             <Button id={`locationButton${location.locationId}`}>Route anzeigen</Button>
+            <Button id={`commentButton:${location.locationId}`}>Kommentare anzeigen</Button>
         </div>
     )
 }
