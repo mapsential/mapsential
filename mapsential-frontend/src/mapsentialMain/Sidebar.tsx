@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import {Box, Checkbox, FormControl, FormControlLabel, FormLabel, RadioGroup} from "@mui/material";
 import {StoreContext} from "./Store";
+import {locationTypeColors, locationTypeNames, locationTypesSortedByNames} from './Constants';
+import { LocationType } from './Types';
 
 export default function Sidebar() {
     const store = useContext(StoreContext)
@@ -10,10 +12,16 @@ export default function Sidebar() {
             <FormControl component="fieldset">
                 <FormLabel component="legend"></FormLabel>
                 <RadioGroup aria-label="" defaultValue="" name="radio-buttons-group">
-                    <FormControlLabel value="Drinking Fountain" control={<Checkbox defaultChecked={store.checkboxes.drinking_fountain_checkbox} onChange={(event, isChecked) => {store.checkboxes.setDrinking_Fountain_checkbox(isChecked)}} style={{color:"blue"}}/>} label="Trinkbrunnen" />
-                    <FormControlLabel value="Soup Kitchen" control={<Checkbox defaultChecked={store.checkboxes.soup_Kitchen_checkbox} onChange={(event, isChecked) => {store.checkboxes.setSoup_Kitchen_checkbox(isChecked)}} style={{color:"gold"}}/>} label="Tafeln" />
-                    <FormControlLabel value="Toilet" control={<Checkbox defaultChecked={store.checkboxes.toilet_checkbox} onChange={(event, isChecked) => {store.checkboxes.setToilet_checkbox(isChecked)}} style={{color:"green"}}/>} label="Toiletten" />
-                    <FormControlLabel value="Defibrilator" control={<Checkbox defaultChecked={store.checkboxes.defibrillator_checkbox} onChange={(event, isChecked) => {store.checkboxes.setDefibrillator_checkbox(isChecked)}} style={{color:"red"}}/>} label="Defibrillatoren"/>
+                    {locationTypesSortedByNames.map((locationType: LocationType): JSX.Element => <FormControlLabel 
+                        key={`checkbox-${locationType}`}
+                        value={locationType}
+                        control={<Checkbox 
+                            defaultChecked={store[locationType].status !== "unchecked"}
+                            onChange={(_, isChecked) => store[locationType].setStatus(isChecked ? "loaded" : "unchecked")}
+                            style={{color: locationTypeColors[locationType]}}
+                        />}
+                        label={locationTypeNames[locationType].plural}
+                    />)}
                 </RadioGroup>
             </FormControl>
         </Box>

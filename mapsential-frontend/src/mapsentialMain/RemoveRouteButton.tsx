@@ -1,29 +1,18 @@
 import { useContext } from "react";
 import Button from "@mui/material/Button";
 import { StoreContext } from "./Store";
-import "./RemoveRouteButton.css"
 
-export default function RemoveRouteButton(): JSX.Element | null {
+export default function RemoveRouteButton({className}: {className: string}): JSX.Element | null {
     const store = useContext(StoreContext)
 
     const handleClickRemoveRoute = () => {
-        if (store.currentRoutingControl !== null) {
-            store.map.removeControl(store.currentRoutingControl)
-            store.setCurrentRoutingControl(null)
-            store.currentRoutingControl = null
-        } else {
-            console.error(
-                "Remove route button should only be clickable while a route is shown"
-            )
-        }
-    }
-
-    if (store.currentRoutingControl === null) {
-        return null;
+        store.mapRoutingPlan.setWaypoints([])
+        store.mapRoutingControl.remove()
+        store.setRouteStatus("no-route")
     }
 
     return <Button
-        className="remove-route-btn"
+        className={className}
         variant="contained"
         onClick={handleClickRemoveRoute}
     >Route löschen</Button>

@@ -1,265 +1,422 @@
 import React, {createContext, useEffect, useState} from 'react'
-import axios, {AxiosError} from "axios";
-import {Location, LocationDetails, locationList, LocationType, CommentList} from "./Types";
-import {storeContextDefault, IStoreContext} from "./Defaults";
+import axios from "axios";
+import {CommentList, Location, LocationDetails, LocationType, RouteStatus} from "./Types";
 import Leaflet from "leaflet";
 import {getMapIcons} from "./MapIcons";
 import ReactDOM from "react-dom";
 import LocationInformation from "./LoctionInformation";
-import 'leaflet-routing-machine';
-import {Dialog} from "@mui/material";
+import "leaflet-routing-machine"
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css"
+import 'leaflet.markercluster/dist/leaflet.markercluster.js'
+import 'leaflet-routing-machine'
+import 'leaflet-control-geocoder'
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
+import { locationTypes } from './Constants';
 
-let polyline = require('polyline')
 
-export const StoreContext = createContext<IStoreContext>(storeContextDefault);
+const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
+const MAP_ZOOM = 13;
+const MAP_TILES_URL_TEMPLATE = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const MAP_TILES_LAYER_OPTIONS: Leaflet.TileLayerOptions = {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    minZoom: 5,
+}
+const MAP_OSRM_URL = "https://routing.openstreetmap.de/routed-foot/route/v1"
+const FORCE_SHOW_ROUTE_AFTER_MS = 5000
+
+
+type LocationTypeEntry = {
+    status: "unchecked" | "loading" | "loaded",
+    setStatus: (status: "unchecked" | "loading" | "loaded") => void,
+    locations: Location[],
+    setLocations: (locations: Location[]) => void,
+    mapLayer: Leaflet.LayerGroup,
+}
+
+type GlobalMapEntries = {
+    map: Leaflet.Map,
+    mapClusterLayer: Leaflet.LayerGroup,
+    mapDiv: HTMLDivElement,
+    mapRoutingControl: Leaflet.Routing.Control,
+    mapRoutingPlan: Leaflet.Routing.Plan,
+}
+
+type IStoreContext = Record<LocationType, LocationTypeEntry> & GlobalMapEntries & {
+    currentLocation: Leaflet.LatLng | null,
+    routeStatus: RouteStatus,
+    setRouteStatus: (status: RouteStatus) => void,
+    commentDialogOpen: boolean,
+    setCommentDialogOpen: (open: boolean) => void
+    currentComments: number,
+    setCurrentComments: (detailsId: number) => void,
+    commentMap: Map<number, CommentList>,
+}
+
+
+const StoreDefaults: IStoreContext = {
+    ...Object.fromEntries(locationTypes.map((locationType): [LocationType, LocationTypeEntry] => [locationType, {
+        status: "loading",
+        setStatus: () => {},
+        locations: [],
+        setLocations: () => {},
+        mapLayer: Leaflet.layerGroup(),
+    }])) as unknown as Record<LocationType, LocationTypeEntry>,
+    ...createGlobalMapEntries(),
+    currentLocation: null,
+    routeStatus: "no-route",
+    setRouteStatus: () => {},
+    commentDialogOpen: false,
+    setCommentDialogOpen: (): void => {},
+    currentComments: 0,
+    setCurrentComments: () : void => {},
+    commentMap: new Map<number, CommentList>()
+}
+
+
+export const StoreContext = createContext<IStoreContext>(StoreDefaults);
+
 
 export default function Store ({children}: {children: React.ReactNode | React.ReactNode[]}) {
-    const [drinking_fountain_checkbox,setDrinking_Fountain_checkbox] = useState<boolean>(true)
-    const [soup_Kitchen_checkbox,setSoup_Kitchen_checkbox] = useState<boolean>(true)
-    const [toilet_checkbox,setToilet_checkbox] = useState<boolean>(true)
-    const [defibrillator_checkbox,setDefibrillator_checkbox] = useState<boolean>(true)
+    const [routeStatus, setRouteStatus] = useState<RouteStatus>(StoreDefaults.routeStatus)
 
-    const [drinking_fountain_locations, setDrinking_Fountain_locations] = useState<Location[]>([])
-    const [soup_Kitchen_locations, setSoup_Kitchen_locations] = useState<Location[]>([])
-    const [toilet_locations, setToilet_locations] = useState<Location[]>([])
-    const [defibrillator_locations, setDefibrillator_locations] = useState<Location[]>([])
-    const [currentRoutingControl, setCurrentRoutingControl] = useState<Leaflet.Routing.Control | null>(null)
+    const [commentDialogOpen, setCommentDialogOpen] = useState<boolean>(StoreDefaults.commentDialogOpen)
+    const [currentComments, setCurrentComments] = useState<number>(StoreDefaults.currentComments)
 
-    const [commentDialogOpen,setCommentDialogOpen] = useState<boolean>(false)
-    const [currentComments, setCurrentComments] = useState<number>(0)
-
-    const commentMap = new Map<number, CommentList>()
-
-    const store: IStoreContext = {
-        ...storeContextDefault,
-        checkboxes: {
-            drinking_fountain_checkbox,
-            setDrinking_Fountain_checkbox,
-            soup_Kitchen_checkbox,
-            setSoup_Kitchen_checkbox,
-            toilet_checkbox,setToilet_checkbox,
-            defibrillator_checkbox,
-            setDefibrillator_checkbox
-        },
-        locations: {
-            drinking_fountain_locations,
-            setDrinking_Fountain_locations,
-            soup_Kitchen_locations,
-            setSoup_Kitchen_locations,
-            toilet_locations,
-            setToilet_locations,
-            defibrillator_locations,
-            setDefibrillator_locations
-        },
-        currentRoutingControl,
-        setCurrentRoutingControl,
+    let store: IStoreContext = {
+        ...StoreDefaults,
+        routeStatus,
+        setRouteStatus,
         commentDialogOpen,
         setCommentDialogOpen,
         currentComments,
         setCurrentComments,
-        commentMap
     }
 
-    async function addMapLocationsLayer(locationsType: LocationType, locations: locationList) {
-        const mapIcons = await getMapIcons()
-
-        const layer = Leaflet.layerGroup();
-        for (const location of locations) {
-            const marker = Leaflet.marker([location.latitude, location.longitude], {
-                icon: mapIcons[location.locationType],
-            });
-            marker.on('click', (event) => {
-                const popup = event.target.getPopup();
-
-                new Promise(async () => {
-                    const details: LocationDetails = (await axios.get(
-                        `https://mapsential.de/api/details/${location.locationType}/${location.detailsId}`
-                    )).data;
-
-                    const inner: HTMLDivElement = document.createElement('div');
-                    ReactDOM.render(
-                        <LocationInformation location={location} details={details} key={location.locationId}/>,
-                        inner
-                    );
-                    popup.setContent(inner.outerHTML);
-
-                    const onShowRoute = (location: Location, currentLocation: Leaflet.LatLng) => {
-                        if (store.currentRoutingControl !== null) {
-                            store.map.removeControl(store.currentRoutingControl)
-                        }
-
-                        setCurrentRoutingControl(null)
-
-                        const leafletDestinationLocation = new Leaflet.LatLng(location.latitude, location.longitude)
-
-                        console.log(process.env.REACT_APP_MAP_BOX_API_TOKEN)
-
-                        const routingControl = (Leaflet.Routing as any).control({
-                            waypoints: [
-                                currentLocation,
-                                leafletDestinationLocation,
-                            ],
-                            router:  Leaflet.Routing.mapbox(process.env.REACT_APP_MAP_BOX_API_TOKEN as string,{
-                                profile: "mapbox/walking",
-                                language: "de"
-                            }),
-                            lineOptions: {
-                                addWaypoints: false,
-                            },
-                            createMarker: function(i: any, waypoint: any, n:any){
-                                return null
-                            }
-                        })
-                        routingControl.addTo(store.map)
-                        setCurrentRoutingControl(routingControl)
-                        store.currentRoutingControl = routingControl
-                    }
-
-                    (
-                        document.getElementById(`locationButton${location.locationId}`) as HTMLElement
-                    ).addEventListener(
-                        'click',
-                        () => {
-                            if (store.currentRoutingControl !== null) {
-                                store.map.removeControl(store.currentRoutingControl);
-                            }
-                            store.currentRoutingControl = null;
-                            onShowRoute(location, store.currentLocation as unknown as Leaflet.LatLng)}
-                    );
-
-                    (
-                        document.getElementById(`commentButton:${location.locationId}`) as HTMLElement
-                    ).addEventListener(
-                        'click',
-                        () => {
-                            setCommentDialogOpen(true)
-                            setCurrentComments(5)
-                            setTimeout(() => {console.log(currentComments);}, 1000)
-                            getComments(location.locationId)
-                        }
-                    )
-
-                }).catch((error: AxiosError) => console.error(error))
-            });
-            marker.bindPopup(Leaflet.popup());
-            marker.addTo(layer);
-        }
-
-        store.mapLayers[locationsType] = layer;
+    store = {
+        ...store,
+        "defibrillator": useLocationTypeEntry(store, "defibrillator"),
+        "drinking_fountain": useLocationTypeEntry(store, "drinking_fountain"),
+        "soup_kitchen": useLocationTypeEntry(store, "soup_kitchen"),
+        "toilet": useLocationTypeEntry(store, "toilet"),
     }
 
-    function getComments(locationId: number){
-        if(!commentMap.has(locationId)){
-            if(locationId % 4 === 0){
-                commentMap.set(locationId, [{
-                    timestamp: "0",
-                    content: "Kommentar 0",
-                    authorName: "Tester 0",
-                    detailsId: locationId,
-                    commentId: 0,
-                }])
+    return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+}
 
-            }
-            if(locationId % 4 === 1){
-                commentMap.set(locationId, [{
-                    timestamp: "1",
-                    content: "Kommentar 1",
-                    authorName: "Tester 1",
-                    detailsId: locationId,
-                    commentId: 1,
-                }])
-
-            }
-            if(locationId % 4 === 2){
-                commentMap.set(locationId, [{
-                    timestamp: "2",
-                    content: "Kommentar 2",
-                    authorName: "Tester 2",
-                    detailsId: locationId,
-                    commentId: 2,
-                }])
-
-            }
-            if(locationId % 4 === 3){
-                commentMap.set(locationId, [{
-                    timestamp: "3",
-                    content: "Kommentar 3",
-                    authorName: "Tester 3",
-                    detailsId: locationId,
-                    commentId: 3,
-                }])
-
-            }
-        }
-    }
-    function updateMapRenderedLocationTypes(layersRenderStatusUpdate: Partial<Record<LocationType, boolean>>) {
-        for (const [locationType, newRenderStatus] of Object.entries<boolean>(layersRenderStatusUpdate)) {
-            const currentRenderStatus = store.mapLayersRenderStatus[locationType as LocationType]
-            if (newRenderStatus === currentRenderStatus) {
-                continue;
-            }
-
-            const layer = store.mapLayers[locationType as LocationType]
-            if (typeof layer === "undefined") {
-                console.error(`No layer for location type ${locationType}`);
-                return;
-            }
-
-            if (newRenderStatus === true) {
-                store.mapClusterLayer.addLayer(layer)
-                store.mapLayersRenderStatus[locationType as LocationType] = true;
-            } else {
-                store.mapClusterLayer.removeLayer(layer)
-                store.mapLayersRenderStatus[locationType as LocationType] = false;
-            }
-        }
-    }
+function useLocationTypeEntry(store: IStoreContext, locationType: LocationType): LocationTypeEntry {
+    const defaultEntry = store[locationType]
+    const mapLayer = defaultEntry.mapLayer
+    
+    const [status, setStatus] = useState<"unchecked" | "loading" | "loaded">(defaultEntry.status)
+    const [locations, setLocations] = useState<Location[]>(defaultEntry.locations)
 
     useEffect(() => {
-        store.map.on('locationfound', (e) => {
-            store.currentLocation = e.latlng
-        })
+        // TODO: Add error handling
+        (async () => {
+            store.map.on("locationfound", (e) => {
+                store.currentLocation = e.latlng
+            })
+    
+            store.map.on("locationerror", (err) => {
+                // TODO: Display error message to user
+                console.error(`Could not find location: ${err}`)
+            })
 
-        store.map.on('locationerror', (err) => {
-            console.error(`Could not find location: ${err}`)
-        })
+            store.map.locate({watch: true})
 
-        store.map.locate({watch: true})
-        const initializeLocationTypeFromRequest = async (
-            [locationType, setLocations]: [LocationType, (locations: Location[]) => void],
-        ) => {
-            const locations = (await axios.get(
-                `https://mapsential.de/api/filter_locations/${locationType}`
-            )).data;
+            const markerIcon = (await getMapIcons())[locationType]
+
+            setStatus("loading")
+
+            const locations = await fetchLocations(locationType)
 
             setLocations(locations)
-            await addMapLocationsLayer(locationType, locations)
-            updateMapRenderedLocationTypes({[locationType]: true})
-        }
 
-        Promise.all(([
-            ['defibrillator', store.locations.setDefibrillator_locations],
-            ['drinking_fountain', store.locations.setDrinking_Fountain_locations],
-            ['soup_kitchen', store.locations.setSoup_Kitchen_locations],
-            ['toilet', store.locations.setToilet_locations],
-        ] as [LocationType, (locations: Location[]) => void][]).map(
-            (args) => initializeLocationTypeFromRequest(args)
-        )).catch((error: AxiosError) => console.error(error));
+            const markers = createMarkersFromLocations(markerIcon, locations)
+            const popups = addPopupsToMarkers(markers)
+            addMarkersToMapLayer(mapLayer, markers)
+            addOnClickEventHandlersToMarkers(store, markers, popups, locations)
+            mapLayer.addTo(store.mapClusterLayer)
+
+            setStatus("loaded")
+        })();
     }, [])
 
     useEffect(() => {
-        updateMapRenderedLocationTypes({
-            "defibrillator": store.checkboxes.defibrillator_checkbox,
-            "drinking_fountain": store.checkboxes.drinking_fountain_checkbox,
-            "soup_kitchen": store.checkboxes.soup_Kitchen_checkbox,
-            "toilet": store.checkboxes.toilet_checkbox,
-        })
-    }, [
-        store.checkboxes.defibrillator_checkbox,
-        store.checkboxes.drinking_fountain_checkbox,
-        store.checkboxes.soup_Kitchen_checkbox,
-        store.checkboxes.toilet_checkbox,
+        if (status === "unchecked") {
+            store.mapClusterLayer.removeLayer(mapLayer)
+        } else {
+            mapLayer.addTo(store.mapClusterLayer)
+        }
+    }, [status])
+
+    return {
+        status,
+        setStatus,
+        locations,
+        setLocations,
+        mapLayer,
+    }
+}
+
+async function fetchLocations(locationType: LocationType): Promise<Location[]> {
+    return (await axios.get<Location[]>(
+        `https://mapsential.de/api/filter_locations/${locationType}`
+    )).data
+}
+
+async function fetchLocationDetails(location: Location): Promise<LocationDetails> {
+    return (await axios.get<LocationDetails>(
+        `https://mapsential.de/api/details/${location.locationType}/${location.detailsId}`
+    )).data
+}
+
+function createMarkersFromLocations(markerIcon: Leaflet.Icon, locations: Location[]): Leaflet.Marker[] {
+    return locations.map((location) => createMarkerFromLocation(markerIcon, location))
+}
+
+function createMarkerFromLocation(markerIcon: Leaflet.Icon, location: Location): Leaflet.Marker {
+    return Leaflet.marker([location.latitude, location.longitude], {icon: markerIcon})
+}
+
+function addPopupsToMarkers(markers: Leaflet.Marker[]): Leaflet.Popup[] {
+    return markers.map(addPopupToMarker)
+}
+
+function addPopupToMarker(marker: Leaflet.Marker): Leaflet.Popup {
+    const popup = Leaflet.popup()
+
+    marker.bindPopup(popup)
+
+    return popup;
+}
+
+function addMarkersToMapLayer(layer: Leaflet.LayerGroup, markers: Leaflet.Marker[]): void {
+    markers.forEach((marker) => addMarkerToLayer(layer, marker))
+}
+
+function addMarkerToLayer(layer: Leaflet.LayerGroup, marker: Leaflet.Marker): void {
+    marker.addTo(layer)
+}
+
+function addOnClickEventHandlersToMarkers(
+    store: IStoreContext,
+    markers: Leaflet.Marker[], 
+    popups: Leaflet.Popup[],
+    locations: Location[],
+): void {
+    for (let i = 0; i < markers.length; i++) {
+        const marker = markers[i]
+        const popup = popups[i]
+        const location = locations[i]
+
+        addOnClickEventHandlerToMarker(store, marker, popup, location)
+    }
+}
+
+function addOnClickEventHandlerToMarker(
+    store: IStoreContext,
+    marker: Leaflet.Marker,
+    popup: Leaflet.Popup,
+    location: Location
+): void {
+    marker.on("click", () => handleMarkerClick(
+        store,
+        marker,
+        popup,
+        location,
+    ))
+}
+
+function handleMarkerClick(
+    store: IStoreContext,
+    marker: Leaflet.Marker,
+    popup: Leaflet.Popup,
+    location: Location
+): void {
+    // TODO: Add error handling
+    (async () => {
+        const details = await fetchLocationDetails(location)
+
+        const inner: HTMLDivElement = document.createElement('div');
+        ReactDOM.render(
+            <LocationInformation location={location} details={details} key={location.locationId}/>,
+            inner
+        );
+        (popup as any).setContent(inner.outerHTML)
+
+        createShowRouteButtonClickEventListener(
+            store,
+            marker,
+            popup,
+            location,
+        )
+    })()
+}
+
+function createShowRouteButtonClickEventListener(
+    store: IStoreContext,
+    marker: Leaflet.Marker,
+    popup: Leaflet.Popup,
+    location: Location,
+): void {
+    const btnEl = document.getElementById(`locationButton${location.locationId}`) as HTMLElement
+    btnEl.addEventListener("click", () => handleShowRouteClick(
+        store,
+        location,
+        marker,
+    ));
+
+    (
+        document.getElementById(`commentButton:${location.locationId}`) as HTMLElement
+    ).addEventListener(
+        'click',
+        () => {
+            store.setCommentDialogOpen(true)
+            store.setCurrentComments(5)
+            setTimeout(() => {console.log(store.currentComments);}, 1000)
+            getComments(store, location.locationId)
+        }
+    )
+}
+
+function getComments(store: IStoreContext, locationId: number) {
+    if(!store.commentMap.has(locationId)){
+        if(locationId % 4 === 0){
+            store.commentMap.set(locationId, [{
+                timestamp: "0",
+                content: "Kommentar 0",
+                authorName: "Tester 0",
+                detailsId: locationId,
+                commentId: 0,
+            }])
+
+        }
+        if(locationId % 4 === 1){
+            store.commentMap.set(locationId, [{
+                timestamp: "1",
+                content: "Kommentar 1",
+                authorName: "Tester 1",
+                detailsId: locationId,
+                commentId: 1,
+            }])
+
+        }
+        if(locationId % 4 === 2){
+            store.commentMap.set(locationId, [{
+                timestamp: "2",
+                content: "Kommentar 2",
+                authorName: "Tester 2",
+                detailsId: locationId,
+                commentId: 2,
+            }])
+
+        }
+        if(locationId % 4 === 3){
+            store.commentMap.set(locationId, [{
+                timestamp: "3",
+                content: "Kommentar 3",
+                authorName: "Tester 3",
+                detailsId: locationId,
+                commentId: 3,
+            }])
+
+        }
+    }
+}
+
+function handleShowRouteClick(
+    store: IStoreContext,
+    location: Location,
+    marker: Leaflet.Marker,
+): void {
+    if (store.currentLocation === null) {
+        store.mapRoutingPlan.spliceWaypoints(
+            1,
+            store.mapRoutingPlan.getWaypoints().length,
+            new Leaflet.Routing.Waypoint(
+                new Leaflet.LatLng(location.latitude, location.longitude),
+                "",
+                {}
+            )
+        )
+
+        store.mapRoutingControl.addTo(store.map)
+
+        store.setRouteStatus("loaded")
+
+        marker.getPopup()?.remove()
+
+        return
+    }
+
+    store.mapRoutingPlan.setWaypoints([
+        store.currentLocation,
+        new Leaflet.LatLng(location.latitude, location.longitude),
     ])
 
-    return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+    store.setRouteStatus("loading")
+    store.mapRoutingControl.addTo(store.map)
+    store.mapRoutingControl.hide()
+
+    const showRoute = () => {
+        store.mapRoutingControl.show()
+
+        store.setRouteStatus("loaded")
+
+        marker.getPopup()?.remove()
+    }
+
+    store.mapRoutingControl.on('routesfound', showRoute)
+    setTimeout(() => {
+        if (store.routeStatus !== "loading") {
+            return
+        }
+
+        console.warn(
+            `Failed to load route within ${FORCE_SHOW_ROUTE_AFTER_MS} milliseconds, attempting to display anyway`
+        )
+        showRoute()
+    }, FORCE_SHOW_ROUTE_AFTER_MS)
+}
+
+function createGlobalMapEntries(): GlobalMapEntries {
+    // Create div and use div for leaflet map
+    const mapDiv = document.createElement('div')
+    mapDiv.classList.add('map')
+    const map = Leaflet.map(mapDiv).setView(MAP_CENTER, MAP_ZOOM)
+
+    // Add openstreet maps tiles
+    Leaflet.tileLayer(MAP_TILES_URL_TEMPLATE, MAP_TILES_LAYER_OPTIONS).addTo(map)
+
+    // Add cluster layer for location markers
+    const mapClusterLayer = Leaflet.markerClusterGroup()
+    map.addLayer(mapClusterLayer)
+
+    // Add routing
+    const mapRoutingPlan = Leaflet.Routing.plan([], {
+        geocoder: (Leaflet.Control as any).Geocoder.nominatim({
+            language: "de",
+        }),
+        createMarker: (waypointIndex: number, waypoint: Leaflet.Routing.Waypoint, numberWaypoints: number) => {
+            return Leaflet.marker(waypoint.latLng, {
+                icon: Leaflet.icon({
+                    iconUrl: "./marker-icon-waypoint.png",
+                    iconSize: [25, 41],
+                    iconAnchor: [25/ 2, 41],
+                })
+            })
+        },
+        language: "de",
+    })
+    const mapRoutingControl = Leaflet.Routing.control({
+        plan: mapRoutingPlan,
+        router: Leaflet.Routing.osrmv1({
+            serviceUrl: MAP_OSRM_URL,
+            language: "de",
+        }),
+        addWaypoints: false,
+    });
+
+    return {map, mapDiv, mapClusterLayer, mapRoutingControl, mapRoutingPlan}
 }

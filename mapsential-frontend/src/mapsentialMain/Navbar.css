@@ -1,35 +1,50 @@
 .MuiDrawer-paper {
-    max-width: 200px !important;
-    min-width: 200px !important;
-    width: 200px !important;
-    padding-left: 20px;
+  max-width: 200px !important;
+  min-width: 200px !important;
+  width: 200px !important;
+  padding-left: 20px;
 }
 
 @media (max-width: 1200px) {
-    .MuiDrawer-paper {
-        width: 100px !important;
-    }
+  .MuiDrawer-paper {
+    width: 100px !important;
+  }
 }
 
 .tip-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-    height: 24em;
-    font-size: 0.75em;
+  width: 100%;
+  height: 24rem;
+  min-height: 24rem;
+  display: grid;
+  grid-template-rows: 40px auto 50px;
+}
+
+.tip-header {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: end;
+}
+
+.tip-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip-content {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: clamp(3vmin, 50%, 4vmin);
+  text-align: center;
 }
 
 .tip-navigation {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    gap: 2rem;
-    align-self: flex-end;
-}
-
-.popup-close {
-    align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  padding-bottom: 1rem;
 }

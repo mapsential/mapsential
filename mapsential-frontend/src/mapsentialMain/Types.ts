@@ -57,3 +57,5 @@ export type locationList = Location[]
 export type FilterLocationResponse = {
     data: LocationInformation[],
 }
+
+export type RouteStatus = "no-route" | "loading" | "loaded"

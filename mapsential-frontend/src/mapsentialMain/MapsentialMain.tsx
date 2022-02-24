@@ -3,7 +3,6 @@ import {Navbar} from "./Navbar";
 import {Box} from '@mui/material'
 import Store from "./Store"
 import Legend from "./Legend"
-import RemoveRouteButton from './RemoveRouteButton';
 import CommentDialog from "./CommentDialog";
 
 export default function MapsentialMain() {
@@ -14,7 +13,6 @@ export default function MapsentialMain() {
                 <Navbar />
                 <MapLeaflet />
                 <Legend />
-                <RemoveRouteButton />
                 <CommentDialog />
             </Box>
         </Store>
