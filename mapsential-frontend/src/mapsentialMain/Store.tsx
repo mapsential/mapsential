@@ -314,7 +314,13 @@ function createGlobalMapEntries(): GlobalMapEntries {
             language: "de",
         }),
         createMarker: (waypointIndex: number, waypoint: Leaflet.Routing.Waypoint, numberWaypoints: number) => {
-            return null as unknown as Leaflet.Marker<any>
+            return Leaflet.marker(waypoint.latLng, {
+                icon: Leaflet.icon({
+                    iconUrl: "./marker-icon-waypoint.png",
+                    iconSize: [25, 41],
+                    iconAnchor: [25/ 2, 41],
+                })
+            })
         },
         language: "de",
     })
