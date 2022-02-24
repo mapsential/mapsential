@@ -1,9 +1,9 @@
-import React from 'react'
 import MapLeaflet from '../mapsentialMain/MapLeaflet'
 import {Navbar} from "./Navbar";
 import {Box} from '@mui/material'
 import Store from "./Store"
 import Legend from "./Legend"
+
 
 export default function MapsentialMain() {
     return (

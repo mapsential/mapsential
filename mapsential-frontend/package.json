@@ -9,6 +9,7 @@
     "@mui/material": "^5.4.0",
     "axios": "^0.24.0",
     "leaflet": "^1.7.1",
+    "leaflet-control-geocoder": "^2.4.0",
     "leaflet-routing-machine": "^3.2.12",
     "leaflet.markercluster": "^1.5.3",
     "normalize.css": "^8.0.1",
