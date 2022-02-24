@@ -53,32 +53,43 @@ type IStoreContext = Record<LocationType, LocationTypeEntry> & GlobalMapEntries 
 }
 
 
-export const StoreContext = createContext<IStoreContext>({} as IStoreContext);
+const StoreDefaults: IStoreContext = {
+    ...Object.fromEntries(locationTypes.map((locationType): [LocationType, LocationTypeEntry] => [locationType, {
+        status: "loading",
+        setStatus: () => {},
+        locations: [],
+        setLocations: () => {},
+        mapLayer: Leaflet.layerGroup(),
+    }])) as unknown as Record<LocationType, LocationTypeEntry>,
+    ...createGlobalMapEntries(),
+    currentLocation: null,
+    routeStatus: "no-route",
+    setRouteStatus: () => {},
+    commentDialogOpen: false,
+    setCommentDialogOpen: (): void => {},
+    currentComments: 0,
+    setCurrentComments: () : void => {},
+    commentMap: new Map<number, CommentList>()
+}
+
+
+export const StoreContext = createContext<IStoreContext>(StoreDefaults);
 
 
 export default function Store ({children}: {children: React.ReactNode | React.ReactNode[]}) {
-    const [routeStatus, setRouteStatus] = useState<RouteStatus>("no-route")
+    const [routeStatus, setRouteStatus] = useState<RouteStatus>(StoreDefaults.routeStatus)
 
-    const [commentDialogOpen, setCommentDialogOpen] = useState<boolean>(false)
-    const [currentComments, setCurrentComments] = useState<number>(0)
+    const [commentDialogOpen, setCommentDialogOpen] = useState<boolean>(StoreDefaults.commentDialogOpen)
+    const [currentComments, setCurrentComments] = useState<number>(StoreDefaults.currentComments)
 
     let store: IStoreContext = {
-        ...Object.fromEntries(locationTypes.map((locationType): [LocationType, LocationTypeEntry] => [locationType, {
-            status: "loading",
-            setStatus: () => {},
-            locations: [],
-            setLocations: () => {},
-            mapLayer: Leaflet.layerGroup(),
-        }])) as unknown as Record<LocationType, LocationTypeEntry>,
-        ...createGlobalMapEntries(),
-        currentLocation: null,
+        ...StoreDefaults,
         routeStatus,
         setRouteStatus,
         commentDialogOpen,
         setCommentDialogOpen,
         currentComments,
         setCurrentComments,
-        commentMap: new Map<number, CommentList>(),
     }
 
     store = {
