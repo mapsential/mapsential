@@ -399,6 +399,10 @@ function createGlobalMapEntries(): GlobalMapEntries {
             language: "de",
         }),
         createMarker: (waypointIndex: number, waypoint: Leaflet.Routing.Waypoint, numberWaypoints: number) => {
+            if (waypointIndex >= numberWaypoints - 1) {
+                return null as unknown as Leaflet.Marker<null>
+            }
+
             return Leaflet.marker(waypoint.latLng, {
                 icon: Leaflet.icon({
                     iconUrl: "./marker-icon-waypoint.png",
