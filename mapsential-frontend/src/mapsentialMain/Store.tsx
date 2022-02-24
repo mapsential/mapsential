@@ -96,6 +96,17 @@ function useLocationTypeEntry(store: IStoreContext, locationType: LocationType):
     useEffect(() => {
         // TODO: Add error handling
         (async () => {
+            store.map.on("locationfound", (e) => {
+                store.currentLocation = e.latlng
+            })
+    
+            store.map.on("locationerror", (err) => {
+                // TODO: Display error message to user
+                console.error(`Could not find location: ${err}`)
+            })
+
+            store.map.locate({watch: true})
+
             const markerIcon = (await getMapIcons())[locationType]
 
             setStatus("loading")
