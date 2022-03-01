@@ -12,6 +12,7 @@ import 'leaflet-routing-machine'
 import 'leaflet-control-geocoder'
 import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
 import { locationTypes } from './Constants';
+import { fetchLocationDetails, fetchLocations } from './Controllers';
 
 
 const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
@@ -157,18 +158,6 @@ function useLocationTypeEntry(store: IStoreContext, locationType: LocationType):
         setLocations,
         mapLayer,
     }
-}
-
-async function fetchLocations(locationType: LocationType): Promise<Location[]> {
-    return (await axios.get<Location[]>(
-        `https://mapsential.de/api/filter_locations/${locationType}`
-    )).data
-}
-
-async function fetchLocationDetails(location: Location): Promise<LocationDetails> {
-    return (await axios.get<LocationDetails>(
-        `https://mapsential.de/api/details/${location.locationType}/${location.detailsId}`
-    )).data
 }
 
 function createMarkersFromLocations(markerIcon: Leaflet.Icon, locations: Location[]): Leaflet.Marker[] {
