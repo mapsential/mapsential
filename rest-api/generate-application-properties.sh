@@ -6,7 +6,7 @@ cd "$( dirname "${BASH_SOURCE[0]}" )" || exit 1
 
 env=$1
 
-if [ $env = "docker-dev" ]; then
+if [[ $env == "docker-dev" ]]; then
     db_host="db"
     # TODO: Do not hardcode dev password here.
     # Password should have single source of truth
