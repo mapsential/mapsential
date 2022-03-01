@@ -16,7 +16,7 @@ FROM install AS run
 
 EXPOSE 80
 
-ENV IS_PROD=true
+ENV ENV=prod
 
 ENTRYPOINT cd admin_backend \
     # Uncomment following and run `podman-compose down && podman-compose build && podman-compose up`

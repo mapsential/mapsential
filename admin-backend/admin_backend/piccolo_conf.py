@@ -1,33 +1,44 @@
-from env import is_production
+import os
+
 from passwords import get_password
 from piccolo.conf.apps import AppRegistry
 from piccolo.engine.postgres import PostgresEngine
 
 
 BASE_POSTGRES_CONFIG = dict(
-    host="localhost",
     port="5432",
     user="postgres",
     database="postgres",
+    password=get_password("postgres/password"),
 )
 
 
-def get_postgres_production_config() -> dict:
+def get_postgres_prod_config() -> dict:
     return dict(
         **BASE_POSTGRES_CONFIG,
-        passfile="/run/secrets/postgres_password",
+        host="localhost",
     )
 
 
-def get_postgres_development_config() -> dict:
+def get_postgres_docker_dev_config() -> dict:
     return dict(
         **BASE_POSTGRES_CONFIG,
-        password=get_password("postgres/password"),
+        host="db",
+    )
+
+
+def get_postgres_dev_config() -> dict:
+    return dict(
+        **BASE_POSTGRES_CONFIG,
+        host="localhost",
     )
 
 
 DB = PostgresEngine(
-    config=get_postgres_production_config() if is_production() else get_postgres_development_config()
+    config={
+        "prod": get_postgres_prod_config(),
+        "docker-dev": get_postgres_docker_dev_config(),
+    }.get(os.environ["ENV"], get_postgres_dev_config())
 )
 
 APP_REGISTRY = AppRegistry(

@@ -5,16 +5,11 @@ WORKDIR /workspace/app
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
+COPY generate-application-properties.sh generate-application-properties.sh
 COPY src src
 
-RUN mkdir -p /etc/config/datasource && \
-    ln -s /run/secrets/postgres_password /etc/config/datasource/password
+ARG ENV
 
-RUN ./mvnw package -Dprofile=prod -DskipTests
+RUN ./generate-application-properties.sh ${ENV} && ./mvnw package -DskipTests
 
-
-FROM build AS run
-
-EXPOSE 8080
-
-ENTRYPOINT java -jar target/mapsential-0.0.1-SNAPSHOT.jar
+ENTRYPOINT java -jar target/mapsential-1.0.0.jar
