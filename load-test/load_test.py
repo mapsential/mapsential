@@ -91,7 +91,7 @@ def test_urls(urls, num, reps, delay, verbose):
                         success_count += 1
                     else:
                         print(
-                            f"{log_prefix} failed with status {response.status} and data:\n{response.data}"
+                            f"{log_prefix} failed with status {response.status} and data:\n{body}"
                         )
                         if verbose:
                             print(body)
