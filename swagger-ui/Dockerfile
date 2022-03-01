@@ -1,4 +1,6 @@
-FROM node:18 AS install
+ARG node_version=18
+
+FROM node:${node_version} AS install
 
 COPY ./package.json .
 # Copying yarn.lock ensures (version) pinned dependencies
