@@ -19,7 +19,7 @@ const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center 
 const MAP_ZOOM = 13;
 const MAP_TILES_URL_TEMPLATE = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const MAP_TILES_LAYER_OPTIONS: Leaflet.TileLayerOptions = {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    attribution: '&copy; <a class="map-copyright" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     minZoom: 5,
 }
 const MAP_MAPBOX_URL = "https://api.mapbox.com/directions/v5"
