@@ -28,8 +28,6 @@ async function fetch<T>(
     try {
         const res = await (axiosInstance || axios).get(url)   
 
-        console.log(res.status)
-
         if (res.status < 300) {
             return res.data;
         }

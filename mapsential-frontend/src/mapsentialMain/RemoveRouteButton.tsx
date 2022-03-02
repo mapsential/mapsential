@@ -7,8 +7,15 @@ export default function RemoveRouteButton({className}: {className: string}): JSX
 
     const handleClickRemoveRoute = () => {
         store.mapRoutingPlan.setWaypoints([])
-        store.mapRoutingControl.remove()
-        store.setRouteStatus("no-route")
+        if (store.mapRoutingControl instanceof Promise) {
+            store.mapRoutingControl.then((mapRoutingControl) => {
+                mapRoutingControl.remove()
+                store.setRouteStatus("no-route")
+            })
+        } else {
+            store.mapRoutingControl.remove()
+            store.setRouteStatus("no-route")
+        }
     }
 
     return <Button

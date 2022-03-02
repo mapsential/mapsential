@@ -22,7 +22,8 @@ const MAP_TILES_LAYER_OPTIONS: Leaflet.TileLayerOptions = {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     minZoom: 5,
 }
-const MAP_OSRM_URL = "https://routing.openstreetmap.de/routed-foot/route/v1"
+const MAP_MAPBOX_URL = "https://api.mapbox.com/directions/v5"
+const MAP_MAPBOX_PROFILE = "mapbox/walking"
 const FORCE_SHOW_ROUTE_AFTER_MS = 5000
 
 
@@ -326,12 +327,13 @@ function createGlobalMapEntries(): GlobalMapEntries {
     })
     const mapRoutingControl = Leaflet.Routing.control({
         plan: mapRoutingPlan,
-        router: Leaflet.Routing.osrmv1({
-            serviceUrl: MAP_OSRM_URL,
+        router: Leaflet.Routing.mapbox(process.env.REACT_APP_MAPBOX_ACCESS_TOKEN as string, {
+            serviceUrl: MAP_MAPBOX_URL,
+            profile: "mapbox/walking",
             language: "de",
         }),
         addWaypoints: false,
-    });
+    })
 
     return {map, mapDiv, mapClusterLayer, mapRoutingControl, mapRoutingPlan}
 }
