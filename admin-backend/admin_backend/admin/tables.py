@@ -299,3 +299,11 @@ class DataAcquisitionLocations(
     locations_id = ForeignKey(references=Locations)
     # Does not use foreign key because the integer references different tables based on location type.
     details_id = Integer()
+
+
+class Comments(Table):
+    locations_id = ForeignKey(references=Locations)
+
+    author_name = Varchar(length=255)
+    content = Text()
+    timestamp = Timestamp()
