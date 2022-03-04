@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {Drawer} from '@mui/material'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -11,27 +11,17 @@ import {Menu, Public, ArrowForwardIos, ArrowBackIosNew, CloseRounded} from "@mui
 import './Navbar.css'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css'
+import { fetchTips } from './Controllers';
 
 export const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
-    //let tips: string[] = [];
-    const getTips = () => 
-        fetch("tips/tips.json")
-        .then(response => {
-            console.log("Zeile 23 +\n", JSON.stringify(response));
-            return response.json();
-        }).then(json => {
-            console.log("Zeile 26 +\n", json);
-            setTips(json.tips);
-            console.log("Zeile 28 +\n", tips);
-        });
     useEffect(() => {
-        getTips();
+        fetchTips().then(tips => setTips(tips));
     }, []);
-    const [tips, setTips] = useState([]);
+    const [tips, setTips] = useState<string[]>([]);
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const nextTip = () => {
         
