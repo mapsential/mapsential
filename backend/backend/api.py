@@ -1,22 +1,23 @@
 from functools import cache
-from typing import Callable, TypeVar
+from typing import Callable
+from typing import TypeVar
 
-from asyncpg.exceptions import ForeignKeyViolationError
-from db.tables import (
-    Comments,
-    Details, 
-    DetailsDefibrillator, 
-    DetailsDrinkingFountain, 
-    DetailsSoupKitchen, 
-    DetailsToilet
-)
-from db.tables import Locations
-from enums import LocationType
 import fastapi
-from fastapi import FastAPI, HTTPException
+from asyncpg.exceptions import ForeignKeyViolationError
+from enums import LocationType
+from fastapi import FastAPI
+from fastapi import HTTPException
 from piccolo.columns import Column
 from piccolo.table import Table
 from piccolo.utils.pydantic import create_pydantic_model
+
+from db.tables import Comments
+from db.tables import Details
+from db.tables import DetailsDefibrillator
+from db.tables import DetailsDrinkingFountain
+from db.tables import DetailsSoupKitchen
+from db.tables import DetailsToilet
+from db.tables import Locations
 
 
 api = FastAPI()
@@ -46,7 +47,7 @@ async def get_detail(location_type: LocationType, detail_id: int):
 
 
 @api.get("/comments/")
-async def get_comment(location_id: int):
+async def get_comments(location_id: int):
     return await Comments.select().where(Comments.location_id == location_id)
 
 
@@ -56,7 +57,7 @@ async def get_comment(comment_id: int):
 
 
 CommentCreationModel = create_pydantic_model(
-    Comments, 
+    Comments,
     exclude_columns=(
         Comments.id,
         Comments.timestamp,
@@ -65,13 +66,13 @@ CommentCreationModel = create_pydantic_model(
 
 
 @api.post("/comment/")
-async def create_comment(comment: CommentCreationModel):
+async def create_comment(comment: CommentCreationModel):  # type: ignore[valid-type]
     try:
-        await Comments.insert(Comments(**comment.dict()))
+        await Comments.insert(Comments(**comment.dict()))  # type: ignore[attr-defined]
     except ForeignKeyViolationError as err:
         raise HTTPException(
-            status_code=409, 
-            detail=f"No location exists with id={comment.location_id}",
+            status_code=409,
+            detail=f"No location exists with id={comment.location_id}",  # type: ignore[attr-defined]
         ) from err
 
 
@@ -91,29 +92,24 @@ def get_details_api_columns_by_location_type(location_type: LocationType) -> lis
 
 @cache
 def get_details_table_from_location_type(location_type: LocationType) -> Details:
-    match location_type:
-        case LocationType.DEFIBRILLATOR:
-            return DetailsDefibrillator
-        case LocationType.DRINKING_FOUNTAIN:
-            return DetailsDrinkingFountain
-        case LocationType.SOUP_KITCHEN:
-            return DetailsSoupKitchen
-        case LocationType.TOILET:
-            return DetailsToilet
-        case _:
-            raise ValueError(f"Invalid location_type '{_}'")
+    return {
+        LocationType.DEFIBRILLATOR: DetailsDefibrillator,
+        LocationType.DRINKING_FOUNTAIN: DetailsDrinkingFountain,
+        LocationType.SOUP_KITCHEN: DetailsSoupKitchen,
+        LocationType.TOILET: DetailsToilet,
+    }[location_type]
 
 
 @cache
 def get_api_columns(table: TableSpecialization):
-    excluders: list[Callable[[str], bool]] = (
+    excluders: tuple[Callable[[Table, str], bool], ...] = (
         is_not_column,
         starts_with_underscores,
         ends_with_source_id,
     )
 
     columns: list[Column] = []
-    
+
     for attr in table.__dict__:
         if any(func(table, attr) for func in excluders):
             continue

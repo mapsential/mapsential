@@ -1,8 +1,9 @@
-from db.piccolo_app import APP_CONFIG
 from env import is_production
 from fastapi import FastAPI
 from piccolo_admin.endpoints import create_admin
 from starlette.routing import Mount
+
+from db.piccolo_app import APP_CONFIG
 
 
 app = FastAPI(

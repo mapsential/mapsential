@@ -19,9 +19,6 @@ from backend.db.tables import (
 from backend.api import get_api_columns, get_details_api_columns_by_location_type
 
 
-Locations = Mock()
-
-
 def test_get_api_columns_excludes_attrs_that_are_not_columns():
     id_column = Column("id")
     str_column = "str"

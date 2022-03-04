@@ -6,6 +6,15 @@ from typing import Type
 from typing import TypedDict
 from typing import TypeVar
 
+from enums import HandDryingMethod
+from enums import LocationType
+from enums import YesNoLimited
+from errors import DatabaseCrudError
+from piccolo.columns.combination import WhereRaw
+from piccolo.table import Table
+from utils.humanize import humanize_iterable
+from utils.humanize import quote
+
 from db.tables import DataAcquisitionDetails
 from db.tables import DataAcquisitionDetailsDefibrillator
 from db.tables import DataAcquisitionDetailsDrinkingFountain
@@ -19,14 +28,6 @@ from db.tables import DetailsSoupKitchen
 from db.tables import DetailsToilet
 from db.tables import Locations
 from db.tables import Sources
-from enums import HandDryingMethod
-from enums import LocationType
-from enums import YesNoLimited
-from errors import DatabaseCrudError
-from piccolo.columns.combination import WhereRaw
-from piccolo.table import Table
-from utils.humanize import humanize_iterable
-from utils.humanize import quote
 
 
 T = TypeVar("T")
