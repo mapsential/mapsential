@@ -54,3 +54,7 @@ PostgreSQL Database.
 10. Run `podman-compose up` in the repo's root directory and select where to download the base images when prompted
 
 After this completes you should see the website running at `127.0.0.1:8000`
+
+# Deployment
+
+> **Important:** If you are running rootless podman in an ssh session the run [`loginctl enable-linger`](https://github.com/containers/podman/blob/main/troubleshooting.md#21-a-rootless-container-running-in-detached-mode-is-closed-at-logout).
