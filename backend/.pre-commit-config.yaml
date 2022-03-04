@@ -1,0 +1,29 @@
+files: ^backend/
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        files: admin_backend/.*
+      - id: trailing-whitespace
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.910-1
+    hooks:
+      - id: mypy
+        args: ['--config-file=./backend/mypy.ini']
+        additional_dependencies: ['types-requests']
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.6.0
+    hooks:
+      - id: reorder-python-imports
+  - repo: local
+    hooks:
+      - id: pipenv-check
+        name: check pipenv dependencies for python vulnerabilities using PyUp
+        entry: pipenv check
+        language: system

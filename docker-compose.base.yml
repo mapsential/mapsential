@@ -7,10 +7,10 @@ services:
       dockerfile: ./nginx/Dockerfile
       context: .
     ports:
-      - "8000:8000"
+      - "8000:80"
     environment:
       - NGINX_HOST=127.0.0.1
-      - NGINX_PORT=8000
+      - NGINX_PORT=80
     depends_on:
       - "rest_api"
       - "admin_backend"
@@ -24,11 +24,17 @@ services:
   rest_api:
     container_name: mapsential_rest_api
     build:
-      context: ./rest-api
+      context: .
+      dockerfile: ./backend/api.Dockerfile
+    volumes:
+      - ./backend:/usr/src/backend
+      - ./db:/usr/src/db
     ports:
       - "8080:8080"
     depends_on:
       - "db"
+    environment:
+      - ENV=docker-dev
 
   swagger_ui:
     container_name: mapsential_swagger_ui
@@ -43,9 +49,9 @@ services:
     container_name: mapsential_admin_backend
     build:
       context: .
-      dockerfile: ./admin-backend/Dockerfile
+      dockerfile: ./backend/admin.Dockerfile
     volumes:
-      - ./admin-backend:/usr/src/admin-backend
+      - ./backend:/usr/src/backend
       - ./db:/usr/src/db
     ports:
       - "8090:8090"

@@ -3,11 +3,11 @@ import { Location, LocationDetails, LocationType } from "./Types"
 
 // TODO: Load urls from .env file
 const APIAxiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_IS_DOCKER_DEV === "true" ? "http://127.0.0.1:8080/api/" : "https://mapsential.de/api/",
+    baseURL: process.env.REACT_APP_IS_DOCKER_DEV === "true" ? "http://127.0.0.1:8000/api/" : "https://mapsential.de/api/",
 })
 
 export async function fetchLocations(locationType: LocationType): Promise<Location[]> {
-    return await fetch(`filter_locations/${locationType}`, APIAxiosInstance)
+    return await fetch(`locations?type=${locationType}`, APIAxiosInstance)
 }
 
 export async function fetchLocationDetails(location: Location): Promise<LocationDetails> {

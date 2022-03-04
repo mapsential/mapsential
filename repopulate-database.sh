@@ -6,7 +6,7 @@ cd "$( dirname "${BASH_SOURCE[0]}" )" || exit 1
 
 function repopulate_database() {
     admin_backend_cmd="
-        cd admin_backend && 
+        cd backend && 
         echo 'Running database migrations...' && 
         piccolo forward all && 
         echo 'Adding defibrillators to database...' && 
