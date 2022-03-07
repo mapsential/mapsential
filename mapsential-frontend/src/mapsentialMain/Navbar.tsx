@@ -1,20 +1,17 @@
-import {useEffect, useState} from 'react'
-import {Drawer} from '@mui/material'
+import { ArrowBackIosNew, ArrowForwardIos, CloseRounded } from "@mui/icons-material";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import Sidebar from "./Sidebar";
-import {Menu, Public, ArrowForwardIos, ArrowBackIosNew, CloseRounded} from "@mui/icons-material";
-import './Navbar.css'
+import Toolbar from '@mui/material/Toolbar';
+import { useEffect, useState } from 'react';
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css'
+import 'reactjs-popup/dist/index.css';
 import { fetchTips } from './Controllers';
+import Logo from './Logo';
+import './Navbar.css';
 
 export const Navbar = () => {
-    const [open, setOpen] = useState(false);
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);
@@ -46,14 +43,8 @@ export const Navbar = () => {
     return (
         <Box>
             <AppBar position="static">
-                <Toolbar>
-                    <IconButton color="inherit" aria-label="menu" sx={{mr: 2}} onClick={() => {setOpen(true)}}>
-                        <Menu/>
-                    </IconButton>
-                    <Public/>
-                    <Typography variant="h6" sx={{flexGrow: 1}}>
-                       Mapsential
-                    </Typography>
+                <Toolbar className="toolbar">
+                    <Logo />
                     <Button color="inherit" onClick={openPopup}>Tipps</Button>
                     <Popup open={popupOpen} closeOnDocumentClick onClose={closePopup}>
                         <div className="tip-container">
@@ -77,9 +68,6 @@ export const Navbar = () => {
                     </Popup>                   
                 </Toolbar>
             </AppBar>
-            <Drawer variant="temporary" open={open} onClose={() => {setOpen(false)}}>
-                <Sidebar/>
-            </Drawer>
         </Box>
     )
 }
