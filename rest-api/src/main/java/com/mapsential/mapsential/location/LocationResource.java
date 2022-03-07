@@ -29,11 +29,11 @@ public class LocationResource implements Serializable {
     @Column(name = "type")
     private String locationType;
 
-//    @Column(name = "name")
-//    private String locationName;
-//
-//    @Column(name = "address")
-//    private String locationAddress;
+    @Column(name = "name")
+    private String locationName;
+
+    @Column(name = "address")
+    private String locationAddress;
 
     @Column(name = "longitude")
     private Double longitude;
