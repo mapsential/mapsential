@@ -2,3 +2,4 @@ gpg_keyring.gpg*
 .#*
 **/**/.idea/
 *.iml
+.mypy_cache/

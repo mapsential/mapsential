@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import aiohttp
 import asyncio
 import datetime
@@ -8,7 +6,7 @@ import random
 import click
 
 
-@click.group()
+@click.group(context_settings={"show_default": True})
 @click.option("-n", "--num", default=10, help="Number of requests to send at the same time")
 @click.option("-r", "--reps", default=10, help="Number of times to repeat requests")
 @click.option("-d", "--delay", default=1, help="")

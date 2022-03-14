@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
-piccolo = {extras = ["sqlite", "uvloop"], version = "*"}
+piccolo = {extras = ["uvloop"], version = "*"}
 piccolo-admin = "*"
 overpy = "*"
 geopy = "*"
@@ -14,15 +14,20 @@ requests = "*"
 types-requests = "*"
 gunicorn = "*"
 asyncpg = "*"
+click = "*"
 
 [dev-packages]
-pre-commit = "*"
 pytest = "*"
 mypy = "*"
 ipython = "*"
+pre-commit = "*"
+vulture = "*"
 
 [requires]
 python_version = "3.10"
 
 [pipenv]
 allow_prereleases = true
+
+[scripts]
+cli = "bash -c 'cd backend && pipenv run python cli.py $0 $@'"

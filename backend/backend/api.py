@@ -13,10 +13,6 @@ from piccolo.utils.pydantic import create_pydantic_model
 
 from db.tables import Comments
 from db.tables import Details
-from db.tables import DetailsDefibrillator
-from db.tables import DetailsDrinkingFountain
-from db.tables import DetailsSoupKitchen
-from db.tables import DetailsToilet
 from db.tables import Locations
 
 
@@ -39,11 +35,9 @@ async def get_location(location_id: int):
     return await select_columns_from_locations().where(Locations.id == location_id)
 
 
-@api.get("/detail/{location_type}/{detail_id}")
-async def get_detail(location_type: LocationType, detail_id: int):
-    return await select_columns_from_details(location_type).where(
-        get_details_table_from_location_type(location_type).id == detail_id
-    )
+@api.get("/details/{detail_id}")
+async def get_details(detail_id: int):
+    return await select_columns_from_details().where(Details.id == detail_id)
 
 
 @api.get("/comments/")
@@ -80,24 +74,8 @@ def select_columns_from_locations():
     return Locations.select(*get_api_columns(Locations))
 
 
-def select_columns_from_details(location_type: LocationType):
-    table = get_details_table_from_location_type(location_type)
-
-    return table.select(*get_details_api_columns_by_location_type(location_type))
-
-
-def get_details_api_columns_by_location_type(location_type: LocationType) -> list[Column]:
-    return get_api_columns(get_details_table_from_location_type(location_type))
-
-
-@cache
-def get_details_table_from_location_type(location_type: LocationType) -> Details:
-    return {
-        LocationType.DEFIBRILLATOR: DetailsDefibrillator,
-        LocationType.DRINKING_FOUNTAIN: DetailsDrinkingFountain,
-        LocationType.SOUP_KITCHEN: DetailsSoupKitchen,
-        LocationType.TOILET: DetailsToilet,
-    }[location_type]
+def select_columns_from_details():
+    return Details.select(*get_api_columns(Details))
 
 
 @cache

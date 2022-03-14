@@ -33,3 +33,17 @@ def test_humanize_iterable_with_quote_code():
         ("foo", "bar", "baz"),
         str_transformation=humanize.quote_code,
     ) == '`foo`, `bar` and `baz`'
+
+
+def test_humanize_get_shortend_to_original():
+    assert {
+        "de": "defibrillators",
+        "df": "drinking_fountains",
+        "sk": "soup_kitchens",
+        "to": "toilets",
+    } == humanize.get_shortend_to_originals([
+        "defibrillators",
+        "drinking_fountains",
+        "soup_kitchens",
+        "toilets",
+    ])

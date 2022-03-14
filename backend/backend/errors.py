@@ -1,15 +1,16 @@
-class AdminBackendError(Exception):
+class BackendError(Exception):
     pass
 
 
-_BaseError = AdminBackendError
+_BaseError = BackendError
 
 
-class DatabaseError(_BaseError):
+class CountryCodeError(BackendError):
+    pass
+
+class DataManagementError(BackendError):
     pass
 
 
-class DatabaseCrudError(DatabaseError):
-    """Errors relating to create, read, update and delete database operations."""
-
+class GeolocationError(DataManagementError):
     pass

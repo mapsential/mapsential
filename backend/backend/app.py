@@ -1,3 +1,5 @@
+from typing import cast
+
 from env import is_production
 from fastapi import FastAPI
 from piccolo_admin.endpoints import create_admin
