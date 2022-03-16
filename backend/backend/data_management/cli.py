@@ -1,15 +1,11 @@
 #!/bin/python
 import click
+from constants import LOCATION_TYPE_NAMES
+from constants import LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS
 from enums import LocationType
-from utils.enums import get_values as get_enum_values
-from utils.humanize import get_shortend_to_originals
 from utils.iterables import flatten
 
 from . import update
-
-
-LOCATION_TYPE_NAMES = get_enum_values(LocationType)
-LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS = get_shortend_to_originals(LOCATION_TYPE_NAMES)
 
 
 @click.group(help="Data management commands.")

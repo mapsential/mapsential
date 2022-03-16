@@ -1,13 +1,16 @@
-from functools import cache
-from typing import Callable
+from datetime import datetime
+from datetime import timedelta
+from typing import Iterable
+from typing import TypedDict
 from typing import TypeVar
 
-import fastapi
 from asyncpg.exceptions import ForeignKeyViolationError
-from enums import LocationType
+from constants import LOCATION_TYPE_NAMES_ORIGINALS_TO_SHORTEND
+from constants import LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS
 from fastapi import FastAPI
 from fastapi import HTTPException
-from piccolo.columns import Column
+from fastapi import Query
+from piccolo.engine import engine_finder
 from piccolo.table import Table
 from piccolo.utils.pydantic import create_pydantic_model
 
@@ -16,28 +19,117 @@ from db.tables import Details
 from db.tables import Locations
 
 
+TableSpecialization = TypeVar("TableSpecialization", bound=Table)
+
+LocationsCompactResponse = dict[
+    str,  # shortend location name
+    "LocationCompactResponseRows",
+]
+
+class LocationCompactResponseRows(TypedDict):
+    id: list[int]
+    did: list[int]
+    lat: list[float]
+    lon: list[float]
+
+
+MAX_LOCATIONS_LIMIT = 100
+LOCATIONS_COMPACT_CACHE_DURATION = timedelta(hours=3)
+
+
+# Setup
+# ============================================================================
+
+
 api = FastAPI()
 
+locations_compact_cache: Iterable[LocationsCompactResponse]
 
-TableSpecialization = TypeVar("TableSpecialization", bound=Table)
+
+# Use piccolo/asyncpg/postgres connection pool
+@api.on_event('startup')
+async def open_database_connection_pool():
+    engine = engine_finder()
+    await engine.start_connection_pool()
+
+    global locations_compact_cache
+    locations_compact_cache = create_locations_compact_cache()
+    # Prime cache
+    async for _ in locations_compact_cache:
+        break
+
+
+async def create_locations_compact_cache():
+    cached_locations = await get_locations_compact_from_db()
+    last_cache_refresh = datetime.now()
+
+    while True:
+        yield cached_locations
+
+        # Only refresh cache after usage in order not to slow down response time
+        if last_cache_refresh < (now := datetime.now()) - LOCATIONS_COMPACT_CACHE_DURATION:
+            cached_locations = await get_locations_compact_from_db()
+            last_cache_refresh = now
+
+
+async def get_locations_compact_from_db() -> LocationsCompactResponse:
+    compact: LocationsCompactResponse = {
+        shortend_type: {"id": [], "did": [], "lat": [], "lon": []}
+        for shortend_type in LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS.keys()
+    }
+
+    for location in (await Locations.select()):
+        shortend_type = LOCATION_TYPE_NAMES_ORIGINALS_TO_SHORTEND[location["type"]]
+
+        (rows := compact[shortend_type])["id"].append(location["id"])
+        rows["did"].append(location["details_id"])
+        rows["lat"].append(location["latitude"])
+        rows["lon"].append(location["longitude"])
+
+    return compact
+
+
+
+@api.on_event('shutdown')
+async def close_database_connection_pool():
+    engine = engine_finder()
+    await engine.close_connection_pool()
+
+
+# Locations
+# ============================================================================
+
+# This endpoint is optimized for size and speed, because we return a lot of locations
+@api.get("/locations-compact")
+async def get_locations_compact():
+    async for locations_compact in locations_compact_cache:
+        return locations_compact
 
 
 @api.get("/locations")
-async def get_locations(types: list[LocationType] = fastapi.Query(alias="type", default=[])):
-    if len(types) == 0:
-        return await select_columns_from_locations()
-
-    return await select_columns_from_locations().where(Locations.type.is_in([type_.value for type_ in types]))
+async def get_locations(
+    skip: int,
+    limit: int = Query(default=100, gt=0, lt=MAX_LOCATIONS_LIMIT + 1)
+):
+    return await Locations.select().order_by(Locations.id).offset(skip).limit(limit)
 
 
 @api.get("/location/{location_id}")
 async def get_location(location_id: int):
-    return await select_columns_from_locations().where(Locations.id == location_id)
+    return await Locations.select().where(Locations.id == location_id)
+
+
+# Details
+# ============================================================================
 
 
 @api.get("/details/{detail_id}")
 async def get_details(detail_id: int):
-    return await select_columns_from_details().where(Details.id == detail_id)
+    return await Details.select().where(Details.id == detail_id)
+
+
+# Comments
+# ============================================================================
 
 
 @api.get("/comments/")
@@ -68,42 +160,3 @@ async def create_comment(comment: CommentCreationModel):  # type: ignore[valid-t
             status_code=409,
             detail=f"No location exists with id={comment.location_id}",  # type: ignore[attr-defined]
         ) from err
-
-
-def select_columns_from_locations():
-    return Locations.select(*get_api_columns(Locations))
-
-
-def select_columns_from_details():
-    return Details.select(*get_api_columns(Details))
-
-
-@cache
-def get_api_columns(table: TableSpecialization):
-    excluders: tuple[Callable[[Table, str], bool], ...] = (
-        is_not_column,
-        starts_with_underscores,
-        ends_with_source_id,
-    )
-
-    columns: list[Column] = []
-
-    for attr in table.__dict__:
-        if any(func(table, attr) for func in excluders):
-            continue
-
-        columns.append(table.__dict__[attr])
-
-    return columns
-
-
-def is_not_column(table: TableSpecialization, attr: str) -> bool:
-    return not isinstance(table.__dict__[attr], Column)
-
-
-def starts_with_underscores(_: TableSpecialization, attr: str) -> bool:
-    return attr.startswith("_")
-
-
-def ends_with_source_id(_: TableSpecialization, attr: str) -> bool:
-    return attr.endswith("source_id")
