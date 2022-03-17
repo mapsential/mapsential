@@ -1,18 +1,12 @@
 import React, {createContext, useEffect, useState} from 'react'
-import axios from "axios";
-import {CommentList, Location, LocationDetails, LocationType, RouteStatus} from "./Types";
+import {CommentList, Location, RouteStatus} from "./Types";
 import Leaflet from "leaflet";
-import {getMapIcons} from "./MapIcons";
-import ReactDOM from "react-dom";
-import LocationInformation from "./LoctionInformation";
 import "leaflet-routing-machine"
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css"
 import 'leaflet.markercluster/dist/leaflet.markercluster.js'
 import 'leaflet-routing-machine'
 import 'leaflet-control-geocoder'
 import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
-import { locationTypes } from './Constants';
-import { fetchLocationDetails, fetchLocations } from './Controllers';
 
 
 const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
@@ -23,16 +17,16 @@ const MAP_TILES_LAYER_OPTIONS: Leaflet.TileLayerOptions = {
     minZoom: 5,
 }
 const MAP_MAPBOX_URL = "https://api.mapbox.com/directions/v5"
-const MAP_MAPBOX_PROFILE = "mapbox/walking"
-const FORCE_SHOW_ROUTE_AFTER_MS = 5000
 
 
-type LocationTypeEntry = {
-    status: "unchecked" | "loading" | "loaded",
-    setStatus: (status: "unchecked" | "loading" | "loaded") => void,
+export type LocationTypeEntry = {
     locations: Location[],
-    setLocations: (locations: Location[]) => void,
+    isDisplayingMapLayer: boolean,
     mapLayer: Leaflet.LayerGroup,
+}
+
+export type LocationTypes = {
+    [locationType: string]: LocationTypeEntry,
 }
 
 type GlobalMapEntries = {
@@ -43,7 +37,12 @@ type GlobalMapEntries = {
     mapRoutingPlan: Leaflet.Routing.Plan,
 }
 
-type IStoreContext = Record<LocationType, LocationTypeEntry> & GlobalMapEntries & {
+export type StoreContext = GlobalMapEntries & {
+    locationTypes: LocationTypes,
+    setLocationTypes: (locatonTypes: LocationTypes) => void,
+    toggleLocationType: (locationType: string) => void,
+    locationsStatus: "loading" | "loaded" | "failed",
+    setLocationsStatus: (locationStatus: "loading" | "loaded" | "failed") => void,
     currentLocation: Leaflet.LatLng | null,
     routeStatus: RouteStatus,
     setRouteStatus: (status: RouteStatus) => void,
@@ -55,14 +54,12 @@ type IStoreContext = Record<LocationType, LocationTypeEntry> & GlobalMapEntries 
 }
 
 
-const StoreDefaults: IStoreContext = {
-    ...Object.fromEntries(locationTypes.map((locationType): [LocationType, LocationTypeEntry] => [locationType, {
-        status: "loading",
-        setStatus: () => {},
-        locations: [],
-        setLocations: () => {},
-        mapLayer: Leaflet.layerGroup(),
-    }])) as unknown as Record<LocationType, LocationTypeEntry>,
+const StoreDefaults: StoreContext = {
+    locationTypes: {},
+    setLocationTypes: () => {},
+    toggleLocationType: () => {},
+    locationsStatus: "loading",
+    setLocationsStatus: (): void => {},
     ...createGlobalMapEntries(),
     currentLocation: null,
     routeStatus: "no-route",
@@ -75,17 +72,48 @@ const StoreDefaults: IStoreContext = {
 }
 
 
-export const StoreContext = createContext<IStoreContext>(StoreDefaults);
+export const StoreContext = createContext<StoreContext>(StoreDefaults);
 
 
 export default function Store ({children}: {children: React.ReactNode | React.ReactNode[]}) {
+    const [locationTypes, setLocationTypes] = useState<LocationTypes>(StoreDefaults.locationTypes);
+    const [locationsStatus, setLocationsStatus] = useState<"loading" | "loaded" | "failed">(StoreDefaults.locationsStatus);
+
+    const toggleLocationType = (locationType: string): void => {
+        const locationTypesEntry = store.locationTypes[locationType]
+
+        let clusterLayerOperation: (layer: Leaflet.Layer) => void
+        let newIsDisplayingMapLayer: boolean
+        if (locationTypesEntry.isDisplayingMapLayer) {
+            clusterLayerOperation = store.mapClusterLayer.removeLayer.bind(store.mapClusterLayer)
+            newIsDisplayingMapLayer = false
+        } else {
+            clusterLayerOperation = store.mapClusterLayer.addLayer.bind(store.mapClusterLayer)
+            newIsDisplayingMapLayer = true
+        }
+
+        clusterLayerOperation(locationTypesEntry.mapLayer)
+        setLocationTypes({
+            ...locationTypes,
+            [locationType]: {
+                ...locationTypesEntry,
+                isDisplayingMapLayer: newIsDisplayingMapLayer,
+            }
+        })
+    } 
+
     const [routeStatus, setRouteStatus] = useState<RouteStatus>(StoreDefaults.routeStatus)
 
     const [commentDialogOpen, setCommentDialogOpen] = useState<boolean>(StoreDefaults.commentDialogOpen)
     const [currentComments, setCurrentComments] = useState<number>(StoreDefaults.currentComments)
 
-    let store: IStoreContext = {
+    let store: StoreContext = {
         ...StoreDefaults,
+        locationTypes,
+        setLocationTypes,
+        toggleLocationType,
+        locationsStatus,
+        setLocationsStatus,
         routeStatus,
         setRouteStatus,
         commentDialogOpen,
@@ -94,280 +122,20 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
         setCurrentComments,
     }
 
-    store = {
-        ...store,
-        "defibrillator": useLocationTypeEntry(store, "defibrillator"),
-        "drinking_fountain": useLocationTypeEntry(store, "drinking_fountain"),
-        "soup_kitchen": useLocationTypeEntry(store, "soup_kitchen"),
-        "toilet": useLocationTypeEntry(store, "toilet"),
-    }
-
-    return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-}
-
-function useLocationTypeEntry(store: IStoreContext, locationType: LocationType): LocationTypeEntry {
-    const defaultEntry = store[locationType]
-    const mapLayer = defaultEntry.mapLayer
-    
-    const [status, setStatus] = useState<"unchecked" | "loading" | "loaded">(defaultEntry.status)
-    const [locations, setLocations] = useState<Location[]>(defaultEntry.locations)
-
     useEffect(() => {
-        // TODO: Add error handling
-        (async () => {
-            store.map.on("locationfound", (e) => {
-                store.currentLocation = e.latlng
-            })
+        store.map.on("locationfound", (e) => {
+            store.currentLocation = e.latlng
+        })
     
-            store.map.on("locationerror", (err) => {
-                // TODO: Display error message to user
-                console.error(`Could not find location: ${err}`)
-            })
-
-            store.map.locate({watch: true})
-
-            const markerIcon = (await getMapIcons())[locationType]
-
-            setStatus("loading")
-
-            const locations = await fetchLocations(locationType)
-
-            setLocations(locations)
-
-            const markers = createMarkersFromLocations(markerIcon, locations)
-            const popups = addPopupsToMarkers(markers)
-            addMarkersToMapLayer(mapLayer, markers)
-            addOnClickEventHandlersToMarkers(store, markers, popups, locations)
-            mapLayer.addTo(store.mapClusterLayer)
-
-            setStatus("loaded")
-        })();
+        store.map.on("locationerror", (err) => {
+            // TODO: Display error message to user
+            console.error(`Could not find location: ${err.message}`)
+        })
+    
+        store.map.locate({watch: true})
     }, [])
 
-    useEffect(() => {
-        if (status === "unchecked") {
-            store.mapClusterLayer.removeLayer(mapLayer)
-        } else {
-            mapLayer.addTo(store.mapClusterLayer)
-        }
-    }, [status])
-
-    return {
-        status,
-        setStatus,
-        locations,
-        setLocations,
-        mapLayer,
-    }
-}
-
-function createMarkersFromLocations(markerIcon: Leaflet.Icon, locations: Location[]): Leaflet.Marker[] {
-    return locations.map((location) => createMarkerFromLocation(markerIcon, location))
-}
-
-function createMarkerFromLocation(markerIcon: Leaflet.Icon, location: Location): Leaflet.Marker {
-    return Leaflet.marker([location.latitude, location.longitude], {icon: markerIcon})
-}
-
-function addPopupsToMarkers(markers: Leaflet.Marker[]): Leaflet.Popup[] {
-    return markers.map(addPopupToMarker)
-}
-
-function addPopupToMarker(marker: Leaflet.Marker): Leaflet.Popup {
-    const popup = Leaflet.popup()
-
-    marker.bindPopup(popup)
-
-    return popup;
-}
-
-function addMarkersToMapLayer(layer: Leaflet.LayerGroup, markers: Leaflet.Marker[]): void {
-    markers.forEach((marker) => addMarkerToLayer(layer, marker))
-}
-
-function addMarkerToLayer(layer: Leaflet.LayerGroup, marker: Leaflet.Marker): void {
-    marker.addTo(layer)
-}
-
-function addOnClickEventHandlersToMarkers(
-    store: IStoreContext,
-    markers: Leaflet.Marker[], 
-    popups: Leaflet.Popup[],
-    locations: Location[],
-): void {
-    for (let i = 0; i < markers.length; i++) {
-        const marker = markers[i]
-        const popup = popups[i]
-        const location = locations[i]
-
-        addOnClickEventHandlerToMarker(store, marker, popup, location)
-    }
-}
-
-function addOnClickEventHandlerToMarker(
-    store: IStoreContext,
-    marker: Leaflet.Marker,
-    popup: Leaflet.Popup,
-    location: Location
-): void {
-    marker.on("click", () => handleMarkerClick(
-        store,
-        marker,
-        popup,
-        location,
-    ))
-}
-
-function handleMarkerClick(
-    store: IStoreContext,
-    marker: Leaflet.Marker,
-    popup: Leaflet.Popup,
-    location: Location
-): void {
-    // TODO: Add error handling
-    (async () => {
-        const details = await fetchLocationDetails(location)
-
-        const inner: HTMLDivElement = document.createElement('div');
-        ReactDOM.render(
-            <LocationInformation location={location} details={details} key={location.locationId}/>,
-            inner
-        );
-        (popup as any).setContent(inner.outerHTML)
-
-        createShowRouteButtonClickEventListener(
-            store,
-            marker,
-            popup,
-            location,
-        )
-    })()
-}
-
-function createShowRouteButtonClickEventListener(
-    store: IStoreContext,
-    marker: Leaflet.Marker,
-    popup: Leaflet.Popup,
-    location: Location,
-): void {
-    const btnEl = document.getElementById(`locationButton${location.locationId}`) as HTMLElement
-    btnEl.addEventListener("click", () => handleShowRouteClick(
-        store,
-        location,
-        marker,
-    ));
-
-    (
-        document.getElementById(`commentButton:${location.locationId}`) as HTMLElement
-    ).addEventListener(
-        'click',
-        () => {
-            store.setCommentDialogOpen(true)
-            store.setCurrentComments(5)
-            setTimeout(() => {console.log(store.currentComments);}, 1000)
-            getComments(store, location.locationId)
-        }
-    )
-}
-
-function getComments(store: IStoreContext, locationId: number) {
-    if(!store.commentMap.has(locationId)){
-        if(locationId % 4 === 0){
-            store.commentMap.set(locationId, [{
-                timestamp: "0",
-                content: "Kommentar 0",
-                authorName: "Tester 0",
-                detailsId: locationId,
-                commentId: 0,
-            }])
-
-        }
-        if(locationId % 4 === 1){
-            store.commentMap.set(locationId, [{
-                timestamp: "1",
-                content: "Kommentar 1",
-                authorName: "Tester 1",
-                detailsId: locationId,
-                commentId: 1,
-            }])
-
-        }
-        if(locationId % 4 === 2){
-            store.commentMap.set(locationId, [{
-                timestamp: "2",
-                content: "Kommentar 2",
-                authorName: "Tester 2",
-                detailsId: locationId,
-                commentId: 2,
-            }])
-
-        }
-        if(locationId % 4 === 3){
-            store.commentMap.set(locationId, [{
-                timestamp: "3",
-                content: "Kommentar 3",
-                authorName: "Tester 3",
-                detailsId: locationId,
-                commentId: 3,
-            }])
-
-        }
-    }
-}
-
-function handleShowRouteClick(
-    store: IStoreContext,
-    location: Location,
-    marker: Leaflet.Marker,
-): void {
-    if (store.currentLocation === null) {
-        store.mapRoutingPlan.spliceWaypoints(
-            1,
-            store.mapRoutingPlan.getWaypoints().length,
-            new Leaflet.Routing.Waypoint(
-                new Leaflet.LatLng(location.latitude, location.longitude),
-                "",
-                {}
-            )
-        )
-
-        store.mapRoutingControl.addTo(store.map)
-
-        store.setRouteStatus("loaded")
-
-        marker.getPopup()?.remove()
-
-        return
-    }
-
-    store.mapRoutingPlan.setWaypoints([
-        store.currentLocation,
-        new Leaflet.LatLng(location.latitude, location.longitude),
-    ])
-
-    store.setRouteStatus("loading")
-    store.mapRoutingControl.addTo(store.map)
-    store.mapRoutingControl.hide()
-
-    const showRoute = () => {
-        store.mapRoutingControl.show()
-
-        store.setRouteStatus("loaded")
-
-        marker.getPopup()?.remove()
-    }
-
-    store.mapRoutingControl.on('routesfound', showRoute)
-    setTimeout(() => {
-        if (store.routeStatus !== "loading") {
-            return
-        }
-
-        console.warn(
-            `Failed to load route within ${FORCE_SHOW_ROUTE_AFTER_MS} milliseconds, attempting to display anyway`
-        )
-        showRoute()
-    }, FORCE_SHOW_ROUTE_AFTER_MS)
+    return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
 }
 
 function createGlobalMapEntries(): GlobalMapEntries {

@@ -3,7 +3,7 @@
 # Setup
 # ============================================================================
 
-original_dir=$( pwd )
+original_dir="$( pwd )"
 # cd to directory of script. Means script can be run from outside directory.
 cd "$( dirname "${BASH_SOURCE[0]}" )" || exit
 

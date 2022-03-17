@@ -1,23 +1,28 @@
-export type LocationInformation = {
-    lat: number,
-    lng: number,
-    name: string,
-    type?: string
-}
-
+// TOOD: Remove!
 export type LocationType = "defibrillator" | "drinking_fountain" | "soup_kitchen" | "toilet"
 
 export type Location = {
-    locationId: number,
+    id: number,
+    type: string,
     detailsId: number,
-    locationType: LocationType,
-    locationName: string,
-    locationAddress: string,
+    latitude: number,
     longitude: number,
-    latitude: number
+}
+
+export type LocationsResponseTypeEntry = {
+    id: number[],
+    did: number[],
+    lat: number[],
+    lon: number[],
+}
+
+export type LocationsResponse = {
+    [locationType: string]: LocationsResponseTypeEntry,
 }
 
 export type LocationDetails = {
+    name: string,
+    address: string,
     operator?:string,
     openingTimes? : string,
     hasFee? : boolean,
@@ -41,7 +46,7 @@ export type LocationDetails = {
     hasPaper? : boolean,
     hasHotWater ? : boolean,
     hasDrinkingWater ? : boolean,
-    info? : string
+    soupKitchenInfo? : string
 }
 export type CommentDetails = {
     commentId: number,
@@ -52,10 +57,5 @@ export type CommentDetails = {
 }
 
 export type CommentList = CommentDetails[]
-export type locationList = Location[]
-
-export type FilterLocationResponse = {
-    data: LocationInformation[],
-}
 
 export type RouteStatus = "no-route" | "loading" | "loaded"

@@ -6,6 +6,7 @@ from typing import TypeVar
 
 from asyncpg.exceptions import ForeignKeyViolationError
 from constants import LOCATION_TYPE_NAMES
+from env import is_production
 from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import Query
@@ -52,6 +53,24 @@ LOCATION_TYPE_TRANSLATIONS = {
 
 
 api = FastAPI()
+
+if not is_production():
+    from fastapi.middleware.cors import CORSMiddleware
+
+    origins = [
+        "http://localhost",
+        "http://localhost:3000",
+    ]
+
+    api.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+    print(origins)
+
 
 locations_compact_cache: Iterable[LocationsCompactResponse]
 

@@ -22,23 +22,26 @@ export default function Legend(): JSX.Element {
                 <IconButton className="Legend-CloseButton" onClick={(): void => setIsOpen(false)}>
                     <CloseIcon />
                 </IconButton>
-                <Box className="Legend-Checkboxes" width="30%" height="30%">
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend"></FormLabel>
-                        <RadioGroup aria-label="" defaultValue="" name="radio-buttons-group">
-                            {locationTypesSortedByNames.map((locationType: LocationType): JSX.Element => <FormControlLabel 
-                                key={`checkbox-${locationType}`}
-                                value={locationType}
-                                control={<Checkbox 
-                                    defaultChecked={store[locationType].status !== "unchecked"}
-                                    onChange={(_, isChecked) => store[locationType].setStatus(isChecked ? "loaded" : "unchecked")}
-                                    style={{color: locationTypeColors[locationType]}}
-                                />}
-                                label={locationTypeNames[locationType].plural}
-                            />)}
-                        </RadioGroup>
-                    </FormControl>
-                </Box>
+                {(store.locationsStatus === "loaded")
+                    ? <Box className="Legend-Checkboxes" width="30%" height="30%">
+                        <FormControl component="fieldset">
+                            <FormLabel component="legend"></FormLabel>
+                            <RadioGroup aria-label="" defaultValue="" name="radio-buttons-group">
+                                {locationTypesSortedByNames.map((locationType: LocationType): JSX.Element => <FormControlLabel 
+                                    key={`checkbox-${locationType}`}
+                                    value={locationType}
+                                    control={<Checkbox 
+                                        defaultChecked={store.locationTypes[locationType].isDisplayingMapLayer}
+                                        onChange={(_, isChecked) => store.toggleLocationType(locationType)}
+                                        style={{color: locationTypeColors[locationType]}}
+                                    />}
+                                    label={locationTypeNames[locationType].plural}
+                                />)}
+                            </RadioGroup>
+                        </FormControl>
+                    </Box>
+                    : <span>Loading...</span>
+                }
             </dialog>
         )
     } else {

@@ -1,4 +1,3 @@
-import React from 'react'
 import {LocationDetails, Location} from "./Types";
 import {Typography, Button} from "@mui/material";
 import {Dvr, FoodBank, Water, Wc} from "@mui/icons-material";
@@ -15,28 +14,29 @@ translations.set("limited","Limitiert")
 export default function LocationInformation({location, details}: {location: Location, details: LocationDetails})  {
     return (
         <div>
-            {location.locationType === "drinking_fountain" &&
+            {/* TODO: Remove repeated code! */}
+            {location.type === "drinking_fountain" &&
                     <div style={{display:"flex"}}>
-                        <Water/><Typography variant="h6" style={{marginLeft:4}}>{translations.get(location.locationType.toLowerCase())}</Typography>
+                        <Water/><Typography variant="h6" style={{marginLeft:4}}>{translations.get(location.type.toLowerCase())}</Typography>
                     </div>
             }
-            {location.locationType === "soup_kitchen" &&
+            {location.type === "soup_kitchen" &&
                 <div style={{display:"flex"}}>
-                    <FoodBank/> <Typography variant="h6" style={{marginLeft:4}}> {translations.get(location.locationType.toLowerCase())}</Typography>
+                    <FoodBank/> <Typography variant="h6" style={{marginLeft:4}}> {translations.get(location.type.toLowerCase())}</Typography>
                 </div>
             }
-            {location.locationType === "toilet" &&
+            {location.type === "toilet" &&
                 <div style={{display:"flex"}}>
-                    <Wc/>  <Typography variant="h6" style={{marginLeft:4}}> {translations.get(location.locationType.toLowerCase())}</Typography>
+                    <Wc/>  <Typography variant="h6" style={{marginLeft:4}}> {translations.get(location.type.toLowerCase())}</Typography>
                 </div>
             }
-            {location.locationType === "defibrillator" &&
+            {location.type === "defibrillator" &&
             <div style={{display: "flex"}}>
-                <Dvr/><Typography variant="h6" style={{marginLeft: 4}}> {translations.get(location.locationType.toLowerCase())}</Typography>
+                <Dvr/><Typography variant="h6" style={{marginLeft: 4}}> {translations.get(location.type.toLowerCase())}</Typography>
             </div>
             }
-            <Typography>{location.locationName}</Typography>
-            <Typography>Adresse: {location.locationAddress}</Typography>
+            <Typography>{details.name}</Typography>
+            <Typography>Adresse: {details.address}</Typography>
             {"openingTimes" in details && <Typography>Öffnungszeiten: {details.openingTimes}</Typography>}
             {"male" in details && (details.male ? <span>M: Ja<br/></span> : <span>M: Nein<br/></span>)}
             {"female" in details && (details.female ? <span>W: Ja<br/></span> : <span>W: Nein<br/></span>)}
@@ -46,8 +46,9 @@ export default function LocationInformation({location, details}: {location: Loca
             {"hasHandWashing" in details && (details.hasHandWashing ? <span>Waschbecken: Ja<br/></span>: <span>Waschbecken: Nein<br/></span>)}
             {"hasPaper" in details && (details.hasPaper ? <span>Papier: Ja<br/></span>: <span>Papier: Nein<br/></span>)}
             {"changeTable" in details && (details.changeTable ? <span>Wickeltisch: Ja<br/></span> : <span>Wickeltisch: Ja<br/></span>)}
-            <Button id={`locationButton${location.locationId}`}>Route anzeigen</Button>
-            <Button id={`commentButton:${location.locationId}`}>Kommentare anzeigen</Button>
+
+            <Button id={`locationButton${location.id}`}>Route anzeigen</Button>
+            <Button id={`commentButton:${location.id}`}>Kommentare anzeigen</Button>
         </div>
     )
 }

@@ -1,10 +1,13 @@
-import React, {useContext} from 'react'
-import {StoreContext} from "./Store";
+import { useContext, useEffect } from 'react';
+import initializeLocationTypes from './InitalizeLocations';
 import "./MapLeaflet.css";
 import RemoveRouteButton from './RemoveRouteButton';
+import { StoreContext } from "./Store";
 
 export default function MapLeaflet(){
     const store = useContext(StoreContext)
+
+    useEffect(() => initializeLocationTypes(store), [])
 
     return <div style={{}} ref={(el) => {
         if (el !== null) {
