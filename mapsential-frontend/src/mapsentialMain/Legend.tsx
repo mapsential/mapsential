@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
-import LegendItem from './LegendItem'
+import { useContext, useState } from 'react'
 import './Legend.css'
-import MapIcon from '@mui/icons-material/Map';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
+import Box from '@mui/material/Box/Box';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import RadioGroup from '@mui/material/RadioGroup';
+import { locationTypeColors, locationTypeNames, locationTypesSortedByNames } from './Constants';
+import Checkbox from '@mui/material/Checkbox';
+import { StoreContext } from './Store';
+import { LocationType } from './Types';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 export default function Legend(): JSX.Element {
+    const store = useContext(StoreContext)
     const [isOpen, setIsOpen] = useState(true);
 
     if (isOpen) {
@@ -14,18 +22,29 @@ export default function Legend(): JSX.Element {
                 <IconButton className="Legend-CloseButton" onClick={(): void => setIsOpen(false)}>
                     <CloseIcon />
                 </IconButton>
-                <ul className="Legend-List">
-                    <LegendItem name="Toiletten" color="#00FF00" />
-                    <LegendItem name="Trinkbrunnen" color="#2ACAEA" />
-                    <LegendItem name="Tafeln" color="#FFFF00" />
-                    <LegendItem name="Defibrillatoren" color="#990000" />
-                </ul>
+                <Box className="Legend-Checkboxes" width="30%" height="30%">
+                    <FormControl component="fieldset">
+                        <FormLabel component="legend"></FormLabel>
+                        <RadioGroup aria-label="" defaultValue="" name="radio-buttons-group">
+                            {locationTypesSortedByNames.map((locationType: LocationType): JSX.Element => <FormControlLabel 
+                                key={`checkbox-${locationType}`}
+                                value={locationType}
+                                control={<Checkbox 
+                                    defaultChecked={store[locationType].status !== "unchecked"}
+                                    onChange={(_, isChecked) => store[locationType].setStatus(isChecked ? "loaded" : "unchecked")}
+                                    style={{color: locationTypeColors[locationType]}}
+                                />}
+                                label={locationTypeNames[locationType].plural}
+                            />)}
+                        </RadioGroup>
+                    </FormControl>
+                </Box>
             </dialog>
         )
     } else {
         return (
             <button className="Legend--closed" onClick={(): void => setIsOpen(true)}>
-                <MapIcon className="Legend-OpenButtonIcon" />
+                <img src="map.svg" className="Legend-OpenButtonIcon" />
             </button>
         )
     }
