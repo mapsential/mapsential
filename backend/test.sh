@@ -13,7 +13,7 @@ cd "$( dirname "${BASH_SOURCE[0]}" )" || exit
 # ============================================================================
 
 # Run pytest within pipenv virtual environment and pass command line arguments to pytest.
-pipenv run python -m pytest "$@"
+cd backend && pipenv run python -m pytest "$@"
 
 
 # Teardown

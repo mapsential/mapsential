@@ -20,6 +20,8 @@ services:
     container_name: mapsential_frontend
     build:
       context: ./mapsential-frontend
+    ports:
+      - "8100:8100"
 
   rest_api:
     container_name: mapsential_rest_api
@@ -35,15 +37,6 @@ services:
       - "db"
     environment:
       - ENV=docker-dev
-
-  swagger_ui:
-    container_name: mapsential_swagger_ui
-    build:
-      context: ./swagger-ui
-    ports:
-      - "8120:8120"
-    depends_on:
-      - "rest_api"
 
   admin_backend:
     container_name: mapsential_admin_backend

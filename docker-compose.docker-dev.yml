@@ -9,11 +9,6 @@ services:
     volumes:
       - ./docker_dev_plaintext_secrets/postgres/password.txt:/run/secrets/postgres_password
 
-  swagger_ui:
-    build: 
-      args:
-        - node_version=17
-
   admin_backend:
     volumes:
       - ./docker_dev_plaintext_secrets/postgres/password.txt:/run/secrets/postgres_password

@@ -1,4 +1,4 @@
-from backend.utils.iterables import chunk_iter
+from utils.iterables import chunk_iter
 
 
 def test_chunk_iter():

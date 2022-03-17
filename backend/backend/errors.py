@@ -5,10 +5,14 @@ class BackendError(Exception):
 _BaseError = BackendError
 
 
-class CountryCodeError(BackendError):
+class CountryCodeError(_BaseError):
     pass
 
-class DataManagementError(BackendError):
+
+class InternationalizedTermError(_BaseError):
+    pass
+
+class DataManagementError(_BaseError):
     pass
 
 

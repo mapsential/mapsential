@@ -1,6 +1,5 @@
 import pytest
-
-from backend.utils import humanize
+from utils import humanize
 
 
 def test_humanize_iterable():

@@ -5,11 +5,13 @@ from typing import TypedDict
 from typing import TypeVar
 
 from asyncpg.exceptions import ForeignKeyViolationError
-from constants import LOCATION_TYPE_NAMES_ORIGINALS_TO_SHORTEND
-from constants import LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS
+from constants import LOCATION_TYPE_NAMES
 from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import Query
+from internationalized_terms import get_plural
+from internationalized_terms import get_singular
+from internationalized_terms import get_translation
 from piccolo.engine import engine_finder
 from piccolo.table import Table
 from piccolo.utils.pydantic import create_pydantic_model
@@ -35,6 +37,14 @@ class LocationCompactResponseRows(TypedDict):
 
 MAX_LOCATIONS_LIMIT = 100
 LOCATIONS_COMPACT_CACHE_DURATION = timedelta(hours=3)
+LOCATION_TYPE_TRANSLATIONS = {
+    country_code: {
+        location_type_name: {
+            "singular": get_singular(translated := get_translation(location_type_name.replace("_", " "), "de")),
+            "plural": get_plural(translated),
+        } for location_type_name in LOCATION_TYPE_NAMES
+    } for country_code in ["de"]
+}
 
 
 # Setup
@@ -74,14 +84,12 @@ async def create_locations_compact_cache():
 
 async def get_locations_compact_from_db() -> LocationsCompactResponse:
     compact: LocationsCompactResponse = {
-        shortend_type: {"id": [], "did": [], "lat": [], "lon": []}
-        for shortend_type in LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS.keys()
+        location_type_name: {"id": [], "did": [], "lat": [], "lon": []}
+        for location_type_name in LOCATION_TYPE_NAMES
     }
 
     for location in (await Locations.select()):
-        shortend_type = LOCATION_TYPE_NAMES_ORIGINALS_TO_SHORTEND[location["type"]]
-
-        (rows := compact[shortend_type])["id"].append(location["id"])
+        (rows := compact[location["type"]])["id"].append(location["id"])
         rows["did"].append(location["details_id"])
         rows["lat"].append(location["latitude"])
         rows["lon"].append(location["longitude"])
@@ -117,6 +125,11 @@ async def get_locations(
 @api.get("/location/{location_id}")
 async def get_location(location_id: int):
     return await Locations.select().where(Locations.id == location_id)
+
+
+@api.get("/location-type-translations")
+async def get_location_type_translations():
+    return LOCATION_TYPE_TRANSLATIONS
 
 
 # Details

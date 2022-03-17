@@ -7,7 +7,3 @@ ADMIN_CONTAINER_NAME = "mapsential_admin_backend"
 
 LOCATION_TYPE_NAMES = get_enum_values(LocationType)
 LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS = get_shortend_to_originals(LOCATION_TYPE_NAMES)
-LOCATION_TYPE_NAMES_ORIGINALS_TO_SHORTEND = {
-    original: shortend
-    for shortend, original in LOCATION_TYPE_NAMES_SHORTEND_TO_ORIGINALS.items()
-}
