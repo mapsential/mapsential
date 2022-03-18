@@ -15,6 +15,7 @@ types-requests = "*"
 gunicorn = "*"
 asyncpg = "*"
 click = "*"
+pillow = "*"
 
 [dev-packages]
 pytest = "*"

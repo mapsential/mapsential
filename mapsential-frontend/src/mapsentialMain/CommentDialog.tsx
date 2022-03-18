@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {useState,useContext} from 'react'
 import {Dialog, DialogContent, DialogTitle} from "@mui/material";
 import {StoreContext} from "./Store";
 import Comments from "./Comments"
-import {CommentList} from "./Types";
 
 
 export default function CommentDialog()  {

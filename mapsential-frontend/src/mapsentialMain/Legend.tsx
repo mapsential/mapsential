@@ -6,15 +6,27 @@ import Box from '@mui/material/Box/Box';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import RadioGroup from '@mui/material/RadioGroup';
-import { locationTypeColors, locationTypeNames, locationTypesSortedByNames } from './Constants';
 import Checkbox from '@mui/material/Checkbox';
 import { StoreContext } from './Store';
-import { LocationType } from './Types';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 export default function Legend(): JSX.Element {
     const store = useContext(StoreContext)
     const [isOpen, setIsOpen] = useState(true);
+
+    const formControls: JSX.Element[] = []
+    for (const [locationTypeName, locationTypeEntry] of Object.entries(store.locationTypes)) {
+        formControls.push(<FormControlLabel 
+            key={`checkbox-${locationTypeName}`}
+            value={locationTypeName}
+            control={<Checkbox 
+                defaultChecked={locationTypeEntry.isDisplayingMapLayer}
+                onChange={() => store.toggleLocationType(locationTypeName)}
+                style={{color: locationTypeEntry.cssColor}}
+            />}
+            label={locationTypeEntry.translations?.de.plural}
+        />)
+    }
 
     if (isOpen) {
         return (
@@ -27,16 +39,7 @@ export default function Legend(): JSX.Element {
                         <FormControl component="fieldset">
                             <FormLabel component="legend"></FormLabel>
                             <RadioGroup aria-label="" defaultValue="" name="radio-buttons-group">
-                                {locationTypesSortedByNames.map((locationType: LocationType): JSX.Element => <FormControlLabel 
-                                    key={`checkbox-${locationType}`}
-                                    value={locationType}
-                                    control={<Checkbox 
-                                        defaultChecked={store.locationTypes[locationType].isDisplayingMapLayer}
-                                        onChange={(_, isChecked) => store.toggleLocationType(locationType)}
-                                        style={{color: locationTypeColors[locationType]}}
-                                    />}
-                                    label={locationTypeNames[locationType].plural}
-                                />)}
+                                {formControls}
                             </RadioGroup>
                         </FormControl>
                     </Box>

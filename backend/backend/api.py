@@ -5,7 +5,10 @@ from typing import TypedDict
 from typing import TypeVar
 
 from asyncpg.exceptions import ForeignKeyViolationError
+from colors import CustomColor
+from colors import get_values_and_nearest_colors
 from constants import LOCATION_TYPE_NAMES
+from enums import LocationType
 from env import is_production
 from fastapi import FastAPI
 from fastapi import HTTPException
@@ -34,6 +37,8 @@ class LocationCompactResponseRows(TypedDict):
     did: list[int]
     lat: list[float]
     lon: list[float]
+    trans: dict[str, dict[str, str]]
+    color: str
 
 
 MAX_LOCATIONS_LIMIT = 100
@@ -46,6 +51,21 @@ LOCATION_TYPE_TRANSLATIONS = {
         } for location_type_name in LOCATION_TYPE_NAMES
     } for country_code in ["de"]
 }
+COLORS_LIGHTNESS = -0.2
+LOCATION_TYPE_TARGET_COLORS = {
+    LocationType.DRINKING_FOUNTAIN.value: CustomColor.from_rgb((2, 126, 221)),  # Light blue
+}
+LOCATION_TYPES_AND_COLORS = [
+    (location_type, color.to_hex())
+    for location_type, color in get_values_and_nearest_colors(
+        list(LOCATION_TYPE_TARGET_COLORS.items()),
+        [
+            location_type_name for location_type_name in LOCATION_TYPE_NAMES
+            if location_type_name not in LOCATION_TYPE_TARGET_COLORS
+        ],
+        lightness=COLORS_LIGHTNESS,
+    )
+]
 
 
 # Setup
@@ -69,7 +89,6 @@ if not is_production():
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    print(origins)
 
 
 locations_compact_cache: Iterable[LocationsCompactResponse]
@@ -103,12 +122,24 @@ async def create_locations_compact_cache():
 
 async def get_locations_compact_from_db() -> LocationsCompactResponse:
     compact: LocationsCompactResponse = {
-        location_type_name: {"id": [], "did": [], "lat": [], "lon": []}
-        for location_type_name in LOCATION_TYPE_NAMES
+        location_type_name: {
+            "id": [],
+            "did": [],
+            "lat": [],
+            "lon": [],
+            "trans": {
+                country_code: translations[location_type_name]
+                for country_code, translations in LOCATION_TYPE_TRANSLATIONS.items()
+            },
+            "color": color,
+        }
+        for location_type_name, color in LOCATION_TYPES_AND_COLORS
     }
 
     for location in (await Locations.select()):
-        (rows := compact[location["type"]])["id"].append(location["id"])
+        location_type = location["type"]
+
+        (rows := compact[location_type])["id"].append(location["id"])
         rows["did"].append(location["details_id"])
         rows["lat"].append(location["latitude"])
         rows["lon"].append(location["longitude"])
@@ -157,7 +188,7 @@ async def get_location_type_translations():
 
 @api.get("/details/{detail_id}")
 async def get_details(detail_id: int):
-    return await Details.select().where(Details.id == detail_id)
+    return (await Details.select().where(Details.id == detail_id))[0]
 
 
 # Comments

@@ -7,9 +7,9 @@ import 'leaflet.markercluster/dist/leaflet.markercluster.js';
 import ReactDOM from "react-dom";
 import { fetchLocationDetails, fetchLocations } from './Controllers';
 import LocationInformation from "./LocationInformation";
-import { getMapIcons } from "./MapIcons";
-import { LocationTypes, StoreContext } from "./Store";
-import { Location, LocationsResponse, LocationsResponseTypeEntry, LocationType } from "./Types";
+import { createLeafletMarkerIcon } from "./MapIcons";
+import { LocationTypeEntries, StoreContext } from "./Store";
+import { Location, LocationsResponse, LocationsResponseTypeEntry } from "./Types";
 
 
 const FORCE_SHOW_ROUTE_AFTER_MS = 5000
@@ -24,23 +24,31 @@ export default function initializeLocationTypes(store: StoreContext): void {
 }
 
 async function initializeLocationsPromise(store: StoreContext): Promise<void> {
-    const locationsResponse: LocationsResponse = await fetchLocations();
+    const locationsResponse: LocationsResponse = await fetchLocations()
 
-    const initialized: LocationTypes = {};
+    const locationTypes = Object.keys(locationsResponse)
 
-    for (const [locationType, responseEntry] of Object.entries(locationsResponse)) {
+    const initialized: LocationTypeEntries = {};
+
+    for (let i = 0; i < locationTypes.length; i++) {
+        const locationType = locationTypes[i]
+        const responseEntry = locationsResponse[locationType]
+
         const locations = getLocationsFromResponseEntry(locationType, responseEntry)
 
         const mapLayer = await createMapLayer(
             store, 
             locationType, 
             locations,
+            responseEntry.color,
         )
 
         initialized[locationType] = {
             locations,
             mapLayer,
             isDisplayingMapLayer: true,
+            translations: responseEntry.trans,
+            cssColor: responseEntry.color,
         }
 
         store.mapClusterLayer.addLayer(mapLayer);
@@ -73,11 +81,12 @@ async function createMapLayer(
     store: StoreContext,
     locationType: string,
     locations: Location[],
+    markerCssColor: string,
 ): Promise<Leaflet.LayerGroup> {
     const mapLayer = Leaflet.layerGroup()
 
     // TODO: Remove LocationType type
-    const markerIcon = (await getMapIcons())[locationType as LocationType]
+    const markerIcon = createLeafletMarkerIcon(markerCssColor)
 
     const markers = createMarkersForType(markerIcon, locations)
     const popups = addPopupsToMarkers(markers)
@@ -88,13 +97,13 @@ async function createMapLayer(
 }
 
 function createMarkersForType(
-    markerIcon: Leaflet.Icon, 
+    markerIcon: Leaflet.DivIcon, 
     locations: Location[],
 ): Leaflet.Marker[] {
     return locations.map((location) => createMarkerFromLocation(markerIcon, location))
 }
 
-function createMarkerFromLocation(markerIcon: Leaflet.Icon, location: Location): Leaflet.Marker {
+function createMarkerFromLocation(markerIcon: Leaflet.DivIcon, location: Location): Leaflet.Marker {
     return Leaflet.marker([location.latitude, location.longitude], {icon: markerIcon})
 }
 

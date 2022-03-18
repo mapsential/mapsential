@@ -12,6 +12,11 @@ class CountryCodeError(_BaseError):
 class InternationalizedTermError(_BaseError):
     pass
 
+
+class CustomColorModelError(_BaseError):
+    pass
+
+
 class DataManagementError(_BaseError):
     pass
 

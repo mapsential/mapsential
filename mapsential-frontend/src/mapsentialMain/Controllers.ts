@@ -3,7 +3,8 @@ import { Location, LocationDetails, LocationsResponse } from "./Types"
 
 // TODO: Load urls from .env file
 const APIAxiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_IS_DOCKER_DEV === "true" ? "http://127.0.0.1:8000/api/" : "https://mapsential.de/api/",
+    baseURL: "http://127.0.0.1:8080",
+    // baseURL: process.env.REACT_APP_IS_DOCKER_DEV === "true" ? "http://127.0.0.1:8000/api/" : "https://mapsential.de/api/",
 })
 
 export async function fetchLocations(): Promise<LocationsResponse> {

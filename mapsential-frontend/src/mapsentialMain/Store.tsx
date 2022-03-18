@@ -1,12 +1,12 @@
-import React, {createContext, useEffect, useState} from 'react'
-import {CommentList, Location, RouteStatus} from "./Types";
 import Leaflet from "leaflet";
-import "leaflet-routing-machine"
-import "leaflet-routing-machine/dist/leaflet-routing-machine.css"
-import 'leaflet.markercluster/dist/leaflet.markercluster.js'
-import 'leaflet-routing-machine'
-import 'leaflet-control-geocoder'
-import 'leaflet-control-geocoder/dist/Control.Geocoder.css'
+import 'leaflet-control-geocoder';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css';
+import "leaflet-routing-machine";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import 'leaflet.markercluster/dist/leaflet.markercluster.js';
+import React, { createContext, useEffect, useState } from 'react';
+import { createWaypointIcon } from "./MapIcons";
+import { CommentList, Location, RouteStatus, Translations } from "./Types";
 
 
 const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
@@ -23,9 +23,11 @@ export type LocationTypeEntry = {
     locations: Location[],
     isDisplayingMapLayer: boolean,
     mapLayer: Leaflet.LayerGroup,
+    translations: Translations,
+    cssColor: string,
 }
 
-export type LocationTypes = {
+export type LocationTypeEntries = {
     [locationType: string]: LocationTypeEntry,
 }
 
@@ -38,8 +40,8 @@ type GlobalMapEntries = {
 }
 
 export type StoreContext = GlobalMapEntries & {
-    locationTypes: LocationTypes,
-    setLocationTypes: (locatonTypes: LocationTypes) => void,
+    locationTypes: LocationTypeEntries,
+    setLocationTypes: (locatonTypes: LocationTypeEntries) => void,
     toggleLocationType: (locationType: string) => void,
     locationsStatus: "loading" | "loaded" | "failed",
     setLocationsStatus: (locationStatus: "loading" | "loaded" | "failed") => void,
@@ -76,7 +78,7 @@ export const StoreContext = createContext<StoreContext>(StoreDefaults);
 
 
 export default function Store ({children}: {children: React.ReactNode | React.ReactNode[]}) {
-    const [locationTypes, setLocationTypes] = useState<LocationTypes>(StoreDefaults.locationTypes);
+    const [locationTypes, setLocationTypes] = useState<LocationTypeEntries>(StoreDefaults.locationTypes);
     const [locationsStatus, setLocationsStatus] = useState<"loading" | "loaded" | "failed">(StoreDefaults.locationsStatus);
 
     const toggleLocationType = (locationType: string): void => {
@@ -162,11 +164,7 @@ function createGlobalMapEntries(): GlobalMapEntries {
             }
 
             return Leaflet.marker(waypoint.latLng, {
-                icon: Leaflet.icon({
-                    iconUrl: "./marker-icon-waypoint.png",
-                    iconSize: [25, 41],
-                    iconAnchor: [25/ 2, 41],
-                })
+                icon: createWaypointIcon(),
             })
         },
         language: "de",
