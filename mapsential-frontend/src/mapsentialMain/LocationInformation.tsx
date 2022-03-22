@@ -1,6 +1,10 @@
-import { Dvr, FoodBank, Water, Wc } from "@mui/icons-material";
-import { Button, Typography } from "@mui/material";
-import { Location, LocationDetails } from "./Types";
+import Dvr from "@mui/icons-material/Dvr"
+import FoodBank from "@mui/icons-material/FoodBank"
+import Water from "@mui/icons-material/Water"
+import Wc from "@mui/icons-material/Wc"
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
+import { Location, LocationDetails } from "./Types"
 
 const LOCATION_TYPE_NAMES_TO_ICONS: { [locationTypeName: string]: JSX.Element } = {
     "defibrillator": <Dvr />,

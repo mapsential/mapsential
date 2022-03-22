@@ -1,12 +1,12 @@
-import Leaflet from "leaflet";
-import 'leaflet-control-geocoder';
-import 'leaflet-control-geocoder/dist/Control.Geocoder.css';
-import "leaflet-routing-machine";
-import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
-import 'leaflet.markercluster/dist/leaflet.markercluster.js';
-import React, { createContext, useEffect, useState } from 'react';
-import { createWaypointIcon } from "./MapIcons";
-import { CommentList, Location, RouteStatus, Translations } from "./Types";
+import Leaflet from "leaflet"
+import "leaflet-control-geocoder"
+import "leaflet-control-geocoder/dist/Control.Geocoder.css"
+import "leaflet-routing-machine"
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css"
+import "leaflet.markercluster/dist/leaflet.markercluster.js"
+import React, { createContext, useEffect, useState } from "react"
+import { createWaypointIcon } from "./MapIcons"
+import { Location, LocationTypeEntries, RouteStatus } from "./Types"
 
 
 const MAP_CENTER: Leaflet.LatLngExpression = [52.520008, 13.404954];  // Center of berlin
@@ -18,18 +18,6 @@ const MAP_TILES_LAYER_OPTIONS: Leaflet.TileLayerOptions = {
 }
 const MAP_MAPBOX_URL = "https://api.mapbox.com/directions/v5"
 
-
-export type LocationTypeEntry = {
-    locations: Location[],
-    isDisplayingMapLayer: boolean,
-    mapLayer: Leaflet.LayerGroup,
-    translations: Translations,
-    cssColor: string,
-}
-
-export type LocationTypeEntries = {
-    [locationType: string]: LocationTypeEntry,
-}
 
 type GlobalMapEntries = {
     map: Leaflet.Map,
@@ -48,11 +36,10 @@ export type StoreContext = GlobalMapEntries & {
     currentLocation: Leaflet.LatLng | null,
     routeStatus: RouteStatus,
     setRouteStatus: (status: RouteStatus) => void,
-    commentDialogOpen: boolean,
-    setCommentDialogOpen: (open: boolean) => void
-    currentComments: number,
-    setCurrentComments: (detailsId: number) => void,
-    commentMap: Map<number, CommentList>,
+    commentsAreOpen: boolean,
+    setCommentsAreOpen: (open: boolean) => void,
+    currentCommentLocation: Location | null,
+    setCurrentCommentLocation: (location: Location | null) => void,
 }
 
 
@@ -66,11 +53,10 @@ const StoreDefaults: StoreContext = {
     currentLocation: null,
     routeStatus: "no-route",
     setRouteStatus: () => {},
-    commentDialogOpen: false,
-    setCommentDialogOpen: (): void => {},
-    currentComments: 0,
-    setCurrentComments: () : void => {},
-    commentMap: new Map<number, CommentList>()
+    commentsAreOpen: false,
+    setCommentsAreOpen: () => {},
+    currentCommentLocation: null,
+    setCurrentCommentLocation: () => {},
 }
 
 
@@ -106,8 +92,8 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
 
     const [routeStatus, setRouteStatus] = useState<RouteStatus>(StoreDefaults.routeStatus)
 
-    const [commentDialogOpen, setCommentDialogOpen] = useState<boolean>(StoreDefaults.commentDialogOpen)
-    const [currentComments, setCurrentComments] = useState<number>(StoreDefaults.currentComments)
+    const [commentsAreOpen, setCommentsAreOpen] = useState<boolean>(StoreDefaults.commentsAreOpen)
+    const [currentCommentLocation, setCurrentCommentLocation] = useState<Location | null>(StoreDefaults.currentCommentLocation);
 
     let store: StoreContext = {
         ...StoreDefaults,
@@ -118,10 +104,10 @@ export default function Store ({children}: {children: React.ReactNode | React.Re
         setLocationsStatus,
         routeStatus,
         setRouteStatus,
-        commentDialogOpen,
-        setCommentDialogOpen,
-        currentComments,
-        setCurrentComments,
+        commentsAreOpen,
+        setCommentsAreOpen,
+        currentCommentLocation,
+        setCurrentCommentLocation,
     }
 
     useEffect(() => {

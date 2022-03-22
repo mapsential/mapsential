@@ -16,6 +16,7 @@ gunicorn = "*"
 asyncpg = "*"
 click = "*"
 pillow = "*"
+captcha = "*"
 
 [dev-packages]
 pytest = "*"

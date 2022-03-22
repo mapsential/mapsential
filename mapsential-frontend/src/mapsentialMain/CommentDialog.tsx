@@ -1,27 +1,36 @@
-import React from 'react'
-import {useState,useContext} from 'react'
-import {Dialog, DialogContent, DialogTitle} from "@mui/material";
-import {StoreContext} from "./Store";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import React, { useContext } from "react"
 import Comments from "./Comments"
+import { StoreContext } from "./Store"
 
 
 export default function CommentDialog()  {
     const store = useContext(StoreContext)
     const handleClose = () => {
-        store.setCommentDialogOpen(false)
+        store.setCommentsAreOpen(false)
     }
-    const [comments, setComments] = useState<any>()
-    if(store.commentMap){
-        if(store.commentMap.has(store.currentComments)){
-            setComments(<Comments commentList={store.commentMap.get(store.currentComments) as any} />)
-        }
+
+    if (store.commentsAreOpen && store.currentCommentLocation === null) {
+        console.error("'currentCommentLocation' should be set!")
     }
+
     return(
         <div>
-            <Dialog open={store.commentDialogOpen} onClose={handleClose}>
+            <Dialog 
+                open={store.commentsAreOpen} 
+                onClose={handleClose}
+            >
                 <DialogTitle>Kommentare</DialogTitle>
                 <DialogContent>
-                    {comments}
+                    {store.currentCommentLocation !== null
+                        ? <Comments location={store.currentCommentLocation} />
+                        : <p>
+                            Die Kommentare könnten nicht geöffnet werden. <br />
+                            Bitte kontaktieren Sie unsere Entwicklerteam.
+                        </p> 
+                    }
                 </DialogContent>
             </Dialog>
         </div>

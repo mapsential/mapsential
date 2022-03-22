@@ -8,8 +8,8 @@ import ReactDOM from "react-dom";
 import { fetchLocationDetails, fetchLocations } from './Controllers';
 import LocationInformation from "./LocationInformation";
 import { createLeafletMarkerIcon } from "./MapIcons";
-import { LocationTypeEntries, StoreContext } from "./Store";
-import { Location, LocationsResponse, LocationsResponseTypeEntry } from "./Types";
+import { StoreContext } from "./Store";
+import { Location, LocationsResponse, LocationsResponseTypeEntry, LocationTypeEntries } from "./Types";
 
 
 const FORCE_SHOW_ROUTE_AFTER_MS = 5000
@@ -176,16 +176,15 @@ function handleMarkerClick(
         createShowRouteButtonClickEventListener(
             store,
             marker,
-            popup,
             location,
         )
+        createCommentsButtonClickEventListener(store, location)
     })()
 }
 
 function createShowRouteButtonClickEventListener(
     store: StoreContext,
     marker: Leaflet.Marker,
-    popup: Leaflet.Popup,
     location: Location,
 ): void {
     const btnEl = document.getElementById(`locationButton${location.id}`) as HTMLElement
@@ -193,64 +192,18 @@ function createShowRouteButtonClickEventListener(
         store,
         location,
         marker,
-    ));
-
-    (
-        document.getElementById(`commentButton:${location.id}`) as HTMLElement
-    ).addEventListener(
-        'click',
-        () => {
-            store.setCommentDialogOpen(true)
-            store.setCurrentComments(5)
-            setTimeout(() => {console.log(store.currentComments);}, 1000)
-            getComments(store, location.id)
-        }
-    )
+    ))
 }
 
-function getComments(store: StoreContext, locationId: number) {
-    if(!store.commentMap.has(locationId)){
-        if(locationId % 4 === 0){
-            store.commentMap.set(locationId, [{
-                timestamp: "0",
-                content: "Kommentar 0",
-                authorName: "Tester 0",
-                detailsId: locationId,
-                commentId: 0,
-            }])
-
-        }
-        if(locationId % 4 === 1){
-            store.commentMap.set(locationId, [{
-                timestamp: "1",
-                content: "Kommentar 1",
-                authorName: "Tester 1",
-                detailsId: locationId,
-                commentId: 1,
-            }])
-
-        }
-        if(locationId % 4 === 2){
-            store.commentMap.set(locationId, [{
-                timestamp: "2",
-                content: "Kommentar 2",
-                authorName: "Tester 2",
-                detailsId: locationId,
-                commentId: 2,
-            }])
-
-        }
-        if(locationId % 4 === 3){
-            store.commentMap.set(locationId, [{
-                timestamp: "3",
-                content: "Kommentar 3",
-                authorName: "Tester 3",
-                detailsId: locationId,
-                commentId: 3,
-            }])
-
-        }
-    }
+function createCommentsButtonClickEventListener(
+    store: StoreContext,
+    location: Location,
+): void {
+    const btnEl =  document.getElementById(`commentButton:${location.id}`) as HTMLElement
+    btnEl.addEventListener("click", () => {
+        store.setCurrentCommentLocation(location)
+        store.setCommentsAreOpen(true)
+    })
 }
 
 function handleShowRouteClick(

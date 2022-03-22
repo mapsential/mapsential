@@ -1,4 +1,4 @@
-# type: ignore
+#type:ignore
 from enum import Enum
 
 from piccolo.apps.migrations.auto.migration_manager import MigrationManager
@@ -42,8 +42,8 @@ class Locations(Table, tablename="locations"):
     )
 
 
-ID = "2022-03-14T13:54:08:731797"
-VERSION = "0.71.0"
+ID = "2022-03-22T13:32:47:400799"
+VERSION = "0.71.1"
 DESCRIPTION = ""
 
 
@@ -54,9 +54,11 @@ async def forwards():
 
     manager.add_table("Details", tablename="details")
 
-    manager.add_table("Comments", tablename="comments")
-
     manager.add_table("Locations", tablename="locations")
+
+    manager.add_table("Captcha", tablename="captcha")
+
+    manager.add_table("Comments", tablename="comments")
 
     manager.add_column(
         table_class_name="Details",
@@ -785,90 +787,6 @@ async def forwards():
     )
 
     manager.add_column(
-        table_class_name="Comments",
-        tablename="comments",
-        column_name="location_id",
-        db_column_name="location_id",
-        column_class_name="ForeignKey",
-        column_class=ForeignKey,
-        params={
-            "references": Locations,
-            "on_delete": OnDelete.cascade,
-            "on_update": OnUpdate.cascade,
-            "target_column": None,
-            "null": True,
-            "primary_key": False,
-            "unique": False,
-            "index": False,
-            "index_method": IndexMethod.btree,
-            "choices": None,
-            "db_column_name": None,
-            "secret": False,
-        },
-    )
-
-    manager.add_column(
-        table_class_name="Comments",
-        tablename="comments",
-        column_name="author_name",
-        db_column_name="author_name",
-        column_class_name="Varchar",
-        column_class=Varchar,
-        params={
-            "length": 255,
-            "default": "",
-            "null": False,
-            "primary_key": False,
-            "unique": False,
-            "index": False,
-            "index_method": IndexMethod.btree,
-            "choices": None,
-            "db_column_name": None,
-            "secret": False,
-        },
-    )
-
-    manager.add_column(
-        table_class_name="Comments",
-        tablename="comments",
-        column_name="content",
-        db_column_name="content",
-        column_class_name="Text",
-        column_class=Text,
-        params={
-            "default": "",
-            "null": False,
-            "primary_key": False,
-            "unique": False,
-            "index": False,
-            "index_method": IndexMethod.btree,
-            "choices": None,
-            "db_column_name": None,
-            "secret": False,
-        },
-    )
-
-    manager.add_column(
-        table_class_name="Comments",
-        tablename="comments",
-        column_name="timestamp",
-        db_column_name="timestamp",
-        column_class_name="Timestamp",
-        column_class=Timestamp,
-        params={
-            "default": TimestampNow(),
-            "null": False,
-            "primary_key": False,
-            "unique": False,
-            "index": False,
-            "index_method": IndexMethod.btree,
-            "choices": None,
-            "db_column_name": None,
-            "secret": False,
-        },
-    )
-
-    manager.add_column(
         table_class_name="Locations",
         tablename="locations",
         column_name="details_id",
@@ -950,6 +868,132 @@ async def forwards():
         params={
             "default": None,
             "null": True,
+            "primary_key": False,
+            "unique": False,
+            "index": False,
+            "index_method": IndexMethod.btree,
+            "choices": None,
+            "db_column_name": None,
+            "secret": False,
+        },
+    )
+
+    manager.add_column(
+        table_class_name="Captcha",
+        tablename="captcha",
+        column_name="token",
+        db_column_name="token",
+        column_class_name="Varchar",
+        column_class=Varchar,
+        params={
+            "length": 255,
+            "default": "",
+            "null": False,
+            "primary_key": False,
+            "unique": False,
+            "index": False,
+            "index_method": IndexMethod.btree,
+            "choices": None,
+            "db_column_name": None,
+            "secret": False,
+        },
+    )
+
+    manager.add_column(
+        table_class_name="Captcha",
+        tablename="captcha",
+        column_name="answer",
+        db_column_name="answer",
+        column_class_name="Varchar",
+        column_class=Varchar,
+        params={
+            "length": 255,
+            "default": "",
+            "null": False,
+            "primary_key": False,
+            "unique": False,
+            "index": False,
+            "index_method": IndexMethod.btree,
+            "choices": None,
+            "db_column_name": None,
+            "secret": False,
+        },
+    )
+
+    manager.add_column(
+        table_class_name="Comments",
+        tablename="comments",
+        column_name="location_id",
+        db_column_name="location_id",
+        column_class_name="ForeignKey",
+        column_class=ForeignKey,
+        params={
+            "references": Locations,
+            "on_delete": OnDelete.cascade,
+            "on_update": OnUpdate.cascade,
+            "target_column": None,
+            "null": True,
+            "primary_key": False,
+            "unique": False,
+            "index": False,
+            "index_method": IndexMethod.btree,
+            "choices": None,
+            "db_column_name": None,
+            "secret": False,
+        },
+    )
+
+    manager.add_column(
+        table_class_name="Comments",
+        tablename="comments",
+        column_name="author_name",
+        db_column_name="author_name",
+        column_class_name="Varchar",
+        column_class=Varchar,
+        params={
+            "length": 255,
+            "default": "",
+            "null": False,
+            "primary_key": False,
+            "unique": False,
+            "index": False,
+            "index_method": IndexMethod.btree,
+            "choices": None,
+            "db_column_name": None,
+            "secret": False,
+        },
+    )
+
+    manager.add_column(
+        table_class_name="Comments",
+        tablename="comments",
+        column_name="content",
+        db_column_name="content",
+        column_class_name="Text",
+        column_class=Text,
+        params={
+            "default": "",
+            "null": False,
+            "primary_key": False,
+            "unique": False,
+            "index": False,
+            "index_method": IndexMethod.btree,
+            "choices": None,
+            "db_column_name": None,
+            "secret": False,
+        },
+    )
+
+    manager.add_column(
+        table_class_name="Comments",
+        tablename="comments",
+        column_name="timestamp",
+        db_column_name="timestamp",
+        column_class_name="Timestamp",
+        column_class=Timestamp,
+        params={
+            "default": TimestampNow(),
+            "null": False,
             "primary_key": False,
             "unique": False,
             "index": False,

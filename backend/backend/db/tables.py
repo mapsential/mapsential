@@ -83,3 +83,8 @@ class Comments(Table):
     author_name = Varchar(length=255)
     content = Text()
     timestamp = Timestamp()
+
+
+class Captcha(Table):
+    token = Varchar(length=255)
+    answer = Varchar(length=255)

@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import Button from "@mui/material/Button";
-import { StoreContext } from "./Store";
+import Button from "@mui/material/Button"
+import { useContext } from "react"
+import { StoreContext } from "./Store"
 
 export default function RemoveRouteButton({className}: {className: string}): JSX.Element | null {
     const store = useContext(StoreContext)

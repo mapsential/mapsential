@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3be28fd392501240d84bec9bb080eff3458d1c3330137743191cc67fd30f8cbe"
+            "sha256": "8a51ff44ac2d2f8a49f142cae32a77a6b6af6ef6212736c926a69256ede851de"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -100,6 +100,14 @@
             ],
             "markers": "python_full_version >= '3.6.2'",
             "version": "==22.1.0"
+        },
+        "captcha": {
+            "hashes": [
+                "sha256:2ae5e8daac4f1649b57b34328bcc45ba691b5c707fc6fbdd016e213aece9a8b8",
+                "sha256:529941705c01c20143d030805f82a362ba5a2af898e59426acc2c8d649ba034c"
+            ],
+            "index": "pypi",
+            "version": "==0.4"
         },
         "certifi": {
             "hashes": [
@@ -590,11 +598,11 @@
         },
         "types-requests": {
             "hashes": [
-                "sha256:5d6f77f3c7565659bdb7b7bce1d33d1abb7d0b056138cac714860e13da2f19df",
-                "sha256:cf0646031dd6307113b37814f743c04f0707a3357378c2bb1326f848412f5ba9"
+                "sha256:04579ee164f7c2659be46950e3c2f8d51a081ad252ef1b01d4b12faba5c3810b",
+                "sha256:c01838abfe3e8a83ba68346cd373afff97594c19c15c922ddee4a0e80ba7e329"
             ],
             "index": "pypi",
-            "version": "==2.27.13"
+            "version": "==2.27.14"
         },
         "types-urllib3": {
             "hashes": [
@@ -1067,11 +1075,11 @@
         },
         "virtualenv": {
             "hashes": [
-                "sha256:dd448d1ded9f14d1a4bfa6bfc0c5b96ae3be3f2d6c6c159b23ddcfd701baa021",
-                "sha256:e9dd1a1359d70137559034c0f5433b34caf504af2dc756367be86a5a32967134"
+                "sha256:c3e01300fb8495bc00ed70741f5271fc95fed067eb7106297be73d30879af60c",
+                "sha256:ce8901d3bbf3b90393498187f2d56797a8a452fb2d0d7efc6fd837554d6f679c"
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
-            "version": "==20.13.3"
+            "version": "==20.13.4"
         },
         "vulture": {
             "hashes": [

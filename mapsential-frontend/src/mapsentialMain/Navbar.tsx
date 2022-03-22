@@ -1,17 +1,19 @@
-import { ArrowBackIosNew, ArrowForwardIos, CloseRounded } from "@mui/icons-material";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Toolbar from '@mui/material/Toolbar';
-import { useEffect, useState } from 'react';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-import { fetchTips } from './Controllers';
-import Logo from './Logo';
-import './Navbar.css';
+import ArrowBackIosNew from "@mui/icons-material/ArrowBackIos"
+import ArrowForwardIos from "@mui/icons-material/ArrowForwardIos"
+import CloseRounded from "@mui/icons-material/CloseRounded"
+import AppBar from "@mui/material/AppBar"
+import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
+import IconButton from "@mui/material/IconButton"
+import Toolbar from "@mui/material/Toolbar"
+import { useEffect, useState } from "react"
+import Popup from "reactjs-popup"
+import "reactjs-popup/dist/index.css"
+import { fetchTips } from "./Controllers"
+import Logo from "./Logo"
+import "./Navbar.css"
 
-export const Navbar = () => {
+export default function Navbar(): JSX.Element {
     const [popupOpen, setPopupOpen] = useState(false);
     const closePopup = () => setPopupOpen(false);
     const openPopup = () => setPopupOpen(true);

@@ -1,4 +1,4 @@
-import Leaflet from "leaflet";
+import Leaflet from "leaflet"
 
 
 const ICON_DIMENSIONS = {width: 28, height: 30}

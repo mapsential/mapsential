@@ -1,9 +1,9 @@
-import MapLeaflet from '../mapsentialMain/MapLeaflet'
-import {Navbar} from "./Navbar";
-import {Box} from '@mui/material'
+import MapLeaflet from "../mapsentialMain/MapLeaflet"
+import Navbar from "./Navbar"
+import Box from "@mui/material/Box"
 import Store from "./Store"
 import Legend from "./Legend"
-import CommentDialog from "./CommentDialog";
+import CommentDialog from "./CommentDialog"
 
 export default function MapsentialMain() {
     return (

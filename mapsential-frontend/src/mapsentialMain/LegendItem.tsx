@@ -1,4 +1,4 @@
-import './LegendItem.css'
+import "./LegendItem.css"
 
 export default function LocationInformationItem({name, color}: { name: string, color: string }): JSX.Element {
     return <li className="LegendItem">

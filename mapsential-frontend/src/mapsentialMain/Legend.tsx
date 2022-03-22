@@ -1,14 +1,14 @@
-import { useContext, useState } from 'react'
-import './Legend.css'
 import CloseIcon from '@mui/icons-material/Close';
-import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box/Box';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import RadioGroup from '@mui/material/RadioGroup';
 import Checkbox from '@mui/material/Checkbox';
-import { StoreContext } from './Store';
+import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
+import IconButton from '@mui/material/IconButton';
+import RadioGroup from '@mui/material/RadioGroup';
+import { useContext, useState } from 'react';
+import './Legend.css';
+import { StoreContext } from './Store';
 
 export default function Legend(): JSX.Element {
     const store = useContext(StoreContext)

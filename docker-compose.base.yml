@@ -20,8 +20,6 @@ services:
     container_name: mapsential_frontend
     build:
       context: ./mapsential-frontend
-    ports:
-      - "8100:8100"
 
   rest_api:
     container_name: mapsential_rest_api

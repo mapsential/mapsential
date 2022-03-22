@@ -1,10 +1,9 @@
 import axios, { AxiosInstance } from "axios"
-import { Location, LocationDetails, LocationsResponse } from "./Types"
+import { CaptchaResponse, Comment, Location, LocationDetails, LocationsResponse, PrePostComment } from "./Types"
 
 // TODO: Load urls from .env file
 const APIAxiosInstance = axios.create({
-    baseURL: "http://127.0.0.1:8080",
-    // baseURL: process.env.REACT_APP_IS_DOCKER_DEV === "true" ? "http://127.0.0.1:8000/api/" : "https://mapsential.de/api/",
+    baseURL: process.env.REACT_APP_IS_DOCKER_DEV === "true" ? "http://127.0.0.1:8000/api/" : "https://mapsential.de/api/",
 })
 
 export async function fetchLocations(): Promise<LocationsResponse> {
@@ -13,6 +12,18 @@ export async function fetchLocations(): Promise<LocationsResponse> {
 
 export async function fetchLocationDetails(location: Location): Promise<LocationDetails> {
     return await fetch(`details/${location.detailsId}`, APIAxiosInstance)
+}
+
+export async function fetchCaptcha(): Promise<CaptchaResponse> {
+    return await fetch("/captcha/", APIAxiosInstance)
+}
+
+export async function fetchComments(locationId: number): Promise<Comment[]> {
+    return await fetch(`comments/?location_id=${locationId}`, APIAxiosInstance)
+}
+
+export async function postComment(comment: PrePostComment): Promise<void> {
+    await APIAxiosInstance.post("/comment/", comment)
 }
 
 export async function fetchTips(): Promise<string[]> {

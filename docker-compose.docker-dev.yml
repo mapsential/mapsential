@@ -5,6 +5,14 @@ services:
     volumes:
       - ./nginx/nginx.docker-dev.conf:/etc/nginx/nginx.conf:ro
 
+  frontend:
+    build:
+      dockerfile: dev.Dockerfile
+    ports:
+      - "8100:3000"
+    volumes:
+      - ./mapsential-frontend:/usr/src/app
+
   rest_api:
     volumes:
       - ./docker_dev_plaintext_secrets/postgres/password.txt:/run/secrets/postgres_password

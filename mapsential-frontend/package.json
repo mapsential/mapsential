@@ -50,5 +50,5 @@
     "react-scripts": "^5.0.0",
     "webpack-bundle-analyzer": "^4.5.0"
   },
-  "proxy": "http://localhost:8000"
+  "proxy": "http://127.0.0.1:8000"
 }

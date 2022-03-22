@@ -1,3 +1,6 @@
+import Leaflet from "leaflet";
+
+
 export type TranslationEntry = {
     singular: string,
     plural: string,
@@ -18,6 +21,18 @@ export type LocationsResponseTypeEntry = {
 
 export type LocationsResponse = {
     [locationType: string]: LocationsResponseTypeEntry,
+}
+
+export type LocationTypeEntry = {
+    locations: Location[],
+    isDisplayingMapLayer: boolean,
+    mapLayer: Leaflet.LayerGroup,
+    translations: Translations,
+    cssColor: string,
+}
+
+export type LocationTypeEntries = {
+    [locationType: string]: LocationTypeEntry,
 }
 
 export type Location = {
@@ -74,14 +89,23 @@ export type LocationDetails = {
 
     soup_kitchen_info?: boolean,
 }
-export type CommentDetails = {
-    commentId: number,
-    detailsId: number,
-    authorName: string,
-    content: string,
-    timestamp: string
+
+export type CaptchaResponse = {
+    token: string,
+    jpeg: string,
 }
 
-export type CommentList = CommentDetails[]
+export type PrePostComment = {
+    captcha_token: string,
+    captcha_answer: string,
+    location_id: number,
+    author_name: string,
+    content: string,
+}
+
+export type Comment = {
+    id: number,
+    timestamp: string,
+} & PrePostComment
 
 export type RouteStatus = "no-route" | "loading" | "loaded"
