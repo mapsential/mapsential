@@ -33,8 +33,6 @@ services:
       - "8080:8080"
     depends_on:
       - "db"
-    environment:
-      - ENV=docker-dev
 
   admin_backend:
     container_name: mapsential_admin_backend
@@ -48,8 +46,6 @@ services:
       - "8090:8090"
     depends_on:
       - "db"
-    environment:
-      - ENV=docker-dev
 
   db:
     container_name: mapsential_db

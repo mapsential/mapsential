@@ -14,6 +14,7 @@ from env import is_production
 from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import Query
+from fastapi.middleware.cors import CORSMiddleware
 from internationalized_terms import get_plural
 from internationalized_terms import get_singular
 from internationalized_terms import get_translation
@@ -36,18 +37,28 @@ from db.tables import Locations
 
 api = FastAPI()
 
-if not is_production():
-    from fastapi.middleware.cors import CORSMiddleware
 
-    origins = [
-        "http://127.0.0.1:8000",
-        "http://localhost:8100",
-        "http://localhost:3000",
-    ]
-
+if is_production():
     api.add_middleware(
         CORSMiddleware,
-        allow_origins=origins,
+        allow_origins=[
+            "http://127.0.0.1:8000",
+            "http://localhost:8100",
+        ],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+    print("test")
+
+else:
+    api.add_middleware(
+        CORSMiddleware,
+        allow_origins=[
+            "http://127.0.0.1:8000",
+            "http://localhost:8100",
+            "http://localhost:3000",
+        ],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
