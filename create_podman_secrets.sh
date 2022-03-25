@@ -21,10 +21,4 @@ pass piccolo_admin_password/lucas | podman secret create piccolo_admin_password_
 pass piccolo_admin_password/orhun | podman secret create piccolo_admin_password_orhun -
 pass piccolo_admin_password/oscar | podman secret create piccolo_admin_password_oscar -
 
-pass airflow_password/clemens | podman secret create airflow_password_clemens -
-pass airflow_password/denis | podman secret create airflow_password_denis -
-pass airflow_password/lucas | podman secret create airflow_password_lucas -
-pass airflow_password/orhun | podman secret create airflow_password_orhun -
-pass airflow_password/oscar | podman secret create airflow_password_oscar -
-
 unset project_dir
