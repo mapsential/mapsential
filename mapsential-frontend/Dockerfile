@@ -1,4 +1,4 @@
-FROM node:18 AS install
+FROM node:17 AS install
 
 RUN npm install -g serve
 
