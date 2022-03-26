@@ -15,6 +15,7 @@ from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi import Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from internationalized_terms import get_plural
 from internationalized_terms import get_singular
 from internationalized_terms import get_translation
@@ -35,7 +36,10 @@ from db.tables import Locations
 # ============================================================================
 
 
-api = FastAPI()
+api = FastAPI(root_path="/api")
+
+
+api.add_middleware(GZipMiddleware)
 
 
 if is_production():
