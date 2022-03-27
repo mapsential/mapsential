@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  nginx:
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    volumes:
+      - ./mapsential-frontend:/usr/src/app
+
+  rest_api:
+    secrets:
+      - postgres_password
+
+  admin_backend:
+    secrets:
+      - postgres_password
+
+  db:
+    secrets:
+      - postgres_password
+
+secrets:
+  postgres_password:
+    external: true

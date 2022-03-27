@@ -13,14 +13,7 @@ BASE_POSTGRES_CONFIG = dict(
 )
 
 
-def get_postgres_prod_config() -> dict:
-    return dict(
-        **BASE_POSTGRES_CONFIG,
-        host="localhost",
-    )
-
-
-def get_postgres_docker_dev_config() -> dict:
+def get_postgres_container_config() -> dict:
     return dict(
         **BASE_POSTGRES_CONFIG,
         host="db",
@@ -36,8 +29,8 @@ def get_postgres_dev_config() -> dict:
 
 DB = PostgresEngine(
     config={
-        "prod": get_postgres_prod_config(),
-        "docker-dev": get_postgres_docker_dev_config(),
+        "prod": get_postgres_container_config(),
+        "docker-dev": get_postgres_container_config(),
     }.get(os.environ["ENV"], get_postgres_dev_config())
 )
 

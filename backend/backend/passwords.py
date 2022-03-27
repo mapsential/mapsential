@@ -8,7 +8,7 @@ from paths import PROJECT_DIR
 def get_password(password_path: str) -> str:
     if (secret_path := Path(f"/run/secrets/{password_path.replace('/', '_')}")).exists():
         with open(secret_path) as f:
-            return f.read()
+            return f.read().strip()
 
     func = get_docker_dev_password if env.is_docker_dev() else get_prod_password
 

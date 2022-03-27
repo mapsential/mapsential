@@ -16,10 +16,14 @@ services:
   rest_api:
     volumes:
       - ./docker_dev_plaintext_secrets/postgres/password.txt:/run/secrets/postgres_password
+    environment:
+      - ENV=docker-dev
 
   admin_backend:
     volumes:
       - ./docker_dev_plaintext_secrets/postgres/password.txt:/run/secrets/postgres_password
+    environment:
+      - ENV=docker-dev
 
   db:
     volumes:

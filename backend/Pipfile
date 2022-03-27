@@ -13,7 +13,8 @@ geopy = "*"
 requests = "*"
 types-requests = "*"
 gunicorn = "*"
-asyncpg = "*"
+# TODO: Use offical version when https://github.com/MagicStack/asyncpg/issues/899 is fixed
+asyncpg = {git = "git+https://github.com/Rongronggg9/asyncpg.git@fix/pep-621"}
 click = "*"
 pillow = "*"
 captcha = "*"
@@ -26,7 +27,7 @@ pre-commit = "*"
 vulture = "*"
 
 [requires]
-python_version = "3.10.2"
+python_version = "3.10.4"
 
 [pipenv]
 allow_prereleases = true
